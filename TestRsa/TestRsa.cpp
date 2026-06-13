@@ -2,6 +2,7 @@
 #include "../TestUtils/TestUtils.h"
 #include "../libs/algorithms/Rsa/Rsa.h"
 #include "../libs/algorithms/RsaKeygen/RsaKeygen.h"
+#include "../libs/helpers/KeyFile/KeyFile.h"
 #include <cstdint>
 #include <string>
 #include <vector>
@@ -19,4 +20,9 @@ void RunRsaTests() {
     TestRsaRoundTrip({0, 1, 2, 255}, GenerateRsaKey(17, 23, 3), "RSA small bytes");
     TestRsaRoundTrip({72, 101, 108, 108, 111}, GenerateRsaKey(19, 23, 5), "RSA text bytes");
     TestRsaRoundTrip({10, 20, 30, 40, 250}, GenerateRandomRsaKey(17, 61), "RSA random key");
+
+    RsaKey key = GenerateRsaKey(17, 23, 3);
+    SaveRsaKeyToFile("/private/tmp/rsa_key.bin", key);
+    RsaKey fileKey = ReadRsaKeyFromFile("/private/tmp/rsa_key.bin");
+    CheckTest(fileKey.moduleValue == key.moduleValue && fileKey.publicKey == key.publicKey && fileKey.privateKey == key.privateKey, "RSA key file");
 }
