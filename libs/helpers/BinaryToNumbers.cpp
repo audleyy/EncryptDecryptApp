@@ -1,6 +1,6 @@
 #include "ConvertUtils.h"
 
-vector<int64_t> binaryToNumbers(const vector<uint8_t>& bytes) {
+vector<int64_t> BinaryToNumbers(const vector<uint8_t>& bytes) {
     vector<int64_t> numbers;
     if (bytes.size() % sizeof(int64_t) != 0) {
         throw runtime_error("Размер шифротекста некорректен");
