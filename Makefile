@@ -4,6 +4,7 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
 BIN_DIR = bin
 
 TEST_APP = $(BIN_DIR)/test_crypto
+DLL_TEST_APP = $(BIN_DIR)/test_dll
 RSA_LIB = $(BIN_DIR)/librsa.dylib
 SHAMIR_LIB = $(BIN_DIR)/libshamir.dylib
 
@@ -42,6 +43,13 @@ TEST_SRC = \
 	TestRsa/TestRsa.cpp \
 	TestShamir/TestShamir.cpp
 
+DLL_TEST_SRC = \
+	TestDllMain.cpp \
+	TestUtils/TestUtils.cpp \
+	TestDll/TestDll.cpp \
+	TestDll/TestRsaDll.cpp \
+	TestDll/TestShamirDll.cpp
+
 all: test rsa shamir
 
 $(BIN_DIR):
@@ -50,6 +58,10 @@ $(BIN_DIR):
 test: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(TEST_SRC) $(RSA_SRC) $(RSA_KEYGEN_SRC) $(SHAMIR_SRC) $(SHAMIR_KEYGEN_SRC) $(HELPERS_SRC) $(MATH_SRC) -o $(TEST_APP)
 	./$(TEST_APP)
+
+dll-test: rsa shamir
+	$(CXX) $(CXXFLAGS) $(DLL_TEST_SRC) $(RSA_KEYGEN_SRC) $(SHAMIR_KEYGEN_SRC) $(MATH_SRC) -o $(DLL_TEST_APP)
+	./$(DLL_TEST_APP)
 
 rsa: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(HELPERS_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
