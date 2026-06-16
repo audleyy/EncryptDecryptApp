@@ -1,7 +1,8 @@
-#include "../TestUtils/TestUtils.h"
-#include "../libs/algorithms/RsaKeygen/RsaKeygen.h"
+#include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
+#include <cassert>
 #include <cstdint>
 #include <dlfcn.h>
+#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -33,14 +34,17 @@ void TestRsaDllRoundTrip() {
         vector<uint8_t> encryptedBytes(inputBytes.size() * sizeof(int64_t));
         size_t encryptedSize = 0;
         int encryptCode = encryptFunc(inputBytes.data(), inputBytes.size(), key.publicKey, key.moduleValue, encryptedBytes.data(), encryptedBytes.size(), &encryptedSize);
-        CheckTest(encryptCode == 0, "RSA DLL: шифрование");
+        cout << "Проверяем: RSA DLL: шифрование\n";
+        assert(encryptCode == 0);
         encryptedBytes.resize(encryptedSize);
         vector<uint8_t> decryptedBytes(inputBytes.size());
         size_t decryptedSize = 0;
         int decryptCode = decryptFunc(encryptedBytes.data(), encryptedBytes.size(), key.privateKey, key.moduleValue, decryptedBytes.data(), decryptedBytes.size(), &decryptedSize);
-        CheckTest(decryptCode == 0, "RSA DLL: расшифрование");
+        cout << "Проверяем: RSA DLL: расшифрование\n";
+        assert(decryptCode == 0);
         decryptedBytes.resize(decryptedSize);
-        CheckTest(decryptedBytes == inputBytes, "RSA DLL: полный цикл");
+        cout << "Проверяем: RSA DLL: полный цикл\n";
+        assert(decryptedBytes == inputBytes);
     } catch (...) {
         dlclose(library);
         throw;

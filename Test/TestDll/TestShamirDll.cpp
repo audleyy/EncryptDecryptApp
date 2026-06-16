@@ -1,7 +1,8 @@
-#include "../TestUtils/TestUtils.h"
-#include "../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
+#include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
+#include <cassert>
 #include <cstdint>
 #include <dlfcn.h>
+#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -33,14 +34,19 @@ void TestShamirDllRoundTrip() {
         vector<uint8_t> encryptedBytes(inputBytes.size() * sizeof(int64_t));
         size_t encryptedSize = 0;
         int encryptCode = encryptFunc(inputBytes.data(), inputBytes.size(), key.primeValue, key.caValue, key.cbValue, encryptedBytes.data(), encryptedBytes.size(), &encryptedSize);
-        CheckTest(encryptCode == 0, "Шамир DLL: шифрование");
+        cout << "Проверяем: Шамир DLL: шифрование\n";
+        assert(encryptCode == 0);
+
         encryptedBytes.resize(encryptedSize);
         vector<uint8_t> decryptedBytes(inputBytes.size());
         size_t decryptedSize = 0;
         int decryptCode = decryptFunc(encryptedBytes.data(), encryptedBytes.size(), key.primeValue, key.daValue, key.dbValue, decryptedBytes.data(), decryptedBytes.size(), &decryptedSize);
-        CheckTest(decryptCode == 0, "Шамир DLL: расшифрование");
+        cout << "Проверяем: Шамир DLL: расшифрование\n";
+        assert(decryptCode == 0);
+
         decryptedBytes.resize(decryptedSize);
-        CheckTest(decryptedBytes == inputBytes, "Шамир DLL: полный цикл");
+        cout << "Проверяем: Шамир DLL: полный цикл\n";
+        assert(decryptedBytes == inputBytes);
     } catch (...) {
         dlclose(library);
         throw;

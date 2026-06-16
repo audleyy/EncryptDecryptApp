@@ -38,17 +38,15 @@ SHAMIR_KEYGEN_SRC = \
 	libs/algorithms/ShamirKeygen/ShamirRandomKeygen.cpp
 
 TEST_SRC = \
-	TestMain.cpp \
-	TestUtils/TestUtils.cpp \
-	TestRsa/TestRsa.cpp \
-	TestShamir/TestShamir.cpp
+	Test/TestMain.cpp \
+	Test/TestRsa/TestRsa.cpp \
+	Test/TestShamir/TestShamir.cpp
 
 DLL_TEST_SRC = \
-	TestDllMain.cpp \
-	TestUtils/TestUtils.cpp \
-	TestDll/TestDll.cpp \
-	TestDll/TestRsaDll.cpp \
-	TestDll/TestShamirDll.cpp
+	Test/TestDllMain.cpp \
+	Test/TestDll/TestDll.cpp \
+	Test/TestDll/TestRsaDll.cpp \
+	Test/TestDll/TestShamirDll.cpp
 
 all: test rsa shamir
 

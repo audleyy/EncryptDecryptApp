@@ -1,18 +1,20 @@
 #include "TestRsa.h"
-#include "../TestUtils/TestUtils.h"
-#include "../libs/algorithms/Rsa/Rsa.h"
-#include "../libs/algorithms/RsaKeygen/RsaKeygen.h"
-#include "../libs/helpers/KeyFile/KeyFile.h"
+#include "../../libs/algorithms/Rsa/Rsa.h"
+#include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
+#include "../../libs/helpers/KeyFile/KeyFile.h"
+#include <cassert>
 #include <cstdint>
+#include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
 void TestRsaRoundTrip(const vector<uint8_t>& inputBytes, const RsaKey& key, const string& testName) {
+    cout << "Проверяем: " << testName << "\n";
     vector<uint8_t> encryptedBytes = EncryptRsa(inputBytes, key.publicKey, key.moduleValue);
     vector<uint8_t> decryptedBytes = DecryptRsa(encryptedBytes, key.privateKey, key.moduleValue);
-    CheckTest(decryptedBytes == inputBytes, testName);
+    assert(decryptedBytes == inputBytes);
 }
 
 void RunRsaTests() {
@@ -22,5 +24,8 @@ void RunRsaTests() {
     RsaKey key = GenerateRsaKey(17, 23, 3);
     SaveRsaKeyToFile("/private/tmp/rsa_key.bin", key);
     RsaKey fileKey = ReadRsaKeyFromFile("/private/tmp/rsa_key.bin");
-    CheckTest(fileKey.moduleValue == key.moduleValue && fileKey.publicKey == key.publicKey && fileKey.privateKey == key.privateKey, "RSA: файл ключа");
+    cout << "Проверяем: RSA: файл ключа\n";
+    assert(fileKey.moduleValue == key.moduleValue);
+    assert(fileKey.publicKey == key.publicKey);
+    assert(fileKey.privateKey == key.privateKey);
 }
