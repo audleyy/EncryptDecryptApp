@@ -7,6 +7,7 @@
 const string RsaLibraryPath = "bin/librsa.dylib";
 const string ShamirLibraryPath = "bin/libshamir.dylib";
 const string ElGamalLibraryPath = "bin/libelgamal.dylib";
+const string CaesarLibraryPath = "bin/libcaesar.dylib";
 
 struct DllLibrary {
     void* handle;
@@ -106,6 +107,22 @@ vector<uint8_t> ProcessElGamalByDll(const vector<uint8_t>& inputBytes, const ElG
     return outputBytes;
 }
 
+vector<uint8_t> ProcessCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key, bool isEncrypt) {
+    using CaesarFunction = int (*)(const uint8_t*, size_t, uint64_t, uint8_t*, size_t, size_t*);
+    DllLibrary library = OpenDllLibrary(CaesarLibraryPath, "Caesar");
+    string functionName = isEncrypt ? "caesar_encrypt" : "caesar_decrypt";
+    CaesarFunction function = reinterpret_cast<CaesarFunction>(LoadDllFunction(library, functionName, "Caesar"));
+
+    vector<uint8_t> outputBytes(inputBytes.size());
+    size_t outputSize = 0;
+    int errorCode = function(inputBytes.data(), inputBytes.size(), key.shift, outputBytes.data(), outputBytes.size(), &outputSize);
+
+    CloseDllLibrary(library);
+    CheckDllError(errorCode);
+    outputBytes.resize(outputSize);
+    return outputBytes;
+}
+
 vector<uint8_t> EncryptRsaByDll(const vector<uint8_t>& inputBytes, const RsaKey& key) {
     return ProcessRsaByDll(inputBytes, key, true);
 }
@@ -128,4 +145,12 @@ vector<uint8_t> EncryptElGamalByDll(const vector<uint8_t>& inputBytes, const ElG
 
 vector<uint8_t> DecryptElGamalByDll(const vector<uint8_t>& inputBytes, const ElGamalKey& key) {
     return ProcessElGamalByDll(inputBytes, key, false);
+}
+
+vector<uint8_t> EncryptCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key) {
+    return ProcessCaesarByDll(inputBytes, key, true);
+}
+
+vector<uint8_t> DecryptCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key) {
+    return ProcessCaesarByDll(inputBytes, key, false);
 }

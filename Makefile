@@ -7,6 +7,7 @@ APP = $(BIN_DIR)/app
 RSA_LIB = $(BIN_DIR)/librsa.dylib
 SHAMIR_LIB = $(BIN_DIR)/libshamir.dylib
 ELGAMAL_LIB = $(BIN_DIR)/libelgamal.dylib
+CAESAR_LIB = $(BIN_DIR)/libcaesar.dylib
 
 MATH_SRC = \
 	libs/algorithms/MathCrypto/mod.cpp \
@@ -14,17 +15,24 @@ MATH_SRC = \
 	libs/algorithms/MathCrypto/euclid.cpp \
 	libs/algorithms/MathCrypto/random.cpp
 
-HELPERS_SRC = \
+CONVERT_SRC = \
 	libs/helpers/BytesToNumbers.cpp \
 	libs/helpers/NumbersToBytes.cpp \
 	libs/helpers/NumbersToBinary.cpp \
 	libs/helpers/BinaryToNumbers.cpp \
 	libs/helpers/TextToBytes.cpp \
-	libs/helpers/HexConverter.cpp \
+	libs/helpers/HexConverter.cpp
+
+KEYFILE_SRC = \
 	libs/helpers/KeyFile/KeyNumbersFile.cpp \
 	libs/helpers/KeyFile/RsaKeyFile.cpp \
 	libs/helpers/KeyFile/ShamirKeyFile.cpp \
 	libs/helpers/KeyFile/ElGamalKeyFile.cpp \
+	libs/helpers/KeyFile/CaesarKeyFile.cpp
+
+HELPERS_SRC = \
+	$(CONVERT_SRC) \
+	$(KEYFILE_SRC) \
 	libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.cpp
 
 RSA_SRC = \
@@ -52,6 +60,13 @@ ELGAMAL_SRC = \
 ELGAMAL_KEYGEN_SRC = \
 	libs/algorithms/ElGamalKeygen/ElGamalKeygen.cpp
 
+CAESAR_SRC = \
+	libs/algorithms/Caesar/CaesarEncrypt.cpp \
+	libs/algorithms/Caesar/CaesarDecrypt.cpp
+
+CAESAR_KEYGEN_SRC = \
+	libs/algorithms/CaesarKeygen/CaesarKeygen.cpp
+
 COMMON_SRC = \
 	src/common/ErrorText.cpp
 
@@ -74,10 +89,11 @@ APP_SRC = \
 	$(RSA_KEYGEN_SRC) \
 	$(SHAMIR_KEYGEN_SRC) \
 	$(ELGAMAL_KEYGEN_SRC) \
+	$(CAESAR_KEYGEN_SRC) \
 	$(DIFFIE_HELLMAN_SRC) \
 	$(MATH_SRC)
 
-all: app rsa shamir elgamal
+all: app rsa shamir elgamal caesar
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
@@ -86,13 +102,16 @@ app: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(APP_SRC) -o $(APP)
 
 rsa: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(HELPERS_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
+	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
 
 shamir: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(HELPERS_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
+	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
 
 elgamal: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/ElGamal/ElGamalDll.cpp $(ELGAMAL_SRC) $(DIFFIE_HELLMAN_SRC) -o $(ELGAMAL_LIB)
+
+caesar: $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
 
 clean:
 	rm -rf $(BIN_DIR)

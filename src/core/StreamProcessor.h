@@ -12,4 +12,7 @@ void DecryptShamirFileByStream(const CoreOptions& options);
 void EncryptElGamalFileByStream(const CoreOptions& options);
 void DecryptElGamalFileByStream(const CoreOptions& options);
 
+void EncryptCaesarFileByStream(const CoreOptions& options);
+void DecryptCaesarFileByStream(const CoreOptions& options);
+
 #endif

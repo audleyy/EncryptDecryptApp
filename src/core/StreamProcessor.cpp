@@ -66,3 +66,17 @@ void DecryptElGamalFileByStream(const CoreOptions& options) {
         return DecryptElGamalByDll(inputBytes, key);
     });
 }
+
+void EncryptCaesarFileByStream(const CoreOptions& options) {
+    CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return EncryptCaesarByDll(inputBytes, key);
+    });
+}
+
+void DecryptCaesarFileByStream(const CoreOptions& options) {
+    CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return DecryptCaesarByDll(inputBytes, key);
+    });
+}

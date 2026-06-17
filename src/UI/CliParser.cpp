@@ -27,6 +27,8 @@ bool ParseAlgorithm(const string& value, AlgorithmType& algorithm) {
         algorithm = AlgorithmType::Shamir;
     } else if (value == "elgamal") {
         algorithm = AlgorithmType::ElGamal;
+    } else if (value == "caesar") {
+        algorithm = AlgorithmType::Caesar;
     } else {
         isParsed = false;
     }
@@ -127,17 +129,17 @@ CliParseResult ParseCliLine(const string& line) {
 void PrintHelp(){
     cout << "Использование:\n";
     cout << "  ./app --help\n";
-    cout << "  ./app --mode generate-key --algorithm rsa|shamir|elgamal --key key.bin\n";
-    cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal --input in.bin --output out.bin --key key.bin\n";
-    cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal --input in.bin --output out.bin --key key.bin\n";
-    cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal --text --key key.bin\n";
-    cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal --text --key key.bin\n";
+    cout << "  ./app --mode generate-key --algorithm rsa|shamir|elgamal|caesar --key key.bin\n";
+    cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal|caesar --input in.bin --output out.bin --key key.bin\n";
+    cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal|caesar --input in.bin --output out.bin --key key.bin\n";
+    cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal|caesar --text --key key.bin\n";
+    cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal|caesar --text --key key.bin\n";
     cout << "  ./app -m encrypt -a rsa -i in.bin -o out.bin -k key.bin\n";
     cout << "\n";
     cout << "Флаги:\n";
     cout << "  --help, -h       показать справку\n";
     cout << "  --mode, -m       generate-key, encrypt или decrypt\n";
-    cout << "  --algorithm, -a  rsa, shamir или elgamal\n";
+    cout << "  --algorithm, -a  rsa, shamir, elgamal или caesar\n";
     cout << "  --input, -i      входной файл для encrypt/decrypt\n";
     cout << "  --output, -o     выходной файл для encrypt/decrypt\n";
     cout << "  --key, -k        файл ключа .bin\n";

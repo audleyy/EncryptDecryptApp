@@ -4,6 +4,7 @@
 #include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
 #include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
 #include "../../libs/algorithms/ElGamalKeygen/ElGamalKeygen.h"
+#include "../../libs/algorithms/CaesarKeygen/CaesarKeygen.h"
 #include "../../libs/helpers/ConvertUtils.h"
 #include "../../libs/helpers/KeyFile/KeyFile.h"
 #include <exception>
@@ -48,6 +49,11 @@ void EncryptTextByOptions(const CoreOptions& options) {
             outputBytes = EncryptElGamalByDll(inputBytes, key);
             break;
         }
+        case AlgorithmType::Caesar: {
+            CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
+            outputBytes = EncryptCaesarByDll(inputBytes, key);
+            break;
+        }
         default:
             throw invalid_argument("Некорректный алгоритм");
     }
@@ -71,6 +77,11 @@ void DecryptTextByOptions(const CoreOptions& options) {
         case AlgorithmType::ElGamal: {
             ElGamalKey key = ReadElGamalKeyFromFile(options.keyFilePath);
             outputBytes = DecryptElGamalByDll(inputBytes, key);
+            break;
+        }
+        case AlgorithmType::Caesar: {
+            CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
+            outputBytes = DecryptCaesarByDll(inputBytes, key);
             break;
         }
         default:
@@ -101,6 +112,11 @@ ErrorCode GenerateKeyByOptions(const CoreOptions& options) {
                 SaveElGamalKeyToFile(options.keyFilePath, key);
                 break;
             }
+            case AlgorithmType::Caesar: {
+                CaesarKey key = GenerateRandomCaesarKey();
+                SaveCaesarKeyToFile(options.keyFilePath, key);
+                break;
+            }
             default:
                 errorCode = InvalidInput;
                 break;
@@ -128,6 +144,9 @@ ErrorCode EncryptByOptions(const CoreOptions& options) {
             case AlgorithmType::ElGamal:
                 EncryptElGamalFileByStream(options);
                 break;
+            case AlgorithmType::Caesar:
+                EncryptCaesarFileByStream(options);
+                break;
             default:
                 errorCode = InvalidInput;
                 break;
@@ -154,6 +173,9 @@ ErrorCode DecryptByOptions(const CoreOptions& options) {
                 break;
             case AlgorithmType::ElGamal:
                 DecryptElGamalFileByStream(options);
+                break;
+            case AlgorithmType::Caesar:
+                DecryptCaesarFileByStream(options);
                 break;
             default:
                 errorCode = InvalidInput;

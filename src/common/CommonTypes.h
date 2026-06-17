@@ -8,7 +8,8 @@ using namespace std;
 enum class AlgorithmType {
     Rsa,
     Shamir,
-    ElGamal
+    ElGamal,
+    Caesar
 };
 
 enum class OperationType {
