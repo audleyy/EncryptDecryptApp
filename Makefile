@@ -1,76 +1,38 @@
-CXX      = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -I./docs/libs
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -fPIC
+LDFLAGS = -dynamiclib
 
-# ─── Исходники библиотек ──────────────────────────────────────────────────────
 
-CAESAR_SRC = \
-    docs/libs/algorithms/caesar/CaesarEncrypt.cpp \
-    docs/libs/algorithms/caesar/CaesarDecrypt.cpp
 
-CAESAR_DLL_SRC = \
-    $(CAESAR_SRC) \
-    docs/libs/algorithms/caesar/CaesarDll.cpp
+CAESAR_SRC = docs/libs/algorithms/caesar/CaesarEncrypt.cpp \
+             docs/libs/algorithms/caesar/CaesarDecrypt.cpp \
+             docs/libs/algorithms/caesar/CaesarKeygen.cpp \
+             docs/libs/algorithms/caesar/CaesarDll.cpp
 
-CHACHA20_SRC = \
-    docs/libs/algorithms/chacha20/ChaCha20Core.cpp \
-    docs/libs/algorithms/chacha20/ChaCha20Context.cpp \
-    docs/libs/algorithms/chacha20/ChaCha20Encrypt.cpp \
-    docs/libs/algorithms/chacha20/ChaCha20Decrypt.cpp
+CHACHA_SRC = docs/libs/algorithms/chacha20/ChaCha20Round.cpp \
+             docs/libs/algorithms/chacha20/ChaCha20Context.cpp \
+             docs/libs/algorithms/chacha20/ChaCha20Encrypt.cpp \
+             docs/libs/algorithms/chacha20/ChaCha20Decrypt.cpp \
+             docs/libs/algorithms/chacha20/ChaCha20Keygen.cpp \
+             docs/libs/algorithms/chacha20/ChaCha20Dll.cpp
 
-CHACHA20_DLL_SRC = \
-    $(CHACHA20_SRC) \
-    docs/libs/algorithms/chacha20/ChaCha20Dll.cpp
 
-# ─── Исходники тестов ─────────────────────────────────────────────────────────
+CAESAR_OUT = libcaesar.dylib
+CHACHA_OUT = libchacha20.dylib
 
-TEST_SRC = \
-    Test/TestMain.cpp \
-    Test/TestUtils/TestUtils.cpp \
-    Test/TestCaesar/TestCaesar.cpp \
-    Test/TestChaCha20/TestChaCha20.cpp
+.PHONY: all caesar chacha clean
 
-DLL_TEST_SRC = \
-    Test/TestDllMain.cpp \
-    Test/TestUtils/TestUtils.cpp \
-    Test/TestDll/TestDll.cpp \
-    Test/TestDll/TestCaesarDll.cpp \
-    Test/TestDll/TestChaCha20Dll.cpp
+all: caesar chacha
 
-# ─── Цели ─────────────────────────────────────────────────────────────────────
+caesar: $(CAESAR_OUT)
 
-# Для macOS лучше использовать расширение .dylib вместо .so
-all: libcaesar.dylib libchacha20.dylib test dll_test
+chacha: $(CHACHA_OUT)
 
-# Сборка динамических библиотек
-libcaesar.dylib:
-	$(CXX) $(CXXFLAGS) -shared -fPIC \
-		$(CAESAR_DLL_SRC)             \
-		-o libcaesar.dylib
+$(CAESAR_OUT): $(CAESAR_SRC)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(CAESAR_SRC) -o $(CAESAR_OUT)
 
-libchacha20.dylib:
-	$(CXX) $(CXXFLAGS) -shared -fPIC \
-		$(CHACHA20_DLL_SRC)           \
-		-o libchacha20.dylib
-
-# Unit тесты
-test:
-	$(CXX) $(CXXFLAGS)  \
-		$(TEST_SRC)      \
-		$(CAESAR_SRC)    \
-		$(CHACHA20_SRC)  \
-		-o test_runner
-	./test_runner
-
-# DLL тесты (.dylib используются как зависимости)
-dll_test: libcaesar.dylib libchacha20.dylib
-	$(CXX) $(CXXFLAGS)  \
-		$(DLL_TEST_SRC)  \
-		-ldl             \
-		-o dll_test_runner
-	./dll_test_runner
+$(CHACHA_OUT): $(CHACHA_SRC)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(CHACHA_SRC) -o $(CHACHA_OUT)
 
 clean:
-	rm -f test_runner dll_test_runner \
-	      libcaesar.dylib libchacha20.dylib
-
-.PHONY: all test dll_test clean
+	rm -f $(CAESAR_OUT) $(CHACHA_OUT)

@@ -1,12 +1,16 @@
 #define CHACHA20_DLL_EXPORTS
 #include "ChaCha20Dll.h"
+#include "ChaCha20Types.h"
 #include <cstring>
 #include <exception>
 
-// Прототипы функций Си-стиля из первого файла
-void chacha20_init_context(uint32_t* state, uint8_t* buffer, size_t* buffer_pos, const uint8_t* key, const uint8_t* nonce, uint32_t counter);
-void chacha20_xor_raw(uint32_t* state, uint8_t* buffer, size_t* buffer_pos, const uint8_t* input, uint8_t* output, size_t length);
-void chacha20_clear_raw(uint32_t* state, uint8_t* buffer, size_t* buffer_pos);
+using namespace std;
+
+
+void ChaCha20ValidateRaw(const ByteVec& key, const ByteVec& nonce);
+void ChaCha20InitContext(uint32_t* state, uint8_t* buffer, size_t* bufferPos, const uint8_t* key, const uint8_t* nonce, uint32_t counter);
+void ChaCha20XorRaw(uint32_t* state, uint8_t* buffer, size_t* bufferPos, const uint8_t* input, uint8_t* output, size_t length);
+void ChaCha20ClearRaw(uint32_t* state, uint8_t* buffer, size_t* bufferPos);
 
 static int validateParams(const uint8_t* in, size_t in_len, const uint8_t* key, const uint8_t* nonce, const uint8_t* out, size_t out_cap, const size_t* out_len) {
     if (!in || !key || !nonce || !out || !out_len) return CHACHA20_ERR_NULL_PTR;
@@ -20,21 +24,20 @@ int chacha20_encrypt(const uint8_t* in, size_t in_len, const uint8_t* key, const
     int check = validateParams(in, in_len, key, nonce, out, out_cap, out_len);
     if (check != CHACHA20_OK) return check;
 
-    // Выделяем обычные локальные переменные на стеке вместо класса
     uint32_t state[16];
-    uint8_t buffer[64];
-    size_t buffer_pos = 64;
+    uint8_t buffer[CHACHA20_BLOCK_SIZE];
+    size_t bufferPos = CHACHA20_BLOCK_SIZE;
 
     try {
-        chacha20_init_context(state, buffer, &buffer_pos, key, nonce, counter);
-        chacha20_xor_raw(state, buffer, &buffer_pos, in, out, in_len);
+        ChaCha20InitContext(state, buffer, &bufferPos, key, nonce, counter);
+        ChaCha20XorRaw(state, buffer, &bufferPos, in, out, in_len);
         *out_len = in_len;
     } catch (...) {
-        chacha20_clear_raw(state, buffer, &buffer_pos); // Зануляем вручную при ошибке
+        ChaCha20ClearRaw(state, buffer, &bufferPos);
         return CHACHA20_ERR_COUNTER_OVERFLOW;
     }
 
-    chacha20_clear_raw(state, buffer, &buffer_pos); // Зануляем вручную при успехе
+    ChaCha20ClearRaw(state, buffer, &bufferPos);
     return CHACHA20_OK;
 }
 

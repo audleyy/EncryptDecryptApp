@@ -2,7 +2,6 @@
 
 #include "Caesar.h"
 
-std::vector<uint8_t> DecryptCaesar(
-    const std::vector<uint8_t>& input,
-    int shift
-);
+using namespace std;
+
+vector<uint8_t> CaesarDecrypt(const vector<uint8_t>& input,const CaesarKey& key);
