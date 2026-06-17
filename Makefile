@@ -53,6 +53,7 @@ COMMON_SRC = \
 
 CORE_SRC = \
 	src/core/Core.cpp \
+	src/core/DllProcessor.cpp \
 	src/core/FileProcessor.cpp \
 	src/core/StreamProcessor.cpp
 
@@ -66,11 +67,8 @@ APP_SRC = \
 	$(COMMON_SRC) \
 	$(CORE_SRC) \
 	$(HELPERS_SRC) \
-	$(RSA_SRC) \
 	$(RSA_KEYGEN_SRC) \
-	$(SHAMIR_SRC) \
 	$(SHAMIR_KEYGEN_SRC) \
-	$(ELGAMAL_SRC) \
 	$(ELGAMAL_KEYGEN_SRC) \
 	$(DIFFIE_HELLMAN_SRC) \
 	$(MATH_SRC)
