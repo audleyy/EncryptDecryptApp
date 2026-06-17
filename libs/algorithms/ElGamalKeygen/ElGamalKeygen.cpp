@@ -2,37 +2,11 @@
 #include "../DiffieHellman/DiffieHellman.hpp"
 #include "../MathCrypto/CryptoUtils.h"
 
-int64_t GenerateRandomElGamalPrime(int64_t minValue, int64_t maxValue) {
-    if (minValue > maxValue) {
-        throw invalid_argument("минимальное значение больше максимального");
-    }
-
-    bool isFound = false;
-
-    for (int64_t value = minValue; value <= maxValue; value++) {
-        if (IsPrime(value)) {
-            isFound = true;
-        }
-    }
-
-    if (!isFound) {
-        throw runtime_error("в диапазоне нет простых чисел");
-    }
-
-    int64_t primeModulus = -1;
-
-    while (!IsPrime(primeModulus)) {
-        primeModulus = GeneratePrivateKey(minValue, maxValue);
-    }
-
-    return primeModulus;
+uint64_t GenerateRandomElGamalGenerator(uint64_t primeModulus) {
+    return GenerateRandomUint64(2, primeModulus - 2);
 }
 
-int64_t GenerateRandomElGamalGenerator(int64_t primeModulus) {
-    return GeneratePrivateKey(2, primeModulus - 2);
-}
-
-ElGamalKey GenerateElGamalKey(int64_t primeModulus, int64_t generatorValue, int64_t privateKey) {
+ElGamalKey GenerateElGamalKey(uint64_t primeModulus, uint64_t generatorValue, uint64_t privateKey) {
     try {
         if (!IsPrime(primeModulus)) {
             throw invalid_argument("p должно быть простым числом");
@@ -63,9 +37,9 @@ ElGamalKey GenerateElGamalKey(int64_t primeModulus, int64_t generatorValue, int6
 }
 
 ElGamalKey GenerateRandomElGamalKey() {
-    int64_t primeModulus = GenerateRandomElGamalPrime(257, 997);
-    int64_t generatorValue = GenerateRandomElGamalGenerator(primeModulus);
-    int64_t privateKey = GeneratePrivateKey(2, primeModulus - 2);
+    uint64_t primeModulus = GenerateRandomPrimeInRange(257, 997);
+    uint64_t generatorValue = GenerateRandomElGamalGenerator(primeModulus);
+    uint64_t privateKey = GenerateRandomUint64(2, primeModulus - 2);
 
     return GenerateElGamalKey(primeModulus, generatorValue, privateKey);
 }

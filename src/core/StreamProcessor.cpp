@@ -1,106 +1,68 @@
 #include "StreamProcessor.h"
+#include "DllProcessor.h"
 #include "FileProcessor.h"
-#include "../../libs/algorithms/ElGamal/ElGamal.hpp"
-#include "../../libs/algorithms/Rsa/Rsa.h"
-#include "../../libs/algorithms/Shamir/Shamir.h"
 #include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
 #include "../../libs/helpers/KeyFile/KeyFile.h"
 #include <fstream>
+#include <functional>
 #include <stdexcept>
 
 const size_t OpenTextChunkSize = 4096;
-const size_t CipherTextChunkSize = OpenTextChunkSize * sizeof(int64_t);
+const size_t CipherTextChunkSize = OpenTextChunkSize * sizeof(uint64_t);
 const size_t ElGamalCipherTextChunkSize = OpenTextChunkSize * ElGamalBlockSize;
 
-void EncryptRsaFileByStream(const CoreOptions& options) {
-    RsaKey key = ReadRsaKeyFromFile(options.keyFilePath);
+void ProcessFileByStream(const CoreOptions& options, size_t chunkSize, const function<vector<uint8_t>(const vector<uint8_t>&)>& processChunk) {
     ifstream inputFile(options.inputFilePath, ios::binary);
     ofstream outputFile(options.outputFilePath, ios::binary);
     if (!inputFile || !outputFile) {
         throw runtime_error("Не удалось открыть файл");
     }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
+    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, chunkSize);
     while (!inputBytes.empty()) {
-        vector<uint8_t> outputBytes = EncryptRsa(inputBytes, key.publicKey, key.moduleValue);
+        vector<uint8_t> outputBytes = processChunk(inputBytes);
         WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
+        inputBytes = ReadBinaryChunk(inputFile, chunkSize);
     }
+}
+
+void EncryptRsaFileByStream(const CoreOptions& options) {
+    RsaKey key = ReadRsaKeyFromFile(options.keyFilePath);
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return EncryptRsaByDll(inputBytes, key);
+    });
 }
 
 void DecryptRsaFileByStream(const CoreOptions& options) {
     RsaKey key = ReadRsaKeyFromFile(options.keyFilePath);
-    ifstream inputFile(options.inputFilePath, ios::binary);
-    ofstream outputFile(options.outputFilePath, ios::binary);
-    if (!inputFile || !outputFile) {
-        throw runtime_error("Не удалось открыть файл");
-    }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, CipherTextChunkSize);
-    while (!inputBytes.empty()) {
-        vector<uint8_t> outputBytes = DecryptRsa(inputBytes, key.privateKey, key.moduleValue);
-        WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, CipherTextChunkSize);
-    }
+    ProcessFileByStream(options, CipherTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return DecryptRsaByDll(inputBytes, key);
+    });
 }
 
 void EncryptShamirFileByStream(const CoreOptions& options) {
     ShamirKey key = ReadShamirKeyFromFile(options.keyFilePath);
-    ifstream inputFile(options.inputFilePath, ios::binary);
-    ofstream outputFile(options.outputFilePath, ios::binary);
-    if (!inputFile || !outputFile) {
-        throw runtime_error("Не удалось открыть файл");
-    }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
-    while (!inputBytes.empty()) {
-        vector<uint8_t> outputBytes = EncryptShamir(inputBytes, key.primeValue, key.caValue, key.cbValue);
-        WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
-    }
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return EncryptShamirByDll(inputBytes, key);
+    });
 }
 
 void DecryptShamirFileByStream(const CoreOptions& options) {
     ShamirKey key = ReadShamirKeyFromFile(options.keyFilePath);
-    ifstream inputFile(options.inputFilePath, ios::binary);
-    ofstream outputFile(options.outputFilePath, ios::binary);
-    if (!inputFile || !outputFile) {
-        throw runtime_error("Не удалось открыть файл");
-    }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, CipherTextChunkSize);
-    while (!inputBytes.empty()) {
-        vector<uint8_t> outputBytes = DecryptShamir(inputBytes, key.primeValue, key.daValue, key.dbValue);
-        WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, CipherTextChunkSize);
-    }
+    ProcessFileByStream(options, CipherTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return DecryptShamirByDll(inputBytes, key);
+    });
 }
 
 void EncryptElGamalFileByStream(const CoreOptions& options) {
     ElGamalKey key = ReadElGamalKeyFromFile(options.keyFilePath);
-    ifstream inputFile(options.inputFilePath, ios::binary);
-    ofstream outputFile(options.outputFilePath, ios::binary);
-    if (!inputFile || !outputFile) {
-        throw runtime_error("Не удалось открыть файл");
-    }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
-    while (!inputBytes.empty()) {
-        vector<EncryptedBlockElGamal> encryptedBlocks =
-            EncryptBytesElGamal(inputBytes, key.publicKey, key.primeModulus, key.generatorValue);
-        vector<uint8_t> outputBytes = ElGamalBlocksToBytes(encryptedBlocks);
-        WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, OpenTextChunkSize);
-    }
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return EncryptElGamalByDll(inputBytes, key);
+    });
 }
 
 void DecryptElGamalFileByStream(const CoreOptions& options) {
     ElGamalKey key = ReadElGamalKeyFromFile(options.keyFilePath);
-    ifstream inputFile(options.inputFilePath, ios::binary);
-    ofstream outputFile(options.outputFilePath, ios::binary);
-    if (!inputFile || !outputFile) {
-        throw runtime_error("Не удалось открыть файл");
-    }
-    vector<uint8_t> inputBytes = ReadBinaryChunk(inputFile, ElGamalCipherTextChunkSize);
-    while (!inputBytes.empty()) {
-        vector<EncryptedBlockElGamal> encryptedBlocks = BytesToElGamalBlocks(inputBytes);
-        vector<uint8_t> outputBytes = DecryptBytesElGamal(encryptedBlocks, key.privateKey, key.primeModulus);
-        WriteBinaryChunk(outputFile, outputBytes);
-        inputBytes = ReadBinaryChunk(inputFile, ElGamalCipherTextChunkSize);
-    }
+    ProcessFileByStream(options, ElGamalCipherTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        return DecryptElGamalByDll(inputBytes, key);
+    });
 }

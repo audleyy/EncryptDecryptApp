@@ -1,7 +1,7 @@
 #include "CryptoUtils.h"
 
 
-int64_t calculateReverseElement(int64_t base, int64_t module){
+uint64_t calculateReverseElement(uint64_t base, uint64_t module){
     int64_t r0 = module;
     int64_t r1 = base;
     int64_t u0 = 0;

@@ -11,13 +11,17 @@ ELGAMAL_LIB = $(BIN_DIR)/libelgamal.dylib
 MATH_SRC = \
 	libs/algorithms/MathCrypto/mod.cpp \
 	libs/algorithms/MathCrypto/prime.cpp \
-	libs/algorithms/MathCrypto/euclid.cpp
+	libs/algorithms/MathCrypto/euclid.cpp \
+	libs/algorithms/MathCrypto/random.cpp
 
 HELPERS_SRC = \
 	libs/helpers/BytesToNumbers.cpp \
 	libs/helpers/NumbersToBytes.cpp \
 	libs/helpers/NumbersToBinary.cpp \
 	libs/helpers/BinaryToNumbers.cpp \
+	libs/helpers/TextToBytes.cpp \
+	libs/helpers/HexConverter.cpp \
+	libs/helpers/KeyFile/KeyNumbersFile.cpp \
 	libs/helpers/KeyFile/RsaKeyFile.cpp \
 	libs/helpers/KeyFile/ShamirKeyFile.cpp \
 	libs/helpers/KeyFile/ElGamalKeyFile.cpp \

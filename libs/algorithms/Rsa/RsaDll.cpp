@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <stdexcept>
 
-extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, int64_t publicKey, int64_t moduleValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
+extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, uint64_t publicKey, uint64_t moduleValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
     try {
         if (outputSize == nullptr || (inputData == nullptr && inputSize > 0)) {
             throw invalid_argument("Некорректные входные данные RSA encrypt");
@@ -24,7 +24,7 @@ extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, int64_t publi
         return 3;
     }
 }
-extern "C" int decrypt(const uint8_t* inputData, size_t inputSize, int64_t privateKey, int64_t moduleValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
+extern "C" int decrypt(const uint8_t* inputData, size_t inputSize, uint64_t privateKey, uint64_t moduleValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
     try {
         if (outputSize == nullptr || (inputData == nullptr && inputSize > 0)) {
             throw invalid_argument("Некорректные входные данные RSA decrypt");

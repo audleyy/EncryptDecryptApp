@@ -1,33 +1,21 @@
 #include "KeyFile.h"
-#include "../ConvertUtils.h"
-#include <fstream>
 #include <vector>
 
 void SaveShamirKeyToFile(const string& filePath, const ShamirKey& key) {
-    vector<int64_t> keyNumbers = { key.primeValue, key.caValue, key.cbValue, key.daValue, key.dbValue, };
-    vector<uint8_t> keyBytes = NumbersToBinary(keyNumbers);
-    ofstream file(filePath, ios::binary);
-    if (!file) {
-        throw runtime_error("Не удалось открыть файл для записи ключа Шамира");
-    }
-    file.write(reinterpret_cast<const char*>(keyBytes.data()), keyBytes.size());
+    vector<uint64_t> keyNumbers = {ShamirAlgorithmId, key.primeValue, key.caValue, key.cbValue, key.daValue, key.dbValue};
+    SaveKeyNumbersToFile(filePath, keyNumbers);
 }
 
 ShamirKey ReadShamirKeyFromFile(const string& filePath) {
-    ifstream file(filePath, ios::binary);
-    if (!file) {
-        throw runtime_error("Не удалось открыть файл для чтения ключа Шамира");
-    }
-    vector<uint8_t> keyBytes((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
-    vector<int64_t> keyNumbers = BinaryToNumbers(keyBytes);
-    if (keyNumbers.size() != 5) {
-        throw runtime_error("Некорректный размер файла ключа Шамира");
+    vector<uint64_t> keyNumbers = ReadKeyNumbersFromFile(filePath);
+    if (keyNumbers.size() != 6 || keyNumbers[0] != ShamirAlgorithmId) {
+        throw runtime_error("Ошибка ключа: файл не является ключом Шамира");
     }
     ShamirKey key;
-    key.primeValue = keyNumbers[0];
-    key.caValue = keyNumbers[1];
-    key.cbValue = keyNumbers[2];
-    key.daValue = keyNumbers[3];
-    key.dbValue = keyNumbers[4];
+    key.primeValue = keyNumbers[1];
+    key.caValue = keyNumbers[2];
+    key.cbValue = keyNumbers[3];
+    key.daValue = keyNumbers[4];
+    key.dbValue = keyNumbers[5];
     return key;
 }

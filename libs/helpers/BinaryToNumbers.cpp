@@ -1,8 +1,8 @@
 #include "ConvertUtils.h"
 
-vector<int64_t> BinaryToNumbers(const vector<uint8_t>& bytes) {
-    vector<int64_t> numbers;
-    if (bytes.size() % sizeof(int64_t) != 0) {
+vector<uint64_t> BinaryToNumbers(const vector<uint8_t>& bytes) {
+    vector<uint64_t> numbers;
+    if (bytes.size() % sizeof(uint64_t) != 0) {
         throw runtime_error("Размер шифротекста некорректен");
     }
     uint64_t value = 0;
@@ -12,7 +12,7 @@ vector<int64_t> BinaryToNumbers(const vector<uint8_t>& bytes) {
         value |= part << shift;
         shift += 8;
         if (shift == 64) {
-            int64_t number = value;
+            uint64_t number = value;
             numbers.push_back(number);
             value = 0;
             shift = 0;

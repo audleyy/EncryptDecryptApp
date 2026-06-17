@@ -1,9 +1,9 @@
 #include "ShamirKeygen.h"
 #include "../MathCrypto/CryptoUtils.h"
 
-bool IsShamirSecretKeyValid(int64_t secretKey, int64_t primeValue) {
+bool IsShamirSecretKeyValid(uint64_t secretKey, uint64_t primeValue) {
     bool isValid = true;
-    int64_t moduleValue = primeValue - 1;
+    uint64_t moduleValue = primeValue - 1;
     if (secretKey <= 1 || secretKey >= moduleValue) {
         isValid = false;
     } else {
@@ -16,7 +16,7 @@ bool IsShamirSecretKeyValid(int64_t secretKey, int64_t primeValue) {
     return isValid;
 }
 
-int64_t CalculateShamirReverseKey(int64_t secretKey, int64_t primeValue) {
+uint64_t CalculateShamirReverseKey(uint64_t secretKey, uint64_t primeValue) {
     try {
         return calculateReverseElement(secretKey, primeValue - 1);
     } catch (const exception& exceptionCaught) {
@@ -24,7 +24,7 @@ int64_t CalculateShamirReverseKey(int64_t secretKey, int64_t primeValue) {
     }
 }
 
-ShamirKey GenerateShamirKey(int64_t primeValue, int64_t caValue, int64_t cbValue) {
+ShamirKey GenerateShamirKey(uint64_t primeValue, uint64_t caValue, uint64_t cbValue) {
     try {
         if (!IsPrime(primeValue)) {
             throw invalid_argument("p должно быть простым числом");

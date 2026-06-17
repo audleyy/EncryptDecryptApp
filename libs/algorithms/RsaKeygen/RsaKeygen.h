@@ -8,21 +8,20 @@
 using namespace std;
 
 struct RsaKey {
-    int64_t pValue;
-    int64_t qValue;
-    int64_t moduleValue;
-    int64_t phiValue;
-    int64_t privateKey;
-    int64_t publicKey;
+    uint64_t pValue;
+    uint64_t qValue;
+    uint64_t moduleValue;
+    uint64_t phiValue;
+    uint64_t privateKey;
+    uint64_t publicKey;
 };
 
-int64_t CalculateRsaModule(int64_t pValue, int64_t qValue);
-int64_t CalculateRsaPhi(int64_t pValue, int64_t qValue);
-bool IsRsaPrivateKeyValid(int64_t privateKey, int64_t phiValue);
-int64_t CalculateRsaPublicKey(int64_t privateKey, int64_t phiValue);
-RsaKey GenerateRsaKey(int64_t pValue, int64_t qValue, int64_t privateKey);
-int64_t GenerateRandomPrime(int64_t minValue, int64_t maxValue);
-int64_t GenerateRandomRsaPrivateKey(int64_t phiValue);
-RsaKey GenerateRandomRsaKey(int64_t minPrimeValue, int64_t maxPrimeValue);
+uint64_t CalculateRsaModule(uint64_t pValue, uint64_t qValue);
+uint64_t CalculateRsaPhi(uint64_t pValue, uint64_t qValue);
+bool IsRsaPrivateKeyValid(uint64_t privateKey, uint64_t phiValue);
+uint64_t CalculateRsaPublicKey(uint64_t privateKey, uint64_t phiValue);
+RsaKey GenerateRsaKey(uint64_t pValue, uint64_t qValue, uint64_t privateKey);
+uint64_t GenerateRandomRsaPrivateKey(uint64_t phiValue);
+RsaKey GenerateRandomRsaKey(uint64_t minPrimeValue, uint64_t maxPrimeValue);
 
 #endif

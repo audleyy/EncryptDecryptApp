@@ -2,17 +2,17 @@
 #include "../../helpers/ConvertUtils.h"
 #include "../MathCrypto/CryptoUtils.h"
 
-int64_t DecryptRsaByte(int64_t cipherValue, int64_t privateKey, int64_t moduleValue) {
+uint64_t DecryptRsaByte(uint64_t cipherValue, uint64_t privateKey, uint64_t moduleValue) {
     return modBinary(cipherValue, privateKey, moduleValue);
 }
 
-vector<uint8_t> DecryptRsa(const vector<uint8_t>& inputBytes, int64_t privateKey, int64_t moduleValue) {
+vector<uint8_t> DecryptRsa(const vector<uint8_t>& inputBytes, uint64_t privateKey, uint64_t moduleValue) {
     try {
-        vector<int64_t> encryptedNumbers = BinaryToNumbers(inputBytes);
-        vector<int64_t> decryptedNumbers;
+        vector<uint64_t> encryptedNumbers = BinaryToNumbers(inputBytes);
+        vector<uint64_t> decryptedNumbers;
         decryptedNumbers.reserve(encryptedNumbers.size());
         for (size_t i = 0; i < encryptedNumbers.size(); i++) {
-            int64_t byteValue = DecryptRsaByte(encryptedNumbers[i], privateKey, moduleValue);
+            uint64_t byteValue = DecryptRsaByte(encryptedNumbers[i], privateKey, moduleValue);
             decryptedNumbers.push_back(byteValue);
         }
         return NumbersToBytes(decryptedNumbers);

@@ -5,8 +5,10 @@
 #include <stdexcept>
 using namespace std;
 
-int64_t modBinary(int64_t base, int64_t power, int64_t modulo);
-bool IsPrime(int64_t x);
-int64_t calculateReverseElement(int64_t base, int64_t module);
+uint64_t modBinary(uint64_t base, uint64_t power, uint64_t modulo);
+bool IsPrime(uint64_t x);
+uint64_t calculateReverseElement(uint64_t base, uint64_t module);
+uint64_t GenerateRandomUint64(uint64_t minValue, uint64_t maxValue);
+uint64_t GenerateRandomPrimeInRange(uint64_t minValue, uint64_t maxValue);
 
 #endif

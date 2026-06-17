@@ -1,15 +1,15 @@
 #include "RsaKeygen.h"
 #include "../MathCrypto/CryptoUtils.h"
 
-int64_t CalculateRsaModule(int64_t pValue, int64_t qValue) {
+uint64_t CalculateRsaModule(uint64_t pValue, uint64_t qValue) {
     return pValue * qValue;
 }
 
-int64_t CalculateRsaPhi(int64_t pValue, int64_t qValue) {
+uint64_t CalculateRsaPhi(uint64_t pValue, uint64_t qValue) {
     return (pValue - 1) * (qValue - 1);
 }
 
-bool IsRsaPrivateKeyValid(int64_t privateKey, int64_t phiValue) {
+bool IsRsaPrivateKeyValid(uint64_t privateKey, uint64_t phiValue) {
     bool isValid = true;
     if (privateKey <= 1 || privateKey >= phiValue) {
         isValid = false;
@@ -23,7 +23,7 @@ bool IsRsaPrivateKeyValid(int64_t privateKey, int64_t phiValue) {
     return isValid;
 }
 
-int64_t CalculateRsaPublicKey(int64_t privateKey, int64_t phiValue) {
+uint64_t CalculateRsaPublicKey(uint64_t privateKey, uint64_t phiValue) {
     try {
         return calculateReverseElement(privateKey, phiValue);
     } catch (const exception& exceptionCaught) {
@@ -31,7 +31,7 @@ int64_t CalculateRsaPublicKey(int64_t privateKey, int64_t phiValue) {
     }
 }
 
-RsaKey GenerateRsaKey(int64_t pValue, int64_t qValue, int64_t privateKey) {
+RsaKey GenerateRsaKey(uint64_t pValue, uint64_t qValue, uint64_t privateKey) {
     try {
         if (!IsPrime(pValue)) {
             throw invalid_argument("p должно быть простым числом");
@@ -42,15 +42,15 @@ RsaKey GenerateRsaKey(int64_t pValue, int64_t qValue, int64_t privateKey) {
         if (pValue == qValue) {
             throw invalid_argument("p и q должны быть разными простыми числами");
         }
-        int64_t moduleValue = CalculateRsaModule(pValue, qValue);
+        uint64_t moduleValue = CalculateRsaModule(pValue, qValue);
         if (moduleValue <= 255) {
             throw invalid_argument("n должно быть больше 255 для шифрования байтов");
         }
-        int64_t phiValue = CalculateRsaPhi(pValue, qValue);
+        uint64_t phiValue = CalculateRsaPhi(pValue, qValue);
         if (!IsRsaPrivateKeyValid(privateKey, phiValue)) {
             throw invalid_argument("секретный ключ не взаимно прост с phi");
         }
-        int64_t publicKey = CalculateRsaPublicKey(privateKey, phiValue);
+        uint64_t publicKey = CalculateRsaPublicKey(privateKey, phiValue);
         RsaKey key;
         key.pValue = pValue;
         key.qValue = qValue;

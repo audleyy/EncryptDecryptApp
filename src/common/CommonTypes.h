@@ -32,9 +32,13 @@ enum ErrorCode {
 struct CoreOptions {
     AlgorithmType algorithm;
     OperationType operation;
+    bool useText;
     string inputFilePath;
     string outputFilePath;
     string keyFilePath;
+    string textValue;
 };
+
+extern string LastErrorDetails;
 
 #endif

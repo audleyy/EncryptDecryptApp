@@ -8,13 +8,13 @@
 using namespace std;
 
 struct ElGamalKey {
-    int64_t primeModulus;
-    int64_t generatorValue;
-    int64_t privateKey;
-    int64_t publicKey;
+    uint64_t primeModulus;
+    uint64_t generatorValue;
+    uint64_t privateKey;
+    uint64_t publicKey;
 };
 
-ElGamalKey GenerateElGamalKey(int64_t primeModulus, int64_t generatorValue, int64_t privateKey);
+ElGamalKey GenerateElGamalKey(uint64_t primeModulus, uint64_t generatorValue, uint64_t privateKey);
 ElGamalKey GenerateRandomElGamalKey();
 
 #endif

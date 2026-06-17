@@ -1,14 +1,11 @@
 #include "CryptoUtils.h"
 
 
-int64_t modBinary(int64_t base, int64_t power, int64_t modulo){
+uint64_t modBinary(uint64_t base, uint64_t power, uint64_t modulo){
     if (modulo == 0){
         throw runtime_error("Модуль не может быть равен нулю");
     }
-    if (power < 0){
-        throw runtime_error("Степень не может быть отрицательной");
-    }
-    int64_t result = 1;
+    uint64_t result = 1;
     base %= modulo;
     while (power > 0){
         if (power % 2 == 1){

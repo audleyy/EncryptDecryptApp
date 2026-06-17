@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <stdexcept>
 
-extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, int64_t primeValue, int64_t caValue, int64_t cbValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
+extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, uint64_t primeValue, uint64_t caValue, uint64_t cbValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
     try {
         if (outputSize == nullptr || (inputData == nullptr && inputSize > 0)) {
             throw invalid_argument("Некорректные входные данные Shamir encrypt");
@@ -25,7 +25,7 @@ extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, int64_t prime
     }
 }
 
-extern "C" int decrypt(const uint8_t* inputData, size_t inputSize, int64_t primeValue, int64_t daValue, int64_t dbValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
+extern "C" int decrypt(const uint8_t* inputData, size_t inputSize, uint64_t primeValue, uint64_t daValue, uint64_t dbValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
     try {
         if (outputSize == nullptr || (inputData == nullptr && inputSize > 0)) {
             throw invalid_argument("Некорректные входные данные Shamir decrypt");
