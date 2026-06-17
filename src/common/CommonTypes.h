@@ -9,7 +9,8 @@ enum class AlgorithmType {
     Rsa,
     Shamir,
     ElGamal,
-    Caesar
+    Caesar,
+    ChaCha20
 };
 
 enum class OperationType {

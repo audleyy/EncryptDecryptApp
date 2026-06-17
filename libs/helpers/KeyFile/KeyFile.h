@@ -4,6 +4,8 @@
 #include "../../algorithms/RsaKeygen/RsaKeygen.h"
 #include "../../algorithms/ShamirKeygen/ShamirKeygen.h"
 #include "../../algorithms/ElGamalKeygen/ElGamalKeygen.h"
+#include "../../algorithms/CaesarKeygen/CaesarKeygen.h"
+#include "../../algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
 #include <cstdint>
 #include <string>
 #include <vector>
@@ -13,6 +15,8 @@ using namespace std;
 const uint64_t RsaAlgorithmId = 1;
 const uint64_t ShamirAlgorithmId = 2;
 const uint64_t ElGamalAlgorithmId = 3;
+const uint64_t CaesarAlgorithmId = 4;
+const uint64_t ChaCha20AlgorithmId = 5;
 
 void SaveKeyNumbersToFile(const string& filePath, const vector<uint64_t>& keyNumbers);
 vector<uint64_t> ReadKeyNumbersFromFile(const string& filePath);
@@ -25,5 +29,11 @@ ShamirKey ReadShamirKeyFromFile(const string& filePath);
 
 void SaveElGamalKeyToFile(const string& filePath, const ElGamalKey& key);
 ElGamalKey ReadElGamalKeyFromFile(const string& filePath);
+
+void SaveCaesarKeyToFile(const string& filePath, const CaesarKey& key);
+CaesarKey ReadCaesarKeyFromFile(const string& filePath);
+
+void SaveChaCha20KeyToFile(const string& filePath, const ChaCha20Key& key);
+ChaCha20Key ReadChaCha20KeyFromFile(const string& filePath);
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "../../libs/algorithms/ElGamalKeygen/ElGamalKeygen.h"
 #include "../../libs/algorithms/CaesarKeygen/CaesarKeygen.h"
+#include "../../libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
 #include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
 #include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
 #include <cstdint>
@@ -21,5 +22,8 @@ vector<uint8_t> DecryptElGamalByDll(const vector<uint8_t>& inputBytes, const ElG
 
 vector<uint8_t> EncryptCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key);
 vector<uint8_t> DecryptCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key);
+
+vector<uint8_t> EncryptChaCha20ByDll(const vector<uint8_t>& inputBytes, const ChaCha20Key& key);
+vector<uint8_t> DecryptChaCha20ByDll(const vector<uint8_t>& inputBytes, const ChaCha20Key& key);
 
 #endif

@@ -15,4 +15,7 @@ void DecryptElGamalFileByStream(const CoreOptions& options);
 void EncryptCaesarFileByStream(const CoreOptions& options);
 void DecryptCaesarFileByStream(const CoreOptions& options);
 
+void EncryptChaCha20FileByStream(const CoreOptions& options);
+void DecryptChaCha20FileByStream(const CoreOptions& options);
+
 #endif

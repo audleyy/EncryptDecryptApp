@@ -1,4 +1,5 @@
 #include "DllProcessor.h"
+#include "../common/CommonTypes.h"
 #include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
 #include <dlfcn.h>
 #include <stdexcept>
@@ -8,6 +9,7 @@ const string RsaLibraryPath = "bin/librsa.dylib";
 const string ShamirLibraryPath = "bin/libshamir.dylib";
 const string ElGamalLibraryPath = "bin/libelgamal.dylib";
 const string CaesarLibraryPath = "bin/libcaesar.dylib";
+const string ChaCha20LibraryPath = "bin/libchacha20.dylib";
 
 struct DllLibrary {
     void* handle;
@@ -38,11 +40,11 @@ void* LoadDllFunction(const DllLibrary& library, const string& functionName, con
 }
 
 void CheckDllError(int errorCode) {
-    if (errorCode == 1) {
+    if (errorCode == InvalidInput) {
         throw invalid_argument("DLL получила некорректные входные данные");
-    } else if (errorCode == 2) {
+    } else if (errorCode == BufferTooSmall) {
         throw length_error("DLL получила недостаточный выходной буфер");
-    } else if (errorCode != 0) {
+    } else if (errorCode != Success) {
         throw runtime_error("DLL вернула ошибку шифрования или расшифрования");
     }
 }
@@ -123,6 +125,23 @@ vector<uint8_t> ProcessCaesarByDll(const vector<uint8_t>& inputBytes, const Caes
     return outputBytes;
 }
 
+vector<uint8_t> ProcessChaCha20ByDll(const vector<uint8_t>& inputBytes, const ChaCha20Key& key, bool isEncrypt) {
+    using ChaCha20Function =
+        int (*)(const uint8_t*, size_t, const uint8_t*, const uint8_t*, uint32_t, uint8_t*, size_t, size_t*);
+    DllLibrary library = OpenDllLibrary(ChaCha20LibraryPath, "ChaCha20");
+    string functionName = isEncrypt ? "chacha20_encrypt" : "chacha20_decrypt";
+    ChaCha20Function function = reinterpret_cast<ChaCha20Function>(LoadDllFunction(library, functionName, "ChaCha20"));
+    vector<uint8_t> outputBytes(inputBytes.size());
+    size_t outputSize = 0;
+    int errorCode = function(inputBytes.data(), inputBytes.size(), key.key.data(), key.nonce.data(), key.counter,
+        outputBytes.data(), outputBytes.size(), &outputSize);
+
+    CloseDllLibrary(library);
+    CheckDllError(errorCode);
+    outputBytes.resize(outputSize);
+    return outputBytes;
+}
+
 vector<uint8_t> EncryptRsaByDll(const vector<uint8_t>& inputBytes, const RsaKey& key) {
     return ProcessRsaByDll(inputBytes, key, true);
 }
@@ -153,4 +172,12 @@ vector<uint8_t> EncryptCaesarByDll(const vector<uint8_t>& inputBytes, const Caes
 
 vector<uint8_t> DecryptCaesarByDll(const vector<uint8_t>& inputBytes, const CaesarKey& key) {
     return ProcessCaesarByDll(inputBytes, key, false);
+}
+
+vector<uint8_t> EncryptChaCha20ByDll(const vector<uint8_t>& inputBytes, const ChaCha20Key& key) {
+    return ProcessChaCha20ByDll(inputBytes, key, true);
+}
+
+vector<uint8_t> DecryptChaCha20ByDll(const vector<uint8_t>& inputBytes, const ChaCha20Key& key) {
+    return ProcessChaCha20ByDll(inputBytes, key, false);
 }

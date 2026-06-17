@@ -8,6 +8,7 @@ RSA_LIB = $(BIN_DIR)/librsa.dylib
 SHAMIR_LIB = $(BIN_DIR)/libshamir.dylib
 ELGAMAL_LIB = $(BIN_DIR)/libelgamal.dylib
 CAESAR_LIB = $(BIN_DIR)/libcaesar.dylib
+CHACHA20_LIB = $(BIN_DIR)/libchacha20.dylib
 
 MATH_SRC = \
 	libs/algorithms/MathCrypto/mod.cpp \
@@ -28,11 +29,13 @@ KEYFILE_SRC = \
 	libs/helpers/KeyFile/RsaKeyFile.cpp \
 	libs/helpers/KeyFile/ShamirKeyFile.cpp \
 	libs/helpers/KeyFile/ElGamalKeyFile.cpp \
-	libs/helpers/KeyFile/CaesarKeyFile.cpp
+	libs/helpers/KeyFile/CaesarKeyFile.cpp \
+	libs/helpers/KeyFile/ChaCha20KeyFile.cpp
 
 HELPERS_SRC = \
 	$(CONVERT_SRC) \
 	$(KEYFILE_SRC) \
+	libs/helpers/BinaryFile.cpp \
 	libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.cpp
 
 RSA_SRC = \
@@ -67,6 +70,15 @@ CAESAR_SRC = \
 CAESAR_KEYGEN_SRC = \
 	libs/algorithms/CaesarKeygen/CaesarKeygen.cpp
 
+CHACHA20_SRC = \
+	libs/algorithms/ChaCha20/ChaCha20Context.cpp \
+	libs/algorithms/ChaCha20/ChaCha20Round.cpp \
+	libs/algorithms/ChaCha20/ChaCha20Encrypt.cpp \
+	libs/algorithms/ChaCha20/ChaCha20Decrypt.cpp
+
+CHACHA20_KEYGEN_SRC = \
+	libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.cpp
+
 COMMON_SRC = \
 	src/common/ErrorText.cpp
 
@@ -90,10 +102,11 @@ APP_SRC = \
 	$(SHAMIR_KEYGEN_SRC) \
 	$(ELGAMAL_KEYGEN_SRC) \
 	$(CAESAR_KEYGEN_SRC) \
+	$(CHACHA20_KEYGEN_SRC) \
 	$(DIFFIE_HELLMAN_SRC) \
 	$(MATH_SRC)
 
-all: app rsa shamir elgamal caesar
+all: app rsa shamir elgamal caesar chacha20
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
@@ -112,6 +125,9 @@ elgamal: $(BIN_DIR)
 
 caesar: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
+
+chacha20: $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
 
 clean:
 	rm -rf $(BIN_DIR)

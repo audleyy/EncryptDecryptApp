@@ -5,6 +5,7 @@
 #include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
 #include "../../libs/algorithms/ElGamalKeygen/ElGamalKeygen.h"
 #include "../../libs/algorithms/CaesarKeygen/CaesarKeygen.h"
+#include "../../libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
 #include "../../libs/helpers/ConvertUtils.h"
 #include "../../libs/helpers/KeyFile/KeyFile.h"
 #include <exception>
@@ -19,7 +20,8 @@ ErrorCode ClassifyRuntimeError(const runtime_error& error) {
     ErrorCode errorCode = CryptoError;
     if (text.find("ключ") != string::npos || text.find("ключа") != string::npos || text.find("ключом") != string::npos) {
         errorCode = KeyError;
-    } else if (text.find("открыть файл") != string::npos || text.find("открыть библиотеку") != string::npos) {
+    } else if (text.find("открыть файл") != string::npos || text.find("открыть библиотеку") != string::npos ||
+        text.find("открыть DLL") != string::npos) {
         errorCode = FileOpenError;
     } else if (text.find("прочитать") != string::npos) {
         errorCode = FileReadError;
@@ -54,6 +56,11 @@ void EncryptTextByOptions(const CoreOptions& options) {
             outputBytes = EncryptCaesarByDll(inputBytes, key);
             break;
         }
+        case AlgorithmType::ChaCha20: {
+            ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+            outputBytes = EncryptChaCha20ByDll(inputBytes, key);
+            break;
+        }
         default:
             throw invalid_argument("Некорректный алгоритм");
     }
@@ -82,6 +89,11 @@ void DecryptTextByOptions(const CoreOptions& options) {
         case AlgorithmType::Caesar: {
             CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
             outputBytes = DecryptCaesarByDll(inputBytes, key);
+            break;
+        }
+        case AlgorithmType::ChaCha20: {
+            ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+            outputBytes = DecryptChaCha20ByDll(inputBytes, key);
             break;
         }
         default:
@@ -117,6 +129,11 @@ ErrorCode GenerateKeyByOptions(const CoreOptions& options) {
                 SaveCaesarKeyToFile(options.keyFilePath, key);
                 break;
             }
+            case AlgorithmType::ChaCha20: {
+                ChaCha20Key key = GenerateRandomChaCha20Key();
+                SaveChaCha20KeyToFile(options.keyFilePath, key);
+                break;
+            }
             default:
                 errorCode = InvalidInput;
                 break;
@@ -147,6 +164,9 @@ ErrorCode EncryptByOptions(const CoreOptions& options) {
             case AlgorithmType::Caesar:
                 EncryptCaesarFileByStream(options);
                 break;
+            case AlgorithmType::ChaCha20:
+                EncryptChaCha20FileByStream(options);
+                break;
             default:
                 errorCode = InvalidInput;
                 break;
@@ -176,6 +196,9 @@ ErrorCode DecryptByOptions(const CoreOptions& options) {
                 break;
             case AlgorithmType::Caesar:
                 DecryptCaesarFileByStream(options);
+                break;
+            case AlgorithmType::ChaCha20:
+                DecryptChaCha20FileByStream(options);
                 break;
             default:
                 errorCode = InvalidInput;

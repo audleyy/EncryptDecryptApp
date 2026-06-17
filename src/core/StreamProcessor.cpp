@@ -1,6 +1,7 @@
 #include "StreamProcessor.h"
 #include "DllProcessor.h"
 #include "FileProcessor.h"
+#include "../../libs/algorithms/ChaCha20/ChaCha20Types.h"
 #include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
 #include "../../libs/helpers/KeyFile/KeyFile.h"
 #include <fstream>
@@ -10,6 +11,14 @@
 const size_t OpenTextChunkSize = 4096;
 const size_t CipherTextChunkSize = OpenTextChunkSize * sizeof(uint64_t);
 const size_t ElGamalCipherTextChunkSize = OpenTextChunkSize * ElGamalBlockSize;
+
+uint32_t CalculateNextChaCha20Counter(uint32_t currentCounter, size_t chunkSize) {
+    size_t blockCount = (chunkSize + CHACHA20_BLOCK_SIZE - 1) / CHACHA20_BLOCK_SIZE;
+    if (blockCount > CHACHA20_MAX_COUNTER - currentCounter) {
+        throw runtime_error("ChaCha20: переполнение счетчика");
+    }
+    return currentCounter + blockCount;
+}
 
 void ProcessFileByStream(const CoreOptions& options, size_t chunkSize, const function<vector<uint8_t>(const vector<uint8_t>&)>& processChunk) {
     ifstream inputFile(options.inputFilePath, ios::binary);
@@ -78,5 +87,29 @@ void DecryptCaesarFileByStream(const CoreOptions& options) {
     CaesarKey key = ReadCaesarKeyFromFile(options.keyFilePath);
     ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
         return DecryptCaesarByDll(inputBytes, key);
+    });
+}
+
+void EncryptChaCha20FileByStream(const CoreOptions& options) {
+    ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+    uint32_t currentCounter = key.counter;
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        ChaCha20Key chunkKey = key;
+        chunkKey.counter = currentCounter;
+        vector<uint8_t> outputBytes = EncryptChaCha20ByDll(inputBytes, chunkKey);
+        currentCounter = CalculateNextChaCha20Counter(currentCounter, inputBytes.size());
+        return outputBytes;
+    });
+}
+
+void DecryptChaCha20FileByStream(const CoreOptions& options) {
+    ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+    uint32_t currentCounter = key.counter;
+    ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
+        ChaCha20Key chunkKey = key;
+        chunkKey.counter = currentCounter;
+        vector<uint8_t> outputBytes = DecryptChaCha20ByDll(inputBytes, chunkKey);
+        currentCounter = CalculateNextChaCha20Counter(currentCounter, inputBytes.size());
+        return outputBytes;
     });
 }
