@@ -11,7 +11,6 @@ int64_t CalculateRsaPhi(int64_t pValue, int64_t qValue) {
 
 bool IsRsaPrivateKeyValid(int64_t privateKey, int64_t phiValue) {
     bool isValid = true;
-
     if (privateKey <= 1 || privateKey >= phiValue) {
         isValid = false;
     } else {
