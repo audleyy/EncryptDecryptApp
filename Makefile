@@ -1,14 +1,23 @@
 CXX = c++
 CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
 
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+LIB_EXT = .dylib
+LIB_FLAGS = -dynamiclib -fPIC
+else
+LIB_EXT = .so
+LIB_FLAGS = -shared -fPIC
+endif
+
 BIN_DIR = bin
 
 APP = $(BIN_DIR)/app
-RSA_LIB = $(BIN_DIR)/librsa.so
-SHAMIR_LIB = $(BIN_DIR)/libshamir.so
-ELGAMAL_LIB = $(BIN_DIR)/libelgamal.so
-CAESAR_LIB = $(BIN_DIR)/libcaesar.so
-CHACHA20_LIB = $(BIN_DIR)/libchacha20.so
+RSA_LIB = $(BIN_DIR)/librsa$(LIB_EXT)
+SHAMIR_LIB = $(BIN_DIR)/libshamir$(LIB_EXT)
+ELGAMAL_LIB = $(BIN_DIR)/libelgamal$(LIB_EXT)
+CAESAR_LIB = $(BIN_DIR)/libcaesar$(LIB_EXT)
+CHACHA20_LIB = $(BIN_DIR)/libchacha20$(LIB_EXT)
 
 MATH_SRC = \
 	libs/algorithms/MathCrypto/mod.cpp \
@@ -115,19 +124,19 @@ app: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(APP_SRC) -o $(APP)
 
 rsa: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
+	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
 
 shamir: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
+	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
 
 elgamal: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/ElGamal/ElGamalDll.cpp $(ELGAMAL_SRC) $(DIFFIE_HELLMAN_SRC) -o $(ELGAMAL_LIB)
+	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/ElGamal/ElGamalDll.cpp $(ELGAMAL_SRC) $(DIFFIE_HELLMAN_SRC) -o $(ELGAMAL_LIB)
 
 caesar: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
+	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
 
 chacha20: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
+	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
 
 clean:
 	rm -rf $(BIN_DIR)

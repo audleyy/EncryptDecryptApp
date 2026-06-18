@@ -1,10 +1,16 @@
 #include "DllProcessor.h"
 
-const string RsaLibraryPath = "bin/librsa.dylib";
-const string ShamirLibraryPath = "bin/libshamir.dylib";
-const string ElGamalLibraryPath = "bin/libelgamal.dylib";
-const string CaesarLibraryPath = "bin/libcaesar.dylib";
-const string ChaCha20LibraryPath = "bin/libchacha20.dylib";
+#ifdef __APPLE__
+const string LibExt = ".dylib";
+#else
+const string LibExt = ".so";
+#endif
+
+const string RsaLibraryPath = "bin/librsa" + LibExt;
+const string ShamirLibraryPath = "bin/libshamir" + LibExt;
+const string ElGamalLibraryPath = "bin/libelgamal" + LibExt;
+const string CaesarLibraryPath = "bin/libcaesar" + LibExt;
+const string ChaCha20LibraryPath = "bin/libchacha20" + LibExt;
 
 struct DllLibrary {
     void* handle;
