@@ -88,19 +88,18 @@ CHACHA20_SRC = \
 CHACHA20_KEYGEN_SRC = \
 	libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.cpp
 
-COMMON_SRC = \
-	src/common/ErrorText.cpp
+COMMON_SRC = src/common/ErrorText.cpp
 
 CORE_SRC = \
-	src/core/Core.cpp \
-	src/core/DllProcessor.cpp \
-	src/core/FileProcessor.cpp \
-	src/core/StreamProcessor.cpp
+    src/core/Core.cpp \
+    src/core/DllProcessor.cpp \
+    src/core/FileProcessor.cpp \
+    src/core/StreamProcessor.cpp
 
 UI_SRC = \
-	src/UI/CliParser.cpp \
-	src/UI/ConsoleUI.cpp \
-	src/UI/ManualPages.cpp
+    src/UI/CliParser.cpp \
+    src/UI/ConsoleUI.cpp \
+    src/UI/ManualPages.cpp
 
 APP_SRC = \
 	main.cpp \

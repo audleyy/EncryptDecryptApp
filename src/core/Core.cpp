@@ -1,5 +1,7 @@
 #include "Core.h"
 
+using namespace std;
+
 string LastErrorDetails;
 
 ErrorCode ClassifyRuntimeError(const runtime_error& error) {
@@ -7,15 +9,13 @@ ErrorCode ClassifyRuntimeError(const runtime_error& error) {
     ErrorCode errorCode = CryptoError;
     if (text.find("ключ") != string::npos || text.find("ключа") != string::npos || text.find("ключом") != string::npos) {
         errorCode = KeyError;
-    } else if (text.find("открыть файл") != string::npos || text.find("открыть библиотеку") != string::npos ||
-        text.find("открыть DLL") != string::npos) {
+    } else if (text.find("открыть файл") != string::npos || text.find("открыть библиотеку") != string::npos || text.find("открыть DLL") != string::npos) {
         errorCode = FileOpenError;
     } else if (text.find("прочитать") != string::npos) {
         errorCode = FileReadError;
     } else if (text.find("записать") != string::npos) {
         errorCode = FileWriteError;
     }
-
     return errorCode;
 }
 
@@ -44,17 +44,8 @@ void EncryptTextByOptions(const CoreOptions& options) {
             break;
         }
         case AlgorithmType::ChaCha20: {
-           
-            vector<uint8_t> keyFileBytes = ReadBinaryFile(options.keyFilePath);
-            ChaCha20Key key;
-
-            if (keyFileBytes.size() == sizeof(uint64_t) * 5) { 
-                DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
-                key = GenerateChaCha20KeyFromDH(dhParams);
-            } else {
-                key = ReadChaCha20KeyFromFile(options.keyFilePath);
-            }
-
+            DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+            ChaCha20Key key = GenerateChaCha20KeyFromDH(dhParams);
             outputBytes = EncryptChaCha20ByDll(inputBytes, key);
             break;
         }
@@ -63,7 +54,6 @@ void EncryptTextByOptions(const CoreOptions& options) {
     }
     cout << BytesToHex(outputBytes) << "\n";
 }
-
 
 void DecryptTextByOptions(const CoreOptions& options) {
     vector<uint8_t> inputBytes = HexToBytes(options.textValue);
@@ -90,18 +80,9 @@ void DecryptTextByOptions(const CoreOptions& options) {
             break;
         }
         case AlgorithmType::ChaCha20: {
-        
-            vector<uint8_t> keyFileBytes = ReadBinaryFile(options.keyFilePath);
-            ChaCha20Key key;
-
-            if (keyFileBytes.size() == sizeof(uint64_t) * 5) {
-                DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
-                key = GenerateChaCha20KeyFromDH(dhParams);
-            } else {
-                key = ReadChaCha20KeyFromFile(options.keyFilePath);
-            }
-
            
+            DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+            ChaCha20Key key = GenerateChaCha20KeyFromDH(dhParams);
             outputBytes = DecryptChaCha20ByDll(inputBytes, key);
             break;
         }
@@ -138,8 +119,12 @@ ErrorCode GenerateKeyByOptions(const CoreOptions& options) {
                 break;
             }
             case AlgorithmType::ChaCha20: {
-                ChaCha20Key key = GenerateRandomChaCha20Key();
-                SaveChaCha20KeyToFile(options.keyFilePath, key);
+                DhChaCha20Params dhParams;
+                dhParams.primeModulus = 7919;
+                dhParams.generator = 2;
+                dhParams.privateKeyA = GeneratePrivateKey(2, dhParams.primeModulus - 2);
+                dhParams.privateKeyB = GeneratePrivateKey(2, dhParams.primeModulus - 2);
+                SaveDhChaCha20ParamsToFile(options.keyFilePath, dhParams);
                 break;
             }
             default:
@@ -160,24 +145,12 @@ ErrorCode EncryptByOptions(const CoreOptions& options) {
         errorCode = InvalidInput;
     } else {
         switch (options.algorithm) {
-            case AlgorithmType::Rsa:
-                EncryptRsaFileByStream(options);
-                break;
-            case AlgorithmType::Shamir:
-                EncryptShamirFileByStream(options);
-                break;
-            case AlgorithmType::ElGamal:
-                EncryptElGamalFileByStream(options);
-                break;
-            case AlgorithmType::Caesar:
-                EncryptCaesarFileByStream(options);
-                break;
-            case AlgorithmType::ChaCha20:
-                EncryptChaCha20FileByStream(options);
-                break;
-            default:
-                errorCode = InvalidInput;
-                break;
+            case AlgorithmType::Rsa: EncryptRsaFileByStream(options); break;
+            case AlgorithmType::Shamir: EncryptShamirFileByStream(options); break;
+            case AlgorithmType::ElGamal: EncryptElGamalFileByStream(options); break;
+            case AlgorithmType::Caesar: EncryptCaesarFileByStream(options); break;
+            case AlgorithmType::ChaCha20: EncryptChaCha20FileByStream(options); break;
+            default: errorCode = InvalidInput; break;
         }
     }
     return errorCode;
@@ -193,24 +166,12 @@ ErrorCode DecryptByOptions(const CoreOptions& options) {
         errorCode = InvalidInput;
     } else {
         switch (options.algorithm) {
-            case AlgorithmType::Rsa:
-                DecryptRsaFileByStream(options);
-                break;
-            case AlgorithmType::Shamir:
-                DecryptShamirFileByStream(options);
-                break;
-            case AlgorithmType::ElGamal:
-                DecryptElGamalFileByStream(options);
-                break;
-            case AlgorithmType::Caesar:
-                DecryptCaesarFileByStream(options);
-                break;
-            case AlgorithmType::ChaCha20:
-                DecryptChaCha20FileByStream(options);
-                break;
-            default:
-                errorCode = InvalidInput;
-                break;
+            case AlgorithmType::Rsa: DecryptRsaFileByStream(options); break;
+            case AlgorithmType::Shamir: DecryptShamirFileByStream(options); break;
+            case AlgorithmType::ElGamal: DecryptElGamalFileByStream(options); break;
+            case AlgorithmType::Caesar: DecryptCaesarFileByStream(options); break;
+            case AlgorithmType::ChaCha20: DecryptChaCha20FileByStream(options); break;
+            default: errorCode = InvalidInput; break;
         }
     }
     return errorCode;
@@ -234,18 +195,15 @@ ErrorCode RunCore(const CoreOptions& options) {
                 errorCode = InvalidInput;
                 break;
         }
-    } catch (const invalid_argument& error) {
-        LastErrorDetails = error.what();
-        errorCode = InvalidInput;
-    } catch (const length_error& error) {
-        LastErrorDetails = error.what();
-        errorCode = BufferTooSmall;
     } catch (const runtime_error& error) {
-        LastErrorDetails = error.what();
         errorCode = ClassifyRuntimeError(error);
-    } catch (const exception& error) {
         LastErrorDetails = error.what();
+    } catch (const invalid_argument& error) {
+        errorCode = InvalidInput;
+        LastErrorDetails = error.what();
+    } catch (const exception& error) {
         errorCode = UnknownError;
+        LastErrorDetails = error.what();
     }
     return errorCode;
 }

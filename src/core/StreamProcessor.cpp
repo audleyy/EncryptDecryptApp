@@ -83,7 +83,10 @@ void DecryptCaesarFileByStream(const CoreOptions& options) {
 }
 
 void EncryptChaCha20FileByStream(const CoreOptions& options) {
-    ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+   
+    DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+    ChaCha20Key key = GenerateChaCha20KeyFromDH(dhParams);
+
     uint32_t currentCounter = key.counter;
     ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
         ChaCha20Key chunkKey = key;
@@ -95,7 +98,8 @@ void EncryptChaCha20FileByStream(const CoreOptions& options) {
 }
 
 void DecryptChaCha20FileByStream(const CoreOptions& options) {
-    ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+    DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+    ChaCha20Key key = GenerateChaCha20KeyFromDH(dhParams);
     uint32_t currentCounter = key.counter;
     ProcessFileByStream(options, OpenTextChunkSize, [&](const vector<uint8_t>& inputBytes) {
         ChaCha20Key chunkKey = key;
