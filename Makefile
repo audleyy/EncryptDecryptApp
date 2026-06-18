@@ -99,7 +99,8 @@ CORE_SRC = \
 
 UI_SRC = \
 	src/UI/CliParser.cpp \
-	src/UI/ConsoleUI.cpp
+	src/UI/ConsoleUI.cpp \
+	src/UI/ManualPages.cpp
 
 APP_SRC = \
 	main.cpp \
