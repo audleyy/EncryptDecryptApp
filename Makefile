@@ -4,11 +4,11 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
 BIN_DIR = bin
 
 APP = $(BIN_DIR)/app
-RSA_LIB = $(BIN_DIR)/librsa.dylib
-SHAMIR_LIB = $(BIN_DIR)/libshamir.dylib
-ELGAMAL_LIB = $(BIN_DIR)/libelgamal.dylib
-CAESAR_LIB = $(BIN_DIR)/libcaesar.dylib
-CHACHA20_LIB = $(BIN_DIR)/libchacha20.dylib
+RSA_LIB = $(BIN_DIR)/librsa.so
+SHAMIR_LIB = $(BIN_DIR)/libshamir.so
+ELGAMAL_LIB = $(BIN_DIR)/libelgamal.so
+CAESAR_LIB = $(BIN_DIR)/libcaesar.so
+CHACHA20_LIB = $(BIN_DIR)/libchacha20.so
 
 MATH_SRC = \
 	libs/algorithms/MathCrypto/mod.cpp \
@@ -115,19 +115,19 @@ app: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(APP_SRC) -o $(APP)
 
 rsa: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
+	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
 
 shamir: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
+	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Shamir/ShamirDll.cpp $(SHAMIR_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(SHAMIR_LIB)
 
 elgamal: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/ElGamal/ElGamalDll.cpp $(ELGAMAL_SRC) $(DIFFIE_HELLMAN_SRC) -o $(ELGAMAL_LIB)
+	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/ElGamal/ElGamalDll.cpp $(ELGAMAL_SRC) $(DIFFIE_HELLMAN_SRC) -o $(ELGAMAL_LIB)
 
 caesar: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
+	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/Caesar/CaesarDll.cpp $(CAESAR_SRC) -o $(CAESAR_LIB)
 
 chacha20: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -dynamiclib libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
+	$(CXX) $(CXXFLAGS) -shared -fPIC libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
 
 clean:
 	rm -rf $(BIN_DIR)
