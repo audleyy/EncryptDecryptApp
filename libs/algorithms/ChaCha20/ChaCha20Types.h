@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <string>
 
+using namespace std;
+
 constexpr size_t CHACHA20_KEY_SIZE = 32;
 constexpr size_t CHACHA20_NONCE_SIZE = 12;
 constexpr size_t CHACHA20_BLOCK_SIZE = 64;

@@ -1,6 +1,8 @@
 #ifndef SHAMIR_KEYGEN_H
 #define SHAMIR_KEYGEN_H
 
+#include "../MathCrypto/CryptoUtils.h"
+
 #include <cstdint>
 #include <stdexcept>
 #include <string>

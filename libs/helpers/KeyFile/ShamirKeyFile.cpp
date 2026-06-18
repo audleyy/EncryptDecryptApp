@@ -1,5 +1,4 @@
 #include "KeyFile.h"
-#include <vector>
 
 void SaveShamirKeyToFile(const string& filePath, const ShamirKey& key) {
     vector<uint64_t> keyNumbers = {ShamirAlgorithmId, key.primeValue, key.caValue, key.cbValue, key.daValue, key.dbValue};

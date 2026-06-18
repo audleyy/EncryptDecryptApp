@@ -2,6 +2,14 @@
 #define STREAM_PROCESSOR_H
 
 #include "../common/CommonTypes.h"
+#include "DllProcessor.h"
+#include "FileProcessor.h"
+#include "../../libs/algorithms/ChaCha20/ChaCha20Types.h"
+#include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
+#include "../../libs/helpers/KeyFile/KeyFile.h"
+#include <fstream>
+#include <functional>
+#include <stdexcept>
 
 void EncryptRsaFileByStream(const CoreOptions& options);
 void DecryptRsaFileByStream(const CoreOptions& options);

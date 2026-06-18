@@ -1,0 +1,332 @@
+
+;; Function modBinary (_Z9modBinarymmm, funcdef_no=3110, decl_uid=62216, cgraph_uid=1448, symbol_order=1447)
+
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 86 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 86 6 87 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/algorithms/MathCrypto/mod.cpp":3:67 69 {*pushdi2_rex64}
+     (nil))
+(insn/f 87 86 88 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(insn/f 88 87 89 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 40 r12)) "libs/algorithms/MathCrypto/mod.cpp":3:67 69 {*pushdi2_rex64}
+     (nil))
+(insn/f 89 88 90 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/algorithms/MathCrypto/mod.cpp":3:67 69 {*pushdi2_rex64}
+     (nil))
+(insn/f 90 89 91 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -48 [0xffffffffffffffd0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":3:67 1856 {pro_epilogue_adjust_stack_add_di}
+     (nil))
+(note 91 90 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 91 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 5 di [ base ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+        (reg:DI 4 si [ power ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])
+        (reg:DI 1 dx [ modulo ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":4:5 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":4:5 1458 {*jcc}
+     (nil)
+ -> 28)
+(note 10 9 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg:DI 5 di)
+        (const_int 16 [0x10])) "libs/algorithms/MathCrypto/mod.cpp":5:88 95 {*movdi_internal}
+     (nil))
+(call_insn 12 11 14 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_allocate_exception") [flags 0x41]  <function_decl 0x7fe3775cc500 __cxa_allocate_exception>) [0 __cxa_allocate_exception S1 A8])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":5:88 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 12 15 3 (set (reg/f:DI 3 bx [orig:102 _19 ] [102])
+        (reg/f:DI 0 ax [105])) "libs/algorithms/MathCrypto/mod.cpp":5:88 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 3 (set (reg:DI 0 ax [106])
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fe376e4fda8 *.LC0>)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 16 15 17 3 (set (reg:DI 4 si)
+        (reg:DI 0 ax [106])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 17 16 105 3 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 105 17 18 3 0 NOTE_INSN_EH_REGION_BEG)
+(call_insn 18 105 106 3 (call (mem:QI (symbol_ref:DI ("_ZNSt13runtime_errorC1EPKc") [flags 0x41]  <function_decl 0x7fe378271700 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 106 18 19 0 NOTE_INSN_EH_REGION_END)
+(note 19 106 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 4 (set (reg:DI 0 ax [108])
+        (mem/u/c:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7fe378271c00 __dt_comp >)
+                    ] UNSPEC_GOTPCREL)) [5  S8 A8])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 21 20 22 4 (set (reg:DI 1 dx [107])
+        (reg:DI 0 ax [108])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7fe378271c00 __dt_comp >)
+        (nil)))
+(insn 22 21 24 4 (set (reg:DI 0 ax [109])
+        (symbol_ref:DI ("_ZTISt13runtime_error") [flags 0x40]  <var_decl 0x7fe378207980 _ZTISt13runtime_error>)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 24 22 25 4 (set (reg:DI 4 si)
+        (reg:DI 0 ax [109])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 25 24 107 4 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(note 107 25 26 4 1 NOTE_INSN_EH_REGION_BEG)
+(call_insn 26 107 27 4 (call (mem:QI (symbol_ref:DI ("__cxa_throw") [flags 0x41]  <function_decl 0x7fe3775cc300 __cxa_throw>) [0 __cxa_throw S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(barrier 27 26 28)
+(code_label 28 27 29 5 2 (nil) [1 uses])
+(note 29 28 30 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])
+        (const_int 1 [0x1])) "libs/algorithms/MathCrypto/mod.cpp":7:14 95 {*movdi_internal}
+     (nil))
+(insn 31 30 103 5 (set (reg:DI 0 ax [111])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":8:10 95 {*movdi_internal}
+     (nil))
+(insn 103 31 104 5 (set (reg:DI 1 dx [orig:112 base_11 ] [112])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":8:10 95 {*movdi_internal}
+     (nil))
+(insn 104 103 33 5 (parallel [
+            (set (reg:DI 0 ax [113])
+                (udiv:DI (reg:DI 0 ax [111])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:112 base_11 ] [112])
+                (umod:DI (reg:DI 0 ax [111])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (use (reg:DI 1 dx [orig:112 base_11 ] [112]))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":8:10 672 {*udivmoddi4_noext}
+     (nil))
+(insn 33 104 80 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 1 dx [orig:112 base_11 ] [112])) "libs/algorithms/MathCrypto/mod.cpp":8:10 95 {*movdi_internal}
+     (nil))
+(jump_insn 80 33 81 5 (set (pc)
+        (label_ref 53)) "libs/algorithms/MathCrypto/mod.cpp":9:5 1459 {jump}
+     (nil)
+ -> 53)
+(barrier 81 80 55)
+(code_label 55 81 36 6 5 (nil) [1 uses])
+(note 36 55 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (set (reg:DI 0 ax [114])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":10:19 95 {*movdi_internal}
+     (nil))
+(insn 38 37 39 6 (parallel [
+            (set (reg:DI 0 ax [orig:98 _1 ] [98])
+                (and:DI (reg:DI 0 ax [114])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":10:19 706 {*anddi_1}
+     (expr_list:REG_EQUAL (and:DI (mem/c:DI (plus:DI (reg/f:DI 19 frame)
+                    (const_int -32 [0xffffffffffffffe0])) [4 power+0 S8 A64])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 39 38 40 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 0 ax [orig:98 _1 ] [98])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":10:9 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 40 39 41 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 46)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":10:9 1458 {*jcc}
+     (nil)
+ -> 46)
+(note 41 40 42 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 42 41 43 7 (set (reg:DI 0 ax [115])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":11:30 95 {*movdi_internal}
+     (nil))
+(insn 43 42 101 7 (parallel [
+            (set (reg:DI 0 ax [orig:99 _2 ] [99])
+                (mult:DI (reg:DI 0 ax [115])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":11:30 595 {*muldi3_1}
+     (nil))
+(insn 101 43 102 7 (set (reg:DI 1 dx [orig:117 result_15 ] [117])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":11:20 95 {*movdi_internal}
+     (nil))
+(insn 102 101 45 7 (parallel [
+            (set (reg:DI 0 ax [118])
+                (udiv:DI (reg:DI 0 ax [orig:99 _2 ] [99])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:117 result_15 ] [117])
+                (umod:DI (reg:DI 0 ax [orig:99 _2 ] [99])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (use (reg:DI 1 dx [orig:117 result_15 ] [117]))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":11:20 672 {*udivmoddi4_noext}
+     (nil))
+(insn 45 102 46 7 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])
+        (reg:DI 1 dx [orig:117 result_15 ] [117])) "libs/algorithms/MathCrypto/mod.cpp":11:20 95 {*movdi_internal}
+     (nil))
+(code_label 46 45 47 8 4 (nil) [1 uses])
+(note 47 46 48 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 48 47 49 8 (set (reg:DI 0 ax [119])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":13:22 95 {*movdi_internal}
+     (nil))
+(insn 49 48 99 8 (parallel [
+            (set (reg:DI 0 ax [orig:100 _3 ] [100])
+                (mult:DI (reg:DI 0 ax [119])
+                    (reg:DI 0 ax [119])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":13:22 595 {*muldi3_1}
+     (nil))
+(insn 99 49 100 8 (set (reg:DI 1 dx [orig:121 base_16 ] [121])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":13:14 95 {*movdi_internal}
+     (nil))
+(insn 100 99 51 8 (parallel [
+            (set (reg:DI 0 ax [122])
+                (udiv:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:121 base_16 ] [121])
+                (umod:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (use (reg:DI 1 dx [orig:121 base_16 ] [121]))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":13:14 672 {*udivmoddi4_noext}
+     (nil))
+(insn 51 100 52 8 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 1 dx [orig:121 base_16 ] [121])) "libs/algorithms/MathCrypto/mod.cpp":13:14 95 {*movdi_internal}
+     (nil))
+(insn 52 51 53 8 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+                (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":14:15 1183 {*lshrdi3_1}
+     (nil))
+(code_label 53 52 54 9 3 (nil) [1 uses])
+(note 54 53 56 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 56 54 57 9 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":9:18 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 57 56 58 9 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 55)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":9:18 1458 {*jcc}
+     (nil)
+ -> 55)
+(note 58 57 59 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 83 10 (set (reg:DI 0 ax [orig:101 _13 ] [101])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":16:12 95 {*movdi_internal}
+     (nil))
+(jump_insn 83 59 84 10 (set (pc)
+        (label_ref 82)) "libs/algorithms/MathCrypto/mod.cpp":16:12 1459 {jump}
+     (nil)
+ -> 82)
+(barrier 84 83 77)
+(code_label/s 77 84 79 11 8 (nil) [1 uses])
+(note 79 77 78 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 78 79 67 11 (set (reg:DI 40 r12 [124])
+        (reg:DI 0 ax)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 95 {*movdi_internal}
+     (nil))
+(insn 67 78 68 11 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 95 {*movdi_internal}
+     (nil))
+(call_insn 68 67 69 11 (call (mem:QI (symbol_ref:DI ("__cxa_free_exception") [flags 0x41]  <function_decl 0x7fe3775ccf00 __cxa_free_exception>) [0 __cxa_free_exception S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 69 68 70 11 (set (reg/f:DI 0 ax [orig:103 D.67866 ] [103])
+        (reg:DI 40 r12 [124])) 95 {*movdi_internal}
+     (nil))
+(insn 70 69 71 11 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:103 D.67866 ] [103])) 95 {*movdi_internal}
+     (nil))
+(call_insn 71 70 108 11 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7fe37ab9cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 108 71 72 1 NOTE_INSN_EH_REGION_END)
+(barrier 72 108 82)
+(code_label 82 72 76 12 9 (nil) [1 uses])
+(note 76 82 75 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 75 76 92 12 (use (reg/i:DI 0 ax)) "libs/algorithms/MathCrypto/mod.cpp":17:1 -1
+     (nil))
+(note 92 75 93 12 NOTE_INSN_EPILOGUE_BEG)
+(insn 93 92 94 12 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 48 [0x30])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":17:1 1856 {pro_epilogue_adjust_stack_add_di}
+     (nil))
+(insn 94 93 95 12 (set (reg:DI 3 bx)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/algorithms/MathCrypto/mod.cpp":17:1 77 {*popdi1}
+     (nil))
+(insn 95 94 96 12 (set (reg:DI 40 r12)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/algorithms/MathCrypto/mod.cpp":17:1 77 {*popdi1}
+     (nil))
+(insn/f 96 95 97 12 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/algorithms/MathCrypto/mod.cpp":17:1 77 {*popdi1}
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 97 96 98 12 (simple_return) "libs/algorithms/MathCrypto/mod.cpp":17:1 1489 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 98 97 85)
+(note 85 98 0 NOTE_INSN_DELETED)

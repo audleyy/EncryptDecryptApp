@@ -1,9 +1,4 @@
 #include "DllProcessor.h"
-#include "../common/CommonTypes.h"
-#include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
-#include <dlfcn.h>
-#include <stdexcept>
-#include <string>
 
 const string RsaLibraryPath = "bin/librsa.dylib";
 const string ShamirLibraryPath = "bin/libshamir.dylib";

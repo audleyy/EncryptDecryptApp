@@ -1,5 +1,4 @@
 #include "RsaKeygen.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t GenerateRandomRsaPrivateKey(uint64_t phiValue) {
     if (phiValue <= 3) {

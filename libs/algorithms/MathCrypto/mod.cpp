@@ -1,6 +1,5 @@
 #include "CryptoUtils.h"
 
-
 uint64_t modBinary(uint64_t base, uint64_t power, uint64_t modulo){
     if (modulo == 0){
         throw runtime_error("Модуль не может быть равен нулю");

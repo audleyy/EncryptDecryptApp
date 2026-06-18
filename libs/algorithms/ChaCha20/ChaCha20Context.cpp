@@ -1,11 +1,4 @@
 #include "ChaCha20Context.h"
-#include "ChaCha20Round.h"
-#include <cstring>
-#include <stdexcept>
-#include <string>
-
-using namespace std;
-
 
 static const uint32_t SIGMA[4] = {
     0x61707865u, 0x3320646eu,

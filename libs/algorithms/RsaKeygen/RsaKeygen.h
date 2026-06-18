@@ -1,6 +1,7 @@
 #ifndef RSA_KEYGEN_H
 #define RSA_KEYGEN_H
 
+#include "../MathCrypto/CryptoUtils.h"
 #include <cstdint>
 #include <stdexcept>
 #include <string>

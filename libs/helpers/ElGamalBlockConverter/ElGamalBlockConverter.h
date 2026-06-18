@@ -1,9 +1,10 @@
 #ifndef EL_GAMAL_BLOCK_CONVERTER_H
 #define EL_GAMAL_BLOCK_CONVERTER_H
 
-#include "../../algorithms/ElGamal/ElGamal.hpp"
+#include "../../algorithms/ElGamal/ElGamal.h"
 #include <cstdint>
 #include <vector>
+#include <stdexcept>
 
 using namespace std;
 

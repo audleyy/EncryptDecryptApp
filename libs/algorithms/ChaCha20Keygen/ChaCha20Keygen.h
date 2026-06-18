@@ -1,6 +1,9 @@
 #pragma once
 
 #include "../ChaCha20/ChaCha20Types.h"
+#include <random>
+
+using namespace std;
 
 struct ChaCha20Key {
     ByteVec key;

@@ -1,7 +1,4 @@
 #include "Shamir.h"
-#include <algorithm>
-#include <cstddef>
-#include <stdexcept>
 
 extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, uint64_t primeValue, uint64_t caValue, uint64_t cbValue, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
     try {

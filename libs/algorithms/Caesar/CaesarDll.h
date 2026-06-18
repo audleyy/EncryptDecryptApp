@@ -1,5 +1,9 @@
 #pragma once
 #include "../../../src/common/CommonTypes.h"
+#include "CaesarEncrypt.h"
+#include "CaesarDecrypt.h"
+#include <cstring>
+#include <vector>
 #include <cstdint>
 #include <cstddef>
 

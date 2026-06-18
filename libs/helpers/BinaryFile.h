@@ -1,6 +1,8 @@
 #ifndef BINARY_FILE_H
 #define BINARY_FILE_H
 
+#include <fstream>
+#include <stdexcept>
 #include <cstdint>
 #include <string>
 #include <vector>

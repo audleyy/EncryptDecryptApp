@@ -1,6 +1,4 @@
 #include "KeyFile.h"
-#include "../BinaryFile.h"
-#include "../ConvertUtils.h"
 
 const size_t ChaCha20HeaderSize = sizeof(uint64_t) * 2;
 const size_t ChaCha20KeyFileSize = ChaCha20HeaderSize + CHACHA20_KEY_SIZE + CHACHA20_NONCE_SIZE;

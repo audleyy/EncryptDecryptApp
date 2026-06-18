@@ -1,6 +1,4 @@
 #include "BinaryFile.h"
-#include <fstream>
-#include <stdexcept>
 
 vector<uint8_t> ReadBinaryFile(const string& filePath) {
     ifstream file(filePath, ios::binary);

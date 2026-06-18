@@ -6,6 +6,12 @@
 #include "../../libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
 #include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
 #include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
+
+#include "../common/CommonTypes.h"
+#include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
+#include <dlfcn.h>
+#include <stdexcept>
+#include <string>
 #include <cstdint>
 #include <vector>
 

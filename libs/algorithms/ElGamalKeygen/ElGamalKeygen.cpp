@@ -1,6 +1,4 @@
 #include "ElGamalKeygen.h"
-#include "../DiffieHellman/DiffieHellman.hpp"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t GenerateRandomElGamalGenerator(uint64_t primeModulus) {
     return GenerateRandomUint64(2, primeModulus - 2);

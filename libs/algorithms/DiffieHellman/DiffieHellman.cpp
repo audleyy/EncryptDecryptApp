@@ -1,7 +1,4 @@
-#include "DiffieHellman.hpp"
-#include <random>
-
-using namespace std;
+#include "DiffieHellman.h"
 
 uint64_t CalculateModularExponentiation(uint64_t baseValue, uint64_t exponentValue, uint64_t modulusValue) {
 	if (modulusValue == 0) {

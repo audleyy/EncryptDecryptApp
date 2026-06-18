@@ -1,5 +1,4 @@
 #include "ShamirKeygen.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t GenerateRandomShamirSecretKey(uint64_t primeValue) {
     if (primeValue <= 255) {

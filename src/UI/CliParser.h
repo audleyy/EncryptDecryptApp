@@ -2,6 +2,10 @@
 #define CLI_PARSER_H
 
 #include "../common/CommonTypes.h"
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 struct CliParseResult {
     bool needHelp;

@@ -1,5 +1,4 @@
 #include "KeyFile.h"
-#include <vector>
 
 void SaveElGamalKeyToFile(const string& filePath, const ElGamalKey& key) {
     vector<uint64_t> keyNumbers = {

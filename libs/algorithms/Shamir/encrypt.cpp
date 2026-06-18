@@ -1,6 +1,4 @@
 #include "Shamir.h"
-#include "../../helpers/ConvertUtils.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t CalculateShamirX1(uint64_t messageValue, uint64_t caValue, uint64_t primeValue){
     return modBinary(messageValue, caValue, primeValue);

@@ -1,5 +1,4 @@
 #include "KeyFile.h"
-#include <vector>
 
 void SaveRsaKeyToFile(const string& filePath, const RsaKey& key) {
     vector<uint64_t> keyNumbers = {RsaAlgorithmId, key.moduleValue, key.publicKey, key.privateKey};

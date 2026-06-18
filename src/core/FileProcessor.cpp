@@ -1,5 +1,4 @@
 #include "FileProcessor.h"
-#include <stdexcept>
 
 vector<uint8_t> ReadBinaryChunk(ifstream& file, size_t chunkSize) {
     vector<uint8_t> bytes;

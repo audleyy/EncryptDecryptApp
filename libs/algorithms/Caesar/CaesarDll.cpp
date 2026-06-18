@@ -1,9 +1,5 @@
 #define CAESAR_DLL_EXPORTS
 #include "CaesarDll.h"
-#include "CaesarEncrypt.h"
-#include "CaesarDecrypt.h"
-#include <cstring>
-#include <vector>
 
 using namespace std;
 

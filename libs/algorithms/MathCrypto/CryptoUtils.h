@@ -3,6 +3,8 @@
 
 #include <cstdint>
 #include <stdexcept>
+#include <random>
+
 using namespace std;
 
 uint64_t modBinary(uint64_t base, uint64_t power, uint64_t modulo);

@@ -6,6 +6,10 @@
 #include "../../algorithms/ElGamalKeygen/ElGamalKeygen.h"
 #include "../../algorithms/CaesarKeygen/CaesarKeygen.h"
 #include "../../algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
+
+#include "../BinaryFile.h"
+#include "../ConvertUtils.h"
+
 #include <cstdint>
 #include <string>
 #include <vector>

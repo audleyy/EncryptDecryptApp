@@ -1,10 +1,4 @@
-#include "ElGamal.hpp"
-#include <algorithm>
-#include <cstddef>
-#include <stdexcept>
-#include <vector>
-
-using namespace std;
+#include "ElGamal.h"
 
 extern "C" int encrypt(const uint8_t* inputData, size_t inputSize, uint64_t primeModulus, uint64_t generatorValue, uint64_t bobPublicKey, uint8_t* outputData, size_t outputCapacity, size_t* outputSize) {
 	try {

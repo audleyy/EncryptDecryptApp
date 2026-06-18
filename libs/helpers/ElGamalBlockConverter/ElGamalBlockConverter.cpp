@@ -1,5 +1,4 @@
 #include "ElGamalBlockConverter.h"
-#include <stdexcept>
 
 void WriteUint64ToBytes(vector<uint8_t>& bytes, uint64_t value) {
     vector<int> shifts = {0, 8, 16, 24, 32, 40, 48, 56};

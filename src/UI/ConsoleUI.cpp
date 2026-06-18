@@ -1,8 +1,4 @@
 #include "ConsoleUI.h"
-#include "CliParser.h"
-#include "../common/ErrorText.h"
-#include "../core/Core.h"
-#include <iostream>
 
 using namespace std;
 

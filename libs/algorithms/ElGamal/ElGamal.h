@@ -5,6 +5,12 @@
 #include <vector>
 #include <stdexcept>
 #include <string>
+#include "../DiffieHellman/DiffieHellman.h"
+
+#include <algorithm>
+#include <cstddef>
+
+using namespace std;
 
 using namespace std;
 

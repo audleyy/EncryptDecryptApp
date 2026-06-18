@@ -1,6 +1,12 @@
 #ifndef RSA_H
 #define RSA_H
 
+#include "../../helpers/ConvertUtils.h"
+#include "../MathCrypto/CryptoUtils.h"
+
+
+#include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <stdexcept>
 #include <string>

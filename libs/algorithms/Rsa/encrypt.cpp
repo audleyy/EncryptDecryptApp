@@ -1,6 +1,4 @@
 #include "Rsa.h"
-#include "../../helpers/ConvertUtils.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t EncryptRsaByte(uint64_t messageValue, uint64_t publicKey, uint64_t moduleValue) {
     return modBinary(messageValue, publicKey, moduleValue);

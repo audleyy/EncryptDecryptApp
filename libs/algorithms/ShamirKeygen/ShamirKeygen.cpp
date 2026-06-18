@@ -1,5 +1,4 @@
 #include "ShamirKeygen.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 bool IsShamirSecretKeyValid(uint64_t secretKey, uint64_t primeValue) {
     bool isValid = true;

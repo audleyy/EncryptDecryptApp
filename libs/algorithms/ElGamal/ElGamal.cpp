@@ -1,7 +1,4 @@
-#include "ElGamal.hpp"
-#include "../DiffieHellman/DiffieHellman.hpp"
-
-using namespace std;
+#include "ElGamal.h"
 
 EncryptedBlockElGamal EncryptBlockElGamal(uint64_t messageValue, uint64_t bobPublicKey, uint64_t primeModulus, uint64_t generatorValue) {
 	if (messageValue >= primeModulus) {

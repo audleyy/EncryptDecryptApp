@@ -1,0 +1,1008 @@
+
+;; Function TextToBytes (_Z11TextToBytesRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, funcdef_no=1775, decl_uid=40343, cgraph_uid=385, symbol_order=384)
+
+
+
+TextToBytes
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={31d,26u} r1={13d,3u} r2={9d} r3={3d,3u} r4={11d,3u} r5={17d,9u} r6={3d,40u} r7={5d,23u} r8={8d} r9={8d} r10={8d} r11={8d} r12={8d} r13={8d} r14={8d} r15={8d} r16={1u} r17={12d,2u} r18={8d} r19={1d,2u} r20={9d} r21={9d} r22={9d} r23={9d} r24={9d} r25={9d} r26={9d} r27={9d} r28={8d} r29={8d} r30={8d} r31={8d} r32={8d} r33={8d} r34={8d} r35={8d} r36={9d} r37={9d} r38={8d} r39={8d} r44={8d} r45={8d} r46={8d} r47={8d} r48={8d} r49={8d} r50={8d} r51={8d} r52={8d} r53={8d} r54={8d} r55={8d} r56={8d} r57={8d} r58={8d} r59={8d} r60={8d} r61={8d} r62={8d} r63={8d} r64={8d} r65={8d} r66={8d} r67={8d} r68={8d} r69={8d} r70={8d} r71={8d} r72={8d} r73={8d} r74={8d} r75={8d} r76={8d} r77={8d} r78={8d} r79={8d} r80={8d} r81={8d} r82={8d} r83={8d} r84={8d} r85={8d} r86={8d} r87={8d} r88={8d} r89={8d} r90={8d} r91={8d} 
+;;    total ref usage 843{731d,112u,0e} in 67{59 regular + 8 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 113 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 113 5 114 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/helpers/TextToBytes.cpp":3:49 -1
+     (nil))
+(insn/f 114 113 115 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/helpers/TextToBytes.cpp":3:49 -1
+     (nil))
+(insn/f 115 114 116 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/helpers/TextToBytes.cpp":3:49 -1
+     (nil))
+(insn/f 116 115 117 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -88 [0xffffffffffffffa8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/TextToBytes.cpp":3:49 -1
+     (nil))
+(note 117 116 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 117 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [29 .result_ptr+0 S8 A64])
+        (reg:DI 5 di [ .result_ptr ])) "libs/helpers/TextToBytes.cpp":3:49 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -96 [0xffffffffffffffa0])) [30 text+0 S8 A64])
+        (reg:DI 4 si [ text ])) "libs/helpers/TextToBytes.cpp":3:49 95 {*movdi_internal}
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 9 2 (set (reg:DI 0 ax [112])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [32 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":4:21 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [112])) "libs/helpers/TextToBytes.cpp":4:21 95 {*movdi_internal}
+     (nil))
+(call_insn 10 9 11 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEEC1Ev") [flags 0x3]  <function_decl 0x7f6340181900 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":4:21 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 11 10 12 2 (set (reg:DI 0 ax [113])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -96 [0xffffffffffffffa0])) [30 text+0 S8 A64])) "libs/helpers/TextToBytes.cpp":5:18 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [113])) "libs/helpers/TextToBytes.cpp":5:18 95 {*movdi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv") [flags 0x3]  <function_decl 0x7f6340b3cc00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":5:18 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 13 15 2 (set (reg:DI 1 dx [orig:98 _1 ] [98])
+        (reg:DI 0 ax)) "libs/helpers/TextToBytes.cpp":5:18 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 0 ax [114])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [32 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":5:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:98 _1 ] [98])) "libs/helpers/TextToBytes.cpp":5:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 17 16 126 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [114])) "libs/helpers/TextToBytes.cpp":5:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 126 17 18 2 0 NOTE_INSN_EH_REGION_BEG)
+(call_insn 18 126 19 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEE7reserveEm") [flags 0x3]  <function_decl 0x7f6340163100 reserve>) [0 reserve S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":5:18 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 19 18 20 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 3 (set (reg/f:DI 0 ax [115])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -96 [0xffffffffffffffa0])) [30 text+0 S8 A64])) "libs/helpers/TextToBytes.cpp":6:24 95 {*movdi_internal}
+     (nil))
+(insn 21 20 22 3 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [30 __for_range+0 S8 A64])
+        (reg/f:DI 0 ax [115])) "libs/helpers/TextToBytes.cpp":6:24 95 {*movdi_internal}
+     (nil))
+(insn 22 21 23 3 (set (reg:DI 0 ax [116])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [30 __for_range+0 S8 A64])) "libs/helpers/TextToBytes.cpp":6:24 95 {*movdi_internal}
+     (nil))
+(insn 23 22 24 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [116])) "libs/helpers/TextToBytes.cpp":6:24 95 {*movdi_internal}
+     (nil))
+(call_insn 24 23 27 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5beginEv") [flags 0x3]  <function_decl 0x7f6340b3c100 begin>) [0 begin S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":6:24 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 27 24 28 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [5 __for_begin+0 S8 A64])
+        (reg:DI 0 ax [118])) "libs/helpers/TextToBytes.cpp":6:24 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 3 (set (reg:DI 0 ax [119])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [30 __for_range+0 S8 A64])) "libs/helpers/TextToBytes.cpp":6:24 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 29 28 30 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [119])) "libs/helpers/TextToBytes.cpp":6:24 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 30 29 33 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE3endEv") [flags 0x3]  <function_decl 0x7f6340b3c300 end>) [0 end S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":6:24 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 33 30 104 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [5 __for_end+0 S8 A64])
+        (reg:DI 0 ax [121])) "libs/helpers/TextToBytes.cpp":6:24 discrim 1 95 {*movdi_internal}
+     (nil))
+(jump_insn 104 33 105 3 (set (pc)
+        (label_ref 58)) "libs/helpers/TextToBytes.cpp":6:5 1459 {jump}
+     (nil)
+ -> 58)
+(barrier 105 104 79)
+(code_label 79 105 36 4 18 (nil) [1 uses])
+(note 36 79 37 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 41 4 (set (reg/f:DI 0 ax [orig:102 D.47153 ] [102])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [3 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1090:17 95 {*movdi_internal}
+     (nil))
+(insn 41 37 42 4 (set (reg:QI 0 ax [122])
+        (mem:QI (reg/f:DI 0 ax [orig:102 D.47153 ] [102]) [0 *_2+0 S1 A8])) "libs/helpers/TextToBytes.cpp":6:24 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 42 41 43 4 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 symbol+0 S1 A8])
+        (reg:QI 0 ax [122])) "libs/helpers/TextToBytes.cpp":6:24 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 43 42 44 4 (set (reg:QI 0 ax [orig:99 symbol.0_3 ] [99])
+        (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 symbol+0 S1 A8])) "libs/helpers/TextToBytes.cpp":7:25 98 {*movqi_internal}
+     (nil))
+(insn 44 43 125 4 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -49 [0xffffffffffffffcf])) [0 D.41616+0 S1 A8])
+        (reg:QI 0 ax [orig:99 symbol.0_3 ] [99])) "libs/helpers/TextToBytes.cpp":7:25 98 {*movqi_internal}
+     (nil))
+(insn 125 44 46 4 (set (reg:DI 1 dx [123])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -49 [0xffffffffffffffcf]))) "libs/helpers/TextToBytes.cpp":7:24 265 {*leadi}
+     (nil))
+(insn 46 125 47 4 (set (reg:DI 0 ax [124])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [32 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":7:24 95 {*movdi_internal}
+     (nil))
+(insn 47 46 48 4 (set (reg:DI 4 si)
+        (reg:DI 1 dx [123])) "libs/helpers/TextToBytes.cpp":7:24 95 {*movdi_internal}
+     (nil))
+(insn 48 47 49 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [124])) "libs/helpers/TextToBytes.cpp":7:24 95 {*movdi_internal}
+     (nil))
+(call_insn 49 48 127 4 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEE9push_backEOh") [flags 0x3]  <function_decl 0x7f6340163e00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":7:24 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 127 49 50 0 NOTE_INSN_EH_REGION_END)
+(note 50 127 51 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 51 50 52 5 (set (reg/f:DI 0 ax [orig:103 _29 ] [103])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [3 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1103:4 95 {*movdi_internal}
+     (nil))
+(insn 52 51 53 5 (parallel [
+            (set (reg/f:DI 0 ax [orig:104 _30 ] [104])
+                (plus:DI (reg/f:DI 0 ax [orig:103 _29 ] [103])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 285 {*adddi_1}
+     (nil))
+(insn 53 52 111 5 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [3 __for_begin._M_current+0 S8 A64])
+        (reg/f:DI 0 ax [orig:104 _30 ] [104])) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 95 {*movdi_internal}
+     (nil))
+(insn 111 53 58 5 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_iterator.h":1104:10 1495 {nop}
+     (nil))
+(code_label 58 111 59 6 12 (nil) [1 uses])
+(note 59 58 123 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 123 59 61 6 (set (reg:DI 0 ax [125])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -64 [0xffffffffffffffc0]))) 265 {*leadi}
+     (nil))
+(insn 61 123 62 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [31 this+0 S8 A64])
+        (reg:DI 0 ax [125])) 95 {*movdi_internal}
+     (nil))
+(insn 62 61 66 6 (set (reg/f:DI 0 ax [orig:106 _33 ] [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [31 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 66 62 124 6 (set (reg/f:DI 1 dx [orig:107 _36 ] [107])
+        (mem/f:DI (reg/f:DI 0 ax [orig:106 _33 ] [106]) [3 *_35+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 124 66 68 6 (set (reg:DI 0 ax [126])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -72 [0xffffffffffffffb8]))) 265 {*leadi}
+     (nil))
+(insn 68 124 69 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [31 this+0 S8 A64])
+        (reg:DI 0 ax [126])) 95 {*movdi_internal}
+     (nil))
+(insn 69 68 73 6 (set (reg/f:DI 0 ax [orig:108 _38 ] [108])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [31 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 73 69 74 6 (set (reg/f:DI 0 ax [orig:109 _41 ] [109])
+        (mem/f:DI (reg/f:DI 0 ax [orig:108 _38 ] [108]) [3 *_40+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 74 73 75 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 1 dx [orig:107 _36 ] [107])
+            (reg/f:DI 0 ax [orig:109 _41 ] [109]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 16 {*cmpdi_1}
+     (nil))
+(insn 75 74 80 6 (set (reg:QI 0 ax [orig:110 D.47166 ] [110])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 1452 {*setcc_qi}
+     (nil))
+(insn 80 75 81 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:110 D.47166 ] [110])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":6:24 discrim 7 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 81 80 106 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 79)
+            (pc))) "libs/helpers/TextToBytes.cpp":6:24 discrim 7 1458 {*jcc}
+     (nil)
+ -> 79)
+(note 106 81 108 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 108 106 109 7 (set (pc)
+        (label_ref 107)) "libs/helpers/TextToBytes.cpp":9:12 1459 {jump}
+     (nil)
+ -> 107)
+(barrier 109 108 101)
+(code_label/s 101 109 103 8 21 (nil) [1 uses])
+(note 103 101 102 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 102 103 90 8 (set (reg:DI 3 bx [128])
+        (reg:DI 0 ax)) "libs/helpers/TextToBytes.cpp":10:1 95 {*movdi_internal}
+     (nil))
+(insn 90 102 91 8 (set (reg:DI 0 ax [127])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [32 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":10:1 95 {*movdi_internal}
+     (nil))
+(insn 91 90 92 8 (set (reg:DI 5 di)
+        (reg:DI 0 ax [127])) "libs/helpers/TextToBytes.cpp":10:1 95 {*movdi_internal}
+     (nil))
+(call_insn 92 91 93 8 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEED1Ev") [flags 0x3]  <function_decl 0x7f6340181b00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":10:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 93 92 94 8 (set (reg/f:DI 0 ax [orig:111 D.47219 ] [111])
+        (reg:DI 3 bx [128])) 95 {*movdi_internal}
+     (nil))
+(insn 94 93 128 8 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:111 D.47219 ] [111])) 95 {*movdi_internal}
+     (nil))
+(note 128 94 95 8 1 NOTE_INSN_EH_REGION_BEG)
+(call_insn 95 128 129 8 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f634219cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 129 95 96 1 NOTE_INSN_EH_REGION_END)
+(barrier 96 129 107)
+(code_label 107 96 100 9 22 (nil) [1 uses])
+(note 100 107 98 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 98 100 99 9 (set (reg/i:DI 0 ax)
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [32 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":10:1 95 {*movdi_internal}
+     (nil))
+(insn 99 98 118 9 (use (reg/i:DI 0 ax)) "libs/helpers/TextToBytes.cpp":10:1 -1
+     (nil))
+(note 118 99 119 9 NOTE_INSN_EPILOGUE_BEG)
+(insn 119 118 120 9 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "libs/helpers/TextToBytes.cpp":10:1 -1
+     (nil))
+(insn/f 120 119 121 9 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/TextToBytes.cpp":10:1 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 121 120 122 9 (simple_return) "libs/helpers/TextToBytes.cpp":10:1 -1
+     (nil)
+ -> simple_return)
+(barrier 122 121 112)
+(note 112 122 0 NOTE_INSN_DELETED)
+
+;; Function BytesToText (_Z11BytesToTextB5cxx11RKSt6vectorIhSaIhEE, funcdef_no=1795, decl_uid=40346, cgraph_uid=389, symbol_order=388)
+
+
+
+BytesToText
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={31d,26u} r1={13d,3u} r2={9d} r3={3d,3u} r4={11d,3u} r5={17d,9u} r6={3d,38u} r7={5d,23u} r8={8d} r9={8d} r10={8d} r11={8d} r12={8d} r13={8d} r14={8d} r15={8d} r16={1u} r17={12d,2u} r18={8d} r19={1d,2u} r20={9d} r21={9d} r22={9d} r23={9d} r24={9d} r25={9d} r26={9d} r27={9d} r28={8d} r29={8d} r30={8d} r31={8d} r32={8d} r33={8d} r34={8d} r35={8d} r36={9d} r37={9d} r38={8d} r39={8d} r44={8d} r45={8d} r46={8d} r47={8d} r48={8d} r49={8d} r50={8d} r51={8d} r52={8d} r53={8d} r54={8d} r55={8d} r56={8d} r57={8d} r58={8d} r59={8d} r60={8d} r61={8d} r62={8d} r63={8d} r64={8d} r65={8d} r66={8d} r67={8d} r68={8d} r69={8d} r70={8d} r71={8d} r72={8d} r73={8d} r74={8d} r75={8d} r76={8d} r77={8d} r78={8d} r79={8d} r80={8d} r81={8d} r82={8d} r83={8d} r84={8d} r85={8d} r86={8d} r87={8d} r88={8d} r89={8d} r90={8d} r91={8d} 
+;;    total ref usage 841{731d,110u,0e} in 66{58 regular + 8 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 112 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 112 5 113 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/helpers/TextToBytes.cpp":12:50 -1
+     (nil))
+(insn/f 113 112 114 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/helpers/TextToBytes.cpp":12:50 -1
+     (nil))
+(insn/f 114 113 115 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/helpers/TextToBytes.cpp":12:50 -1
+     (nil))
+(insn/f 115 114 116 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -72 [0xffffffffffffffb8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/TextToBytes.cpp":12:50 -1
+     (nil))
+(note 116 115 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 116 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [35 .result_ptr+0 S8 A64])
+        (reg:DI 5 di [ .result_ptr ])) "libs/helpers/TextToBytes.cpp":12:50 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [32 bytes+0 S8 A64])
+        (reg:DI 4 si [ bytes ])) "libs/helpers/TextToBytes.cpp":12:50 95 {*movdi_internal}
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 9 2 (set (reg:DI 0 ax [113])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [30 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":13:12 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [113])) "libs/helpers/TextToBytes.cpp":13:12 95 {*movdi_internal}
+     (nil))
+(call_insn 10 9 11 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev") [flags 0x3]  <function_decl 0x7f6340b7ac00 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":13:12 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 11 10 12 2 (set (reg:DI 0 ax [114])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [32 bytes+0 S8 A64])) "libs/helpers/TextToBytes.cpp":14:17 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [114])) "libs/helpers/TextToBytes.cpp":14:17 95 {*movdi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE4sizeEv") [flags 0x3]  <function_decl 0x7f6340160a00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":14:17 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 13 15 2 (set (reg:DI 1 dx [orig:98 _1 ] [98])
+        (reg:DI 0 ax)) "libs/helpers/TextToBytes.cpp":14:17 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 0 ax [115])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [30 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":14:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:98 _1 ] [98])) "libs/helpers/TextToBytes.cpp":14:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 17 16 124 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [115])) "libs/helpers/TextToBytes.cpp":14:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 124 17 18 2 2 NOTE_INSN_EH_REGION_BEG)
+(call_insn 18 124 19 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm") [flags 0x3]  <function_decl 0x7f6340b3f400 reserve>) [0 reserve S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":14:17 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 19 18 20 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 3 (set (reg/f:DI 0 ax [116])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [32 bytes+0 S8 A64])) "libs/helpers/TextToBytes.cpp":15:25 95 {*movdi_internal}
+     (nil))
+(insn 21 20 22 3 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [32 __for_range+0 S8 A64])
+        (reg/f:DI 0 ax [116])) "libs/helpers/TextToBytes.cpp":15:25 95 {*movdi_internal}
+     (nil))
+(insn 22 21 23 3 (set (reg:DI 0 ax [117])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [32 __for_range+0 S8 A64])) "libs/helpers/TextToBytes.cpp":15:25 95 {*movdi_internal}
+     (nil))
+(insn 23 22 24 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [117])) "libs/helpers/TextToBytes.cpp":15:25 95 {*movdi_internal}
+     (nil))
+(call_insn 24 23 27 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE5beginEv") [flags 0x3]  <function_decl 0x7f6340157f00 begin>) [0 begin S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":15:25 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 27 24 28 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [8 __for_begin+0 S8 A64])
+        (reg:DI 0 ax [119])) "libs/helpers/TextToBytes.cpp":15:25 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 3 (set (reg:DI 0 ax [120])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [32 __for_range+0 S8 A64])) "libs/helpers/TextToBytes.cpp":15:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 29 28 30 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [120])) "libs/helpers/TextToBytes.cpp":15:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 30 29 33 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE3endEv") [flags 0x3]  <function_decl 0x7f6340160100 end>) [0 end S1 A8])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":15:25 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 33 30 103 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [8 __for_end+0 S8 A64])
+        (reg:DI 0 ax [122])) "libs/helpers/TextToBytes.cpp":15:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(jump_insn 103 33 104 3 (set (pc)
+        (label_ref 57)) "libs/helpers/TextToBytes.cpp":15:5 1459 {jump}
+     (nil)
+ -> 57)
+(barrier 104 103 78)
+(code_label 78 104 36 4 30 (nil) [1 uses])
+(note 36 78 37 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 41 4 (set (reg/f:DI 0 ax [orig:103 D.47196 ] [103])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [7 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1090:17 95 {*movdi_internal}
+     (nil))
+(insn 41 37 42 4 (set (reg:QI 0 ax [123])
+        (mem:QI (reg/f:DI 0 ax [orig:103 D.47196 ] [103]) [0 *_2+0 S1 A8])) "libs/helpers/TextToBytes.cpp":15:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 42 41 43 4 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 byte+0 S1 A8])
+        (reg:QI 0 ax [123])) "libs/helpers/TextToBytes.cpp":15:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 43 42 44 4 (set (reg:QI 0 ax [orig:99 byte.12_3 ] [99])
+        (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 byte+0 S1 A8])) "libs/helpers/TextToBytes.cpp":16:24 98 {*movqi_internal}
+     (nil))
+(insn 44 43 45 4 (set (reg:SI 1 dx [orig:100 _4 ] [100])
+        (sign_extend:SI (reg:QI 0 ax [orig:99 byte.12_3 ] [99]))) "libs/helpers/TextToBytes.cpp":16:23 191 {extendqisi2}
+     (nil))
+(insn 45 44 46 4 (set (reg:DI 0 ax [124])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [30 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":16:23 95 {*movdi_internal}
+     (nil))
+(insn 46 45 47 4 (set (reg:SI 4 si)
+        (reg:SI 1 dx [orig:100 _4 ] [100])) "libs/helpers/TextToBytes.cpp":16:23 96 {*movsi_internal}
+     (nil))
+(insn 47 46 48 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [124])) "libs/helpers/TextToBytes.cpp":16:23 95 {*movdi_internal}
+     (nil))
+(call_insn 48 47 125 4 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9push_backEc") [flags 0x3]  <function_decl 0x7f6340b42e00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":16:23 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+(note 125 48 49 2 NOTE_INSN_EH_REGION_END)
+(note 49 125 50 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 5 (set (reg/f:DI 0 ax [orig:104 _27 ] [104])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [7 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1103:4 95 {*movdi_internal}
+     (nil))
+(insn 51 50 52 5 (parallel [
+            (set (reg/f:DI 0 ax [orig:105 _28 ] [105])
+                (plus:DI (reg/f:DI 0 ax [orig:104 _27 ] [104])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 285 {*adddi_1}
+     (nil))
+(insn 52 51 110 5 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [7 __for_begin._M_current+0 S8 A64])
+        (reg/f:DI 0 ax [orig:105 _28 ] [105])) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 95 {*movdi_internal}
+     (nil))
+(insn 110 52 57 5 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_iterator.h":1104:10 1495 {nop}
+     (nil))
+(code_label 57 110 58 6 24 (nil) [1 uses])
+(note 58 57 122 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 122 58 60 6 (set (reg:DI 0 ax [125])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -56 [0xffffffffffffffc8]))) 265 {*leadi}
+     (nil))
+(insn 60 122 61 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [34 this+0 S8 A64])
+        (reg:DI 0 ax [125])) 95 {*movdi_internal}
+     (nil))
+(insn 61 60 65 6 (set (reg/f:DI 0 ax [orig:107 _31 ] [107])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [34 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 65 61 123 6 (set (reg/f:DI 1 dx [orig:108 _34 ] [108])
+        (mem/f:DI (reg/f:DI 0 ax [orig:107 _31 ] [107]) [7 *_33+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 123 65 67 6 (set (reg:DI 0 ax [126])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -64 [0xffffffffffffffc0]))) 265 {*leadi}
+     (nil))
+(insn 67 123 68 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [34 this+0 S8 A64])
+        (reg:DI 0 ax [126])) 95 {*movdi_internal}
+     (nil))
+(insn 68 67 72 6 (set (reg/f:DI 0 ax [orig:109 _36 ] [109])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [34 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 72 68 73 6 (set (reg/f:DI 0 ax [orig:110 _39 ] [110])
+        (mem/f:DI (reg/f:DI 0 ax [orig:109 _36 ] [109]) [7 *_38+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 73 72 74 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 1 dx [orig:108 _34 ] [108])
+            (reg/f:DI 0 ax [orig:110 _39 ] [110]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 16 {*cmpdi_1}
+     (nil))
+(insn 74 73 79 6 (set (reg:QI 0 ax [orig:111 D.47209 ] [111])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 1452 {*setcc_qi}
+     (nil))
+(insn 79 74 80 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:111 D.47209 ] [111])
+            (const_int 0 [0]))) "libs/helpers/TextToBytes.cpp":15:25 discrim 7 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 80 79 105 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) "libs/helpers/TextToBytes.cpp":15:25 discrim 7 1458 {*jcc}
+     (nil)
+ -> 78)
+(note 105 80 107 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 107 105 108 7 (set (pc)
+        (label_ref 106)) "libs/helpers/TextToBytes.cpp":18:12 1459 {jump}
+     (nil)
+ -> 106)
+(barrier 108 107 100)
+(code_label/s 100 108 102 8 33 (nil) [1 uses])
+(note 102 100 101 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 101 102 89 8 (set (reg:DI 3 bx [128])
+        (reg:DI 0 ax)) "libs/helpers/TextToBytes.cpp":19:1 95 {*movdi_internal}
+     (nil))
+(insn 89 101 90 8 (set (reg:DI 0 ax [127])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [30 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":19:1 95 {*movdi_internal}
+     (nil))
+(insn 90 89 91 8 (set (reg:DI 5 di)
+        (reg:DI 0 ax [127])) "libs/helpers/TextToBytes.cpp":19:1 95 {*movdi_internal}
+     (nil))
+(call_insn 91 90 92 8 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev") [flags 0x3]  <function_decl 0x7f6340b7d000 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/TextToBytes.cpp":19:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 92 91 93 8 (set (reg/f:DI 0 ax [orig:112 D.47221 ] [112])
+        (reg:DI 3 bx [128])) 95 {*movdi_internal}
+     (nil))
+(insn 93 92 126 8 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:112 D.47221 ] [112])) 95 {*movdi_internal}
+     (nil))
+(note 126 93 94 8 3 NOTE_INSN_EH_REGION_BEG)
+(call_insn 94 126 127 8 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f634219cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 127 94 95 3 NOTE_INSN_EH_REGION_END)
+(barrier 95 127 106)
+(code_label 106 95 99 9 34 (nil) [1 uses])
+(note 99 106 97 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 97 99 98 9 (set (reg/i:DI 0 ax)
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [30 <retval>+0 S8 A64])) "libs/helpers/TextToBytes.cpp":19:1 95 {*movdi_internal}
+     (nil))
+(insn 98 97 117 9 (use (reg/i:DI 0 ax)) "libs/helpers/TextToBytes.cpp":19:1 -1
+     (nil))
+(note 117 98 118 9 NOTE_INSN_EPILOGUE_BEG)
+(insn 118 117 119 9 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "libs/helpers/TextToBytes.cpp":19:1 -1
+     (nil))
+(insn/f 119 118 120 9 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/TextToBytes.cpp":19:1 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 120 119 121 9 (simple_return) "libs/helpers/TextToBytes.cpp":19:1 -1
+     (nil)
+ -> simple_return)
+(barrier 121 120 111)
+(note 111 121 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::basic_string (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2Ev, funcdef_no=1902, decl_uid=26578, cgraph_uid=493, symbol_order=492)
+
+
+
+std::__cxx11::basic_string<char>::basic_string
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={11d,7u} r1={6d,1u} r2={6d,1u} r3={3d,3u} r4={7d,2u} r5={9d,5u} r6={3d,16u} r7={5d,12u} r8={4d} r9={4d} r10={4d} r11={4d} r12={4d} r13={4d} r14={4d} r15={4d} r17={5d} r18={4d} r19={1d,1u} r20={5d} r21={5d} r22={5d} r23={5d} r24={5d} r25={5d} r26={5d} r27={5d} r28={4d} r29={4d} r30={4d} r31={4d} r32={4d} r33={4d} r34={4d} r35={4d} r36={5d} r37={5d} r38={4d} r39={4d} r44={4d} r45={4d} r46={4d} r47={4d} r48={4d} r49={4d} r50={4d} r51={4d} r52={4d} r53={4d} r54={4d} r55={4d} r56={4d} r57={4d} r58={4d} r59={4d} r60={4d} r61={4d} r62={4d} r63={4d} r64={4d} r65={4d} r66={4d} r67={4d} r68={4d} r69={4d} r70={4d} r71={4d} r72={4d} r73={4d} r74={4d} r75={4d} r76={4d} r77={4d} r78={4d} r79={4d} r80={4d} r81={4d} r82={4d} r83={4d} r84={4d} r85={4d} r86={4d} r87={4d} r88={4d} r89={4d} r90={4d} r91={4d} 
+;;    total ref usage 422{374d,48u,0e} in 34{30 regular + 4 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 40 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 40 4 41 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 41 40 42 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 42 41 43 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 43 42 44 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -56 [0xffffffffffffffc8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(note 44 43 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 44 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.h":585:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 50 2 (set (reg/f:DI 3 bx [orig:98 _1 ] [98])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":590:9 95 {*movdi_internal}
+     (nil))
+(insn 50 6 8 2 (set (reg:DI 0 ax [101])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) 265 {*leadi}
+     (nil))
+(insn 8 50 33 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [37 this+0 S8 A64])
+        (reg:DI 0 ax [101])) 95 {*movdi_internal}
+     (nil))
+(insn 33 8 34 2 (const_int 0 [0]) "/usr/include/c++/15/bits/new_allocator.h":88:49 1495 {nop}
+     (nil))
+(insn 34 33 11 2 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":168:38 1495 {nop}
+     (nil))
+(insn 11 34 12 2 (set (reg:DI 0 ax [102])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [102])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv") [flags 0x3]  <function_decl 0x7f6340b13f00 _M_local_data>) [0 _M_local_data S1 A8])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 13 51 2 (set (reg/f:DI 2 cx [orig:99 _2 ] [99])
+        (reg:DI 0 ax)) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 51 14 16 2 (set (reg:DI 0 ax [103])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 265 {*leadi}
+     (nil))
+(insn 16 51 17 2 (set (reg:DI 1 dx)
+        (reg:DI 0 ax [103])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:99 _2 ] [99])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:98 _1 ] [98])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(call_insn 19 18 52 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcOS3_") [flags 0x3]  <function_decl 0x7f6340b13800 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 52 19 21 2 (set (reg:DI 0 ax [104])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) "/usr/include/c++/15/bits/allocator.h":189:39 265 {*leadi}
+     (nil))
+(insn 21 52 22 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [104])) "/usr/include/c++/15/bits/allocator.h":189:39 95 {*movdi_internal}
+     (nil))
+(call_insn 22 21 35 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt15__new_allocatorIcED2Ev") [flags 0x3]  <function_decl 0x7f634126b600 __dt_base >) [0 __dt_base  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/allocator.h":189:39 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 35 22 24 2 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":189:39 1495 {nop}
+     (nil))
+(insn 24 35 25 2 (set (reg/f:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 this+0 S8 A64])) 95 {*movdi_internal}
+     (nil))
+(insn 25 24 36 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [35 this+0 S8 A64])
+        (reg/f:DI 0 ax [105])) 95 {*movdi_internal}
+     (nil))
+(insn 36 25 27 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":378:7 1495 {nop}
+     (nil))
+(insn 27 36 28 2 (set (reg:DI 0 ax [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 2 (set (reg:DI 4 si)
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(insn 29 28 30 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [106])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(call_insn 30 29 38 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm") [flags 0x3]  <function_decl 0x7f6340b21200 _M_set_length>) [0 _M_set_length S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":593:15 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 38 30 45 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":594:7 1495 {nop}
+     (nil))
+(note 45 38 46 2 NOTE_INSN_EPILOGUE_BEG)
+(insn 46 45 47 2 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (nil))
+(insn/f 47 46 48 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 48 47 49 2 (simple_return) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (nil)
+ -> simple_return)
+(barrier 49 48 39)
+(note 39 49 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::~basic_string (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev, funcdef_no=1905, decl_uid=26590, cgraph_uid=496, symbol_order=495)
+
+
+
+std::__cxx11::basic_string<char>::~basic_string
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 5 [di] 6 [bp] 7 [sp]
+;;  ref usage 	r0={5d,2u} r1={3d} r2={3d} r4={3d} r5={5d,3u} r6={3d,8u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={3d} r18={2d} r19={1d,1u} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} r81={2d} r82={2d} r83={2d} r84={2d} r85={2d} r86={2d} r87={2d} r88={2d} r89={2d} r90={2d} r91={2d} 
+;;    total ref usage 217{194d,23u,0e} in 13{11 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 17 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 17 4 18 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(insn/f 18 17 19 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(insn/f 19 18 20 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(note 20 19 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 20 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [35 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.h":895:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:DI 0 ax [99])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [35 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":896:19 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [99])) "/usr/include/c++/15/bits/basic_string.h":896:19 95 {*movdi_internal}
+     (nil))
+(call_insn 8 7 9 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv") [flags 0x3]  <function_decl 0x7f6340b21500 _M_dispose>) [0 _M_dispose S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":896:19 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:98 _1 ] [98])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [35 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:98 _1 ] [98])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 11 10 15 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD1Ev") [flags 0x3]  <function_decl 0x7f6340b95800 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 11 21 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":896:23 1495 {nop}
+     (nil))
+(note 21 15 22 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 22 21 23 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":896:23 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 23 22 24 2 (simple_return) "/usr/include/c++/15/bits/basic_string.h":896:23 -1
+     (nil)
+ -> simple_return)
+(barrier 24 23 16)
+(note 16 24 0 NOTE_INSN_DELETED)
+
+;; Function std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base (_ZNSt12_Vector_baseIhSaIhEED2Ev, funcdef_no=2077, decl_uid=40836, cgraph_uid=668, symbol_order=667)
+
+
+
+std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={9d,6u} r1={5d,2u} r2={4d,1u} r4={4d,1u} r5={5d,3u} r6={3d,11u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={4d} r18={2d} r19={1d,1u} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} r81={2d} r82={2d} r83={2d} r84={2d} r85={2d} r86={2d} r87={2d} r88={2d} r89={2d} r90={2d} r91={2d} 
+;;    total ref usage 237{203d,34u,0e} in 21{19 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 27 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 27 4 28 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 28 27 29 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 29 28 30 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(note 30 29 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 30 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/stl_vector.h":373:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [104])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg/f:DI 1 dx [orig:98 _1 ] [98])
+        (mem/f:DI (plus:DI (reg/f:DI 0 ax [104])
+                (const_int 16 [0x10])) [7 this_8(D)->_M_impl.D.40733._M_end_of_storage+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg/f:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:99 _2 ] [99])
+        (mem/f:DI (reg/f:DI 0 ax [105]) [7 this_8(D)->_M_impl.D.40733._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 10 9 12 2 (parallel [
+            (set (reg:DI 1 dx [orig:100 _3 ] [100])
+                (minus:DI (reg/f:DI 1 dx [orig:98 _1 ] [98])
+                    (reg/f:DI 0 ax [orig:99 _2 ] [99])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":376:35 391 {*subdi_1}
+     (nil))
+(insn 12 10 13 2 (set (reg/f:DI 0 ax [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg/f:DI 2 cx [orig:102 _5 ] [102])
+        (mem/f:DI (reg/f:DI 0 ax [106]) [7 this_8(D)->_M_impl.D.40733._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 14 13 16 2 (set (reg:DI 0 ax [107])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 16 14 17 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:102 _5 ] [102])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [107])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(call_insn 18 17 19 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseIhSaIhEE13_M_deallocateEPhm") [flags 0x3]  <function_decl 0x7f6340144e00 _M_deallocate>) [0 _M_deallocate S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":375:15 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 19 18 20 2 (set (reg/f:DI 0 ax [orig:103 _6 ] [103])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(insn 20 19 21 2 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:103 _6 ] [103])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(call_insn 21 20 25 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseIhSaIhEE12_Vector_implD1Ev") [flags 0x3]  <function_decl 0x7f6340148a00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":377:7 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 25 21 31 2 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_vector.h":377:7 1495 {nop}
+     (nil))
+(note 31 25 32 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 32 31 33 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 33 32 34 2 (simple_return) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (nil)
+ -> simple_return)
+(barrier 34 33 26)
+(note 26 34 0 NOTE_INSN_DELETED)

@@ -1,17 +1,4 @@
 #include "Core.h"
-#include "DllProcessor.h"
-#include "StreamProcessor.h"
-#include "../../libs/algorithms/RsaKeygen/RsaKeygen.h"
-#include "../../libs/algorithms/ShamirKeygen/ShamirKeygen.h"
-#include "../../libs/algorithms/ElGamalKeygen/ElGamalKeygen.h"
-#include "../../libs/algorithms/CaesarKeygen/CaesarKeygen.h"
-#include "../../libs/algorithms/ChaCha20Keygen/ChaCha20Keygen.h"
-#include "../../libs/helpers/ConvertUtils.h"
-#include "../../libs/helpers/KeyFile/KeyFile.h"
-#include <exception>
-#include <iostream>
-#include <stdexcept>
-#include <string>
 
 string LastErrorDetails;
 

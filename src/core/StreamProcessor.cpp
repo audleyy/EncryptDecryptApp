@@ -1,12 +1,4 @@
 #include "StreamProcessor.h"
-#include "DllProcessor.h"
-#include "FileProcessor.h"
-#include "../../libs/algorithms/ChaCha20/ChaCha20Types.h"
-#include "../../libs/helpers/ElGamalBlockConverter/ElGamalBlockConverter.h"
-#include "../../libs/helpers/KeyFile/KeyFile.h"
-#include <fstream>
-#include <functional>
-#include <stdexcept>
 
 const size_t OpenTextChunkSize = 4096;
 const size_t CipherTextChunkSize = OpenTextChunkSize * sizeof(uint64_t);

@@ -1,0 +1,921 @@
+
+;; Function modBinary (_Z9modBinarymmm, funcdef_no=3110, decl_uid=62216, cgraph_uid=1448, symbol_order=1447)
+
+
+********** Local #1: **********
+
+	   Spilling non-eliminable hard regs: 6
+New elimination table:
+Can't eliminate 16 to 7 (offset=80, prev_offset=-1)
+Can eliminate 16 to 6 (offset=16, prev_offset=-1)
+Can't eliminate 19 to 7 (offset=48, prev_offset=-1)
+Can eliminate 19 to 6 (offset=-16, prev_offset=-1)
+         Considering alt=2 of insn 2:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 2:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 2:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 2:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 2:  (0) m  (1) re {*movdi_internal}
+         Considering alt=2 of insn 3:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 3:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 3:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 3:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 3:  (0) m  (1) re {*movdi_internal}
+         Considering alt=2 of insn 4:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 4:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 4:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 4:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 4:  (0) m  (1) re {*movdi_internal}
+         Considering alt=0 of insn 8:   (0) r
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+          overall=9,losers=1,rld_nregs=1
+         Considering alt=1 of insn 8:   (0) ?mr
+            Staticly defined alt reject+=6
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 1 in insn 8:  (0) ?mr {*cmpdi_ccno_1}
+         Considering alt=2 of insn 11:   (0) r  (1) Z
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 2 in insn 11:  (0) r  (1) Z {*movdi_internal}
+         Considering alt=0 of insn 12:   (1) rBwBz
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 12:  (1) rBwBz {*call_value}
+         Considering alt=2 of insn 15:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 15:   (0) r  (1) rem
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 15:   (0) r  (1) i
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 4 in insn 15:  (0) r  (1) i {*movdi_internal}
+         Considering alt=0 of insn 18:   (0) rBwBz
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 18:  (0) rBwBz {*call}
+         Considering alt=2 of insn 20:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 20:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 20:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=2 of insn 22:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 22:   (0) r  (1) rem
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 22:   (0) r  (1) i
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 4 in insn 22:  (0) r  (1) i {*movdi_internal}
+         Considering alt=0 of insn 26:   (0) rBwBz
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 26:  (0) rBwBz {*call}
+         Considering alt=2 of insn 30:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+          overall=9,losers=1,rld_nregs=1
+         Considering alt=3 of insn 30:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+          overall=9,losers=1,rld_nregs=1
+         Considering alt=4 of insn 30:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+          overall=9,losers=1,rld_nregs=1
+         Considering alt=5 of insn 30:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 30:  (0) m  (1) re {*movdi_internal}
+         Considering alt=2 of insn 31:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 31:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 31:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=0 of insn 32:   (0) =a  (1) =&d  (2) 0  (3) rm
+            1 Early clobber: reject++
+          overall=1,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 32:  (0) =a  (1) =&d  (2) 0  (3) rm {*udivmoddi4}
+         Considering alt=2 of insn 33:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 33:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 33:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 33:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 33:  (0) m  (1) re {*movdi_internal}
+         Considering alt=2 of insn 37:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 37:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 37:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=0 of insn 38:   (0) =r  (1) %0  (2) Z
+          overall=0,losers=0,rld_nregs=0
+         Considering alt=0 of insn 38:   (0) =r  (1) %0  (2) Z
+            1 Matching alt: reject+=2
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=11,losers=1 -- refuse
+         Considering alt=2 of insn 38:   (0) rm  (1) 0  (2) r
+            1 Matching alt: reject+=2
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=11,losers=1 -- refuse
+         Considering alt=3 of insn 38:   (0) rm  (1) 0  (2) e
+            1 Matching alt: reject+=2
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=11,losers=1 -- refuse
+         Considering alt=4 of insn 38:   (0) r  (1) 0  (2) m
+            1 Matching alt: reject+=2
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=11,losers=1 -- refuse
+         Considering alt=8 of insn 38:   (0) r  (1) qm  (2) L
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=9,losers=1 -- refuse
+      Choosing alt 0 in insn 38:  (0) =r  (1) %0  (2) Z {*anddi_1}
+         Considering alt=0 of insn 39:   (0) r
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 39:  (0) r {*cmpdi_ccno_1}
+         Considering alt=2 of insn 42:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 42:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 42:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=0 of insn 43:   (0) =r  (1) %rm  (2) K
+            Bad operand -- refuse
+         Considering alt=1 of insn 43:   (0) r  (1) rm  (2) e
+            Bad operand -- refuse
+         Considering alt=2 of insn 43:   (0) r  (1) 0  (2) BMr
+          overall=0,losers=0,rld_nregs=0
+         Considering alt=0 of insn 43:   (0) =r  (1) %rm  (2) K
+            Bad operand -- refuse
+         Considering alt=1 of insn 43:   (0) r  (1) rm  (2) e
+            Bad operand -- refuse
+         Considering alt=2 of insn 43:   (0) r  (1) 0  (2) BMr
+            1 Matching alt: reject+=2
+            1 Operand reload: losers++
+            1 Non-pseudo reload: reject+=2
+            1 Non input pseudo reload: reject++
+            overall=11,losers=1 -- refuse
+      Choosing alt 2 in insn 43:  (0) r  (1) 0  (2) BMr {*muldi3_1}
+         Considering alt=0 of insn 44:   (0) =a  (1) =&d  (2) 0  (3) rm
+            1 Early clobber: reject++
+          overall=1,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 44:  (0) =a  (1) =&d  (2) 0  (3) rm {*udivmoddi4}
+         Considering alt=2 of insn 45:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 45:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 45:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 45:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 45:  (0) m  (1) re {*movdi_internal}
+         Considering alt=2 of insn 48:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 48:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 48:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=0 of insn 49:   (0) =r  (1) %rm  (2) K
+            Bad operand -- refuse
+         Considering alt=1 of insn 49:   (0) r  (1) rm  (2) e
+            Bad operand -- refuse
+         Considering alt=2 of insn 49:   (0) r  (1) 0  (2) BMr
+          overall=0,losers=0,rld_nregs=0
+         Considering alt=0 of insn 49:   (0) =r  (1) %rm  (2) K
+            Bad operand -- refuse
+         Considering alt=1 of insn 49:   (0) r  (1) rm  (2) e
+            Bad operand -- refuse
+         Considering alt=2 of insn 49:   (0) r  (1) 0  (2) BMr
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 2 in insn 49:  (0) r  (1) 0  (2) BMr {*muldi3_1}
+         Considering alt=0 of insn 50:   (0) =a  (1) =&d  (2) 0  (3) rm
+            1 Early clobber: reject++
+          overall=1,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 50:  (0) =a  (1) =&d  (2) 0  (3) rm {*udivmoddi4}
+         Considering alt=2 of insn 51:   (0) r  (1) Z
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=3 of insn 51:   (0) r  (1) rem
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Cycle danger: overall += LRA_MAX_REJECT
+          overall=609,losers=1,rld_nregs=1
+         Considering alt=4 of insn 51:   (0) r  (1) i
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+            Bad operand -- refuse
+         Considering alt=5 of insn 51:   (0) m  (1) re
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 5 in insn 51:  (0) m  (1) re {*movdi_internal}
+         Considering alt=0 of insn 52:   (0) =rm  (1) 0  (2) cJ
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 52:  (0) =rm  (1) 0  (2) cJ {*lshrdi3_1}
+         Considering alt=0 of insn 56:   (0) r
+            0 Operand reload: losers++
+            0 Non-pseudo reload: reject+=2
+            0 Non input pseudo reload: reject++
+          overall=9,losers=1,rld_nregs=1
+         Considering alt=1 of insn 56:   (0) ?mr
+            Staticly defined alt reject+=6
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 1 in insn 56:  (0) ?mr {*cmpdi_ccno_1}
+         Considering alt=2 of insn 59:   (0) r  (1) Z
+            Bad operand -- refuse
+         Considering alt=3 of insn 59:   (0) r  (1) rem
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 3 in insn 59:  (0) r  (1) rem {*movdi_internal}
+         Considering alt=0 of insn 68:   (0) rBwBz
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 68:  (0) rBwBz {*call}
+         Considering alt=0 of insn 71:   (0) rBwBz
+          overall=0,losers=0,rld_nregs=0
+      Choosing alt 0 in insn 71:  (0) rBwBz {*call}
+	   Spilling non-eliminable hard regs: 6
+
+********** Inheritance #1: **********
+
+EBB 2 3 4
+EBB 5
+EBB 6 7
+EBB 8
+EBB 9 10
+EBB 11
+EBB 12
+
+********** Pseudo live ranges #1: **********
+
+  BB 4
+   Insn 26: point = 0, n_alt = 0
+   Insn 25: point = 0, n_alt = -2
+   Insn 24: point = 1, n_alt = -2
+   Insn 23: point = 2, n_alt = -2
+   Insn 22: point = 3, n_alt = 4
+   Insn 21: point = 4, n_alt = -2
+   Insn 20: point = 6, n_alt = 3
+  BB 11
+   Insn 71: point = 8, n_alt = 0
+   Insn 70: point = 8, n_alt = -2
+   Insn 69: point = 9, n_alt = -2
+   Insn 68: point = 11, n_alt = 0
+   Insn 67: point = 11, n_alt = -2
+   Insn 78: point = 12, n_alt = -2
+  BB 3
+   Insn 18: point = 14, n_alt = 0
+   Insn 17: point = 14, n_alt = -2
+   Insn 16: point = 14, n_alt = -2
+   Insn 15: point = 15, n_alt = 4
+   Insn 14: point = 16, n_alt = -2
+   Insn 13: point = 18, n_alt = -2
+   Insn 12: point = 19, n_alt = 0
+   Insn 11: point = 19, n_alt = 2
+  BB 12
+   Insn 75: point = 19, n_alt = -1
+   Insn 74: point = 19, n_alt = -2
+  BB 10
+   Insn 83: point = 21, n_alt = -1
+   Insn 62: point = 21, n_alt = -2
+   Insn 59: point = 23, n_alt = 3
+  BB 9
+   Insn 57: point = 24, n_alt = -1
+   Insn 56: point = 24, n_alt = 1
+  BB 5
+   Insn 80: point = 24, n_alt = -1
+   Insn 33: point = 24, n_alt = 5
+   Insn 32: point = 25, n_alt = 0
+   Insn 31: point = 27, n_alt = 3
+   Insn 30: point = 28, n_alt = 5
+  BB 2
+   Insn 9: point = 28, n_alt = -1
+   Insn 8: point = 28, n_alt = 1
+   Insn 4: point = 28, n_alt = 5
+   Insn 3: point = 28, n_alt = 5
+   Insn 2: point = 28, n_alt = 5
+  BB 8
+   Insn 52: point = 28, n_alt = 0
+   Insn 51: point = 28, n_alt = 5
+   Insn 50: point = 29, n_alt = 0
+   Insn 49: point = 31, n_alt = 2
+   Insn 48: point = 33, n_alt = 3
+  BB 7
+   Insn 45: point = 34, n_alt = 5
+   Insn 44: point = 35, n_alt = 0
+   Insn 43: point = 37, n_alt = 2
+   Insn 42: point = 39, n_alt = 3
+  BB 6
+   Insn 40: point = 40, n_alt = -1
+   Insn 39: point = 40, n_alt = 0
+   Insn 38: point = 41, n_alt = 0
+   Insn 37: point = 43, n_alt = 3
+ r98: [40..41]
+ r99: [36..37]
+ r100: [30..31]
+ r101: [22..23]
+ r102: [11..16] [0..7]
+ r103: [8..9]
+ r104: [19..21]
+ r105: [17..18]
+ r106: [14..15]
+ r107: [2..4]
+ r108: [5..6]
+ r109: [1..3]
+ r111: [26..27]
+ r112: [24..26]
+ r113: [25..25]
+ r114: [42..43]
+ r115: [38..39]
+ r117: [34..36]
+ r118: [35..35]
+ r119: [32..33]
+ r121: [28..30]
+ r122: [29..29]
+ r124: [10..12]
+Compressing live ranges: from 44 to 36 - 81%
+Ranges after the compression:
+ r98: [32..33]
+ r99: [28..29]
+ r100: [22..23]
+ r101: [14..15]
+ r102: [6..9] [0..3]
+ r103: [4..5]
+ r104: [12..13]
+ r105: [10..11]
+ r106: [8..9]
+ r107: [0..1]
+ r108: [2..3]
+ r109: [0..1]
+ r111: [18..19]
+ r112: [16..18]
+ r113: [17..17]
+ r114: [34..35]
+ r115: [30..31]
+ r117: [26..28]
+ r118: [27..27]
+ r119: [24..25]
+ r121: [20..22]
+ r122: [21..21]
+ r124: [6..7]
+
+********** Assignment #1: **********
+
+
+********** Undoing inheritance #1: **********
+
+
+********** Local #2: **********
+
+	   Spilling non-eliminable hard regs: 6
+	   Spilling non-eliminable hard regs: 6
+New elimination table:
+Can't eliminate 16 to 7 (offset=80, prev_offset=-1)
+Can eliminate 16 to 6 (offset=16, prev_offset=16)
+Can't eliminate 19 to 7 (offset=48, prev_offset=-1)
+Can eliminate 19 to 6 (offset=-16, prev_offset=-16)
+changing reg in insn 38
+changing reg in insn 39
+changing reg in insn 43
+changing reg in insn 44
+changing reg in insn 44
+changing reg in insn 49
+changing reg in insn 50
+changing reg in insn 50
+changing reg in insn 59
+changing reg in insn 62
+changing reg in insn 14
+changing reg in insn 67
+changing reg in insn 25
+changing reg in insn 17
+changing reg in insn 69
+changing reg in insn 70
+changing reg in insn 62
+changing reg in insn 74
+changing reg in insn 13
+changing reg in insn 14
+changing reg in insn 15
+changing reg in insn 16
+changing reg in insn 21
+changing reg in insn 23
+changing reg in insn 20
+changing reg in insn 21
+changing reg in insn 22
+changing reg in insn 24
+changing reg in insn 31
+changing reg in insn 32
+changing reg in insn 32
+changing reg in insn 32
+changing reg in insn 33
+changing reg in insn 32
+changing reg in insn 37
+changing reg in insn 38
+changing reg in insn 42
+changing reg in insn 43
+changing reg in insn 44
+changing reg in insn 45
+changing reg in insn 44
+changing reg in insn 48
+changing reg in insn 49
+changing reg in insn 49
+changing reg in insn 50
+changing reg in insn 51
+changing reg in insn 50
+changing reg in insn 78
+changing reg in insn 69
+deleting insn with uid = 13.
+deleting insn with uid = 23.
+deleting insn with uid = 62.
+deleting insn with uid = 74.
+starting the processing of deferred insns
+ending the processing of deferred insns
+verify found no changes in insn with uid = 12.
+verify found no changes in insn with uid = 18.
+verify found no changes in insn with uid = 26.
+verify found no changes in insn with uid = 68.
+verify found no changes in insn with uid = 71.
+
+
+modBinary
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags] 40 [r12]
+;;  ref usage 	r0={22d,19u} r1={11d,5u} r2={6d} r3={1d,3u} r4={8d,3u} r5={11d,6u} r6={1d,35u} r7={1d,17u} r8={5d} r9={5d} r10={5d} r11={5d} r12={5d} r13={5d} r14={5d} r15={5d} r16={1u} r17={15d,3u} r18={5d} r19={1d,2u,1e} r20={6d} r21={6d} r22={6d} r23={6d} r24={6d} r25={6d} r26={6d} r27={6d} r28={5d} r29={5d} r30={5d} r31={5d} r32={5d} r33={5d} r34={5d} r35={5d} r36={6d} r37={6d} r38={5d} r39={5d} r40={1d,1u} r44={5d} r45={5d} r46={5d} r47={5d} r48={5d} r49={5d} r50={5d} r51={5d} r52={5d} r53={5d} r54={5d} r55={5d} r56={5d} r57={5d} r58={5d} r59={5d} r60={5d} r61={5d} r62={5d} r63={5d} r64={5d} r65={5d} r66={5d} r67={5d} r68={5d} r69={5d} r70={5d} r71={5d} r72={5d} r73={5d} r74={5d} r75={5d} r76={5d} r77={5d} r78={5d} r79={5d} r80={5d} r81={5d} r82={5d} r83={5d} r84={5d} r85={5d} r86={5d} r87={5d} r88={5d} r89={5d} r90={5d} r91={5d} 
+;;    total ref usage 569{473d,95u,1e} in 47{42 regular + 5 call} insns.
+(note 1 0 6 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 3, flags: (RTL, MODIFIED)
+;;  pred:       ENTRY (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 1 [dx] 4 [si] 5 [di] 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 1 [dx] 4 [si] 5 [di] 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags]
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 5 di [ base ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+        (reg:DI 4 si [ power ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])
+        (reg:DI 1 dx [ modulo ])) "libs/algorithms/MathCrypto/mod.cpp":3:67 95 {*movdi_internal}
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":4:5 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":4:5 1458 {*jcc}
+     (nil)
+ -> 28)
+;;  succ:       3 (FALLTHRU)
+;;              5
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+;; basic block 3, loop depth 0, maybe hot
+;;  prev block 2, next block 4, flags: (RTL, MODIFIED)
+;;  pred:       2 (FALLTHRU)
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31] 102 105 106
+(note 10 9 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg:DI 5 di)
+        (const_int 16 [0x10])) "libs/algorithms/MathCrypto/mod.cpp":5:88 95 {*movdi_internal}
+     (nil))
+(call_insn 12 11 14 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_allocate_exception") [flags 0x41]  <function_decl 0x7fe3775cc500 __cxa_allocate_exception>) [0 __cxa_allocate_exception S1 A8])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":5:88 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 12 15 3 (set (reg/f:DI 3 bx [orig:102 _19 ] [102])
+        (reg/f:DI 0 ax [105])) "libs/algorithms/MathCrypto/mod.cpp":5:88 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 3 (set (reg:DI 0 ax [106])
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fe376e4fda8 *.LC0>)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 16 15 17 3 (set (reg:DI 4 si)
+        (reg:DI 0 ax [106])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 17 16 18 3 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 18 17 19 3 (call (mem:QI (symbol_ref:DI ("_ZNSt13runtime_errorC1EPKc") [flags 0x41]  <function_decl 0x7fe378271700 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+;;  succ:       11 (ABNORMAL,ABNORMAL_CALL,EH)
+;;              4 (FALLTHRU)
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 102
+
+;; basic block 4, loop depth 0, maybe hot
+;;  prev block 3, next block 5, flags: (RTL, MODIFIED)
+;;  pred:       3 (FALLTHRU)
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 102
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 102
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31] 107 108 109
+(note 19 18 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 4 (set (reg:DI 0 ax [108])
+        (mem/u/c:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7fe378271c00 __dt_comp >)
+                    ] UNSPEC_GOTPCREL)) [5  S8 A8])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 21 20 22 4 (set (reg:DI 1 dx [107])
+        (reg:DI 0 ax [108])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7fe378271c00 __dt_comp >)
+        (nil)))
+(insn 22 21 24 4 (set (reg:DI 0 ax [109])
+        (symbol_ref:DI ("_ZTISt13runtime_error") [flags 0x40]  <var_decl 0x7fe378207980 _ZTISt13runtime_error>)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 24 22 25 4 (set (reg:DI 4 si)
+        (reg:DI 0 ax [109])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 25 24 26 4 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 95 {*movdi_internal}
+     (nil))
+(call_insn 26 25 27 4 (call (mem:QI (symbol_ref:DI ("__cxa_throw") [flags 0x41]  <function_decl 0x7fe3775cc300 __cxa_throw>) [0 __cxa_throw S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 4 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+;;  succ:      
+;; lr  out 	 7 [sp] 16 [argp] 19 [frame]
+
+(barrier 27 26 28)
+;; basic block 5, loop depth 0, maybe hot
+;;  prev block 4, next block 6, flags: (RTL, MODIFIED)
+;;  pred:       2
+;; bb 5 artificial_defs: { }
+;; bb 5 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags] 111 112 113
+(code_label 28 27 29 5 2 (nil) [1 uses])
+(note 29 28 30 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])
+        (const_int 1 [0x1])) "libs/algorithms/MathCrypto/mod.cpp":7:14 95 {*movdi_internal}
+     (nil))
+(insn 31 30 32 5 (set (reg:DI 0 ax [111])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":8:10 95 {*movdi_internal}
+     (nil))
+(insn 32 31 33 5 (parallel [
+            (set (reg:DI 0 ax [113])
+                (udiv:DI (reg:DI 0 ax [111])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:112 base_11 ] [112])
+                (umod:DI (reg:DI 0 ax [111])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":8:10 652 {*udivmoddi4}
+     (nil))
+(insn 33 32 80 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 1 dx [orig:112 base_11 ] [112])) "libs/algorithms/MathCrypto/mod.cpp":8:10 95 {*movdi_internal}
+     (nil))
+(jump_insn 80 33 81 5 (set (pc)
+        (label_ref 53)) "libs/algorithms/MathCrypto/mod.cpp":9:5 1459 {jump}
+     (nil)
+ -> 53)
+;;  succ:       9 [always]  libs/algorithms/MathCrypto/mod.cpp:9:5
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+(barrier 81 80 55)
+;; basic block 6, loop depth 0, maybe hot
+;;  prev block 5, next block 7, flags: (RTL, MODIFIED)
+;;  pred:       9
+;; bb 6 artificial_defs: { }
+;; bb 6 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags] 98 114
+(code_label 55 81 36 6 5 (nil) [1 uses])
+(note 36 55 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (set (reg:DI 0 ax [114])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":10:19 95 {*movdi_internal}
+     (nil))
+(insn 38 37 39 6 (parallel [
+            (set (reg:DI 0 ax [orig:98 _1 ] [98])
+                (and:DI (reg:DI 0 ax [114])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":10:19 706 {*anddi_1}
+     (expr_list:REG_EQUAL (and:DI (mem/c:DI (plus:DI (reg/f:DI 19 frame)
+                    (const_int -32 [0xffffffffffffffe0])) [4 power+0 S8 A64])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 39 38 40 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 0 ax [orig:98 _1 ] [98])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":10:9 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 40 39 41 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 46)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":10:9 1458 {*jcc}
+     (nil)
+ -> 46)
+;;  succ:       7 (FALLTHRU)
+;;              8
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+;; basic block 7, loop depth 0, maybe hot
+;;  prev block 6, next block 8, flags: (RTL, MODIFIED)
+;;  pred:       6 (FALLTHRU)
+;; bb 7 artificial_defs: { }
+;; bb 7 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags] 99 115 117 118
+(note 41 40 42 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 42 41 43 7 (set (reg:DI 0 ax [115])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":11:30 95 {*movdi_internal}
+     (nil))
+(insn 43 42 44 7 (parallel [
+            (set (reg:DI 0 ax [orig:99 _2 ] [99])
+                (mult:DI (reg:DI 0 ax [115])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":11:30 595 {*muldi3_1}
+     (nil))
+(insn 44 43 45 7 (parallel [
+            (set (reg:DI 0 ax [118])
+                (udiv:DI (reg:DI 0 ax [orig:99 _2 ] [99])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:117 result_15 ] [117])
+                (umod:DI (reg:DI 0 ax [orig:99 _2 ] [99])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":11:20 652 {*udivmoddi4}
+     (nil))
+(insn 45 44 46 7 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])
+        (reg:DI 1 dx [orig:117 result_15 ] [117])) "libs/algorithms/MathCrypto/mod.cpp":11:20 95 {*movdi_internal}
+     (nil))
+;;  succ:       8 (FALLTHRU)
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+;; basic block 8, loop depth 0, maybe hot
+;;  prev block 7, next block 9, flags: (RTL, MODIFIED)
+;;  pred:       6
+;;              7 (FALLTHRU)
+;; bb 8 artificial_defs: { }
+;; bb 8 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags] 100 119 121 122
+(code_label 46 45 47 8 4 (nil) [1 uses])
+(note 47 46 48 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 48 47 49 8 (set (reg:DI 0 ax [119])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":13:22 95 {*movdi_internal}
+     (nil))
+(insn 49 48 50 8 (parallel [
+            (set (reg:DI 0 ax [orig:100 _3 ] [100])
+                (mult:DI (reg:DI 0 ax [119])
+                    (reg:DI 0 ax [119])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":13:22 595 {*muldi3_1}
+     (nil))
+(insn 50 49 51 8 (parallel [
+            (set (reg:DI 0 ax [122])
+                (udiv:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (set (reg:DI 1 dx [orig:121 base_16 ] [121])
+                (umod:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -56 [0xffffffffffffffc8])) [4 modulo+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":13:14 652 {*udivmoddi4}
+     (nil))
+(insn 51 50 52 8 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [4 base+0 S8 A64])
+        (reg:DI 1 dx [orig:121 base_16 ] [121])) "libs/algorithms/MathCrypto/mod.cpp":13:14 95 {*movdi_internal}
+     (nil))
+(insn 52 51 53 8 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+                (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/algorithms/MathCrypto/mod.cpp":14:15 1183 {*lshrdi3_1}
+     (nil))
+;;  succ:       9 (FALLTHRU,DFS_BACK)
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+;; basic block 9, loop depth 0, maybe hot
+;;  prev block 8, next block 10, flags: (RTL, MODIFIED)
+;;  pred:       8 (FALLTHRU,DFS_BACK)
+;;              5 [always]  libs/algorithms/MathCrypto/mod.cpp:9:5
+;; bb 9 artificial_defs: { }
+;; bb 9 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 17 [flags]
+(code_label 53 52 54 9 3 (nil) [1 uses])
+(note 54 53 56 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 56 54 57 9 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -48 [0xffffffffffffffd0])) [4 power+0 S8 A64])
+            (const_int 0 [0]))) "libs/algorithms/MathCrypto/mod.cpp":9:18 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 57 56 58 9 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 55)
+            (pc))) "libs/algorithms/MathCrypto/mod.cpp":9:18 1458 {*jcc}
+     (nil)
+ -> 55)
+;;  succ:       6
+;;              10 (FALLTHRU)
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+;; basic block 10, loop depth 0, maybe hot
+;;  prev block 9, next block 11, flags: (RTL, MODIFIED)
+;;  pred:       9 (FALLTHRU)
+;; bb 10 artificial_defs: { }
+;; bb 10 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;; lr  def 	 101 104
+(note 58 57 59 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 83 10 (set (reg:DI 0 ax [orig:101 _13 ] [101])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [4 result+0 S8 A64])) "libs/algorithms/MathCrypto/mod.cpp":16:12 95 {*movdi_internal}
+     (nil))
+(jump_insn 83 59 84 10 (set (pc)
+        (label_ref 82)) "libs/algorithms/MathCrypto/mod.cpp":16:12 1459 {jump}
+     (nil)
+ -> 82)
+;;  succ:       12 [always]  libs/algorithms/MathCrypto/mod.cpp:16:12
+;; lr  out 	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 104
+
+(barrier 84 83 77)
+;; basic block 11, loop depth 0, maybe hot
+;;  prev block 10, next block 12, flags: (RTL, MODIFIED)
+;;  pred:       3 (ABNORMAL,ABNORMAL_CALL,EH)
+;; bb 11 artificial_defs: { d-1(0){ }d-1(1){ }}
+;; bb 11 artificial_uses: { u-1(6){ }u-1(7){ }u-1(16){ }u-1(19){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 102
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 102
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31] 103 124
+(code_label/s 77 84 79 11 8 (nil) [1 uses])
+(note 79 77 78 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 78 79 67 11 (set (reg:DI 40 r12 [124])
+        (reg:DI 0 ax)) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 95 {*movdi_internal}
+     (nil))
+(insn 67 78 68 11 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:102 _19 ] [102])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 95 {*movdi_internal}
+     (nil))
+(call_insn 68 67 69 11 (call (mem:QI (symbol_ref:DI ("__cxa_free_exception") [flags 0x41]  <function_decl 0x7fe3775ccf00 __cxa_free_exception>) [0 __cxa_free_exception S1 A8])
+        (const_int 0 [0])) "libs/algorithms/MathCrypto/mod.cpp":5:88 discrim 3 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 69 68 70 11 (set (reg/f:DI 0 ax [orig:103 D.67866 ] [103])
+        (reg:DI 40 r12 [124])) 95 {*movdi_internal}
+     (nil))
+(insn 70 69 71 11 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:103 D.67866 ] [103])) 95 {*movdi_internal}
+     (nil))
+(call_insn 71 70 72 11 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7fe37ab9cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+;;  succ:      
+;; lr  out 	 7 [sp] 16 [argp] 19 [frame]
+
+(barrier 72 71 82)
+;; basic block 12, loop depth 0, maybe hot
+;;  prev block 11, next block 1, flags: (RTL, MODIFIED)
+;;  pred:       10 [always]  libs/algorithms/MathCrypto/mod.cpp:16:12
+;; bb 12 artificial_defs: { }
+;; bb 12 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 104
+;; lr  use 	 6 [bp] 7 [sp] 16 [argp] 19 [frame] 104
+;; lr  def 	 0 [ax]
+(code_label 82 72 76 12 9 (nil) [1 uses])
+(note 76 82 75 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 75 76 85 12 (use (reg/i:DI 0 ax)) "libs/algorithms/MathCrypto/mod.cpp":17:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+
+(note 85 75 0 NOTE_INSN_DELETED)

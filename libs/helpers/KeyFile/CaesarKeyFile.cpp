@@ -1,5 +1,4 @@
 #include "KeyFile.h"
-#include <vector>
 
 void SaveCaesarKeyToFile(const string& filePath, const CaesarKey& key) {
     vector<uint64_t> keyNumbers = {CaesarAlgorithmId, key.shift};

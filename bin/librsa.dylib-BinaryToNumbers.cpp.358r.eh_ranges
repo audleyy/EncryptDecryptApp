@@ -1,0 +1,639 @@
+
+;; Function BinaryToNumbers (_Z15BinaryToNumbersRKSt6vectorIhSaIhEE, funcdef_no=1775, decl_uid=40340, cgraph_uid=385, symbol_order=384)
+
+
+
+BinaryToNumbers
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9] 40 [r12]
+;;  exit block uses 	 0 [ax] 3 [bx] 6 [bp] 7 [sp] 19 [frame] 40 [r12]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags] 40 [r12]
+;;  ref usage 	r0={42d,35u,1e} r1={19d,5u} r2={13d,1u} r3={5d,6u} r4={15d,4u} r5={23d,12u} r6={3d,55u} r7={9d,37u} r8={11d} r9={11d} r10={11d} r11={11d} r12={11d} r13={11d} r14={11d} r15={11d} r16={2u} r17={23d,5u} r18={11d} r19={1d,3u,1e} r20={12d} r21={12d} r22={12d} r23={12d} r24={12d} r25={12d} r26={12d} r27={12d} r28={11d} r29={11d} r30={11d} r31={11d} r32={11d} r33={11d} r34={11d} r35={11d} r36={12d} r37={12d} r38={11d} r39={11d} r40={3d,3u} r44={11d} r45={11d} r46={11d} r47={11d} r48={11d} r49={11d} r50={11d} r51={11d} r52={11d} r53={11d} r54={11d} r55={11d} r56={11d} r57={11d} r58={11d} r59={11d} r60={11d} r61={11d} r62={11d} r63={11d} r64={11d} r65={11d} r66={11d} r67={11d} r68={11d} r69={11d} r70={11d} r71={11d} r72={11d} r73={11d} r74={11d} r75={11d} r76={11d} r77={11d} r78={11d} r79={11d} r80={11d} r81={11d} r82={11d} r83={11d} r84={11d} r85={11d} r86={11d} r87={11d} r88={11d} r89={11d} r90={11d} r91={11d} 
+;;    total ref usage 1183{1013d,168u,2e} in 103{92 regular + 11 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 167 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 167 5 168 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/helpers/BinaryToNumbers.cpp":3:64 -1
+     (nil))
+(insn/f 168 167 169 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/helpers/BinaryToNumbers.cpp":3:64 -1
+     (nil))
+(insn/f 169 168 170 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 40 r12)) "libs/helpers/BinaryToNumbers.cpp":3:64 -1
+     (nil))
+(insn/f 170 169 171 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/helpers/BinaryToNumbers.cpp":3:64 -1
+     (nil))
+(insn/f 171 170 172 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -96 [0xffffffffffffffa0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/BinaryToNumbers.cpp":3:64 -1
+     (nil))
+(note 172 171 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 172 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [30 .result_ptr+0 S8 A64])
+        (reg:DI 5 di [ .result_ptr ])) "libs/helpers/BinaryToNumbers.cpp":3:64 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -112 [0xffffffffffffff90])) [32 bytes+0 S8 A64])
+        (reg:DI 4 si [ bytes ])) "libs/helpers/BinaryToNumbers.cpp":3:64 95 {*movdi_internal}
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 9 2 (set (reg:DI 0 ax [115])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [34 <retval>+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":4:22 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [115])) "libs/helpers/BinaryToNumbers.cpp":4:22 95 {*movdi_internal}
+     (nil))
+(call_insn 10 9 11 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorImSaImEEC1Ev") [flags 0x3]  <function_decl 0x7ffaed981900 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":4:22 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 11 10 12 2 (set (reg:DI 0 ax [116])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -112 [0xffffffffffffff90])) [32 bytes+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":5:19 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [116])) "libs/helpers/BinaryToNumbers.cpp":5:19 95 {*movdi_internal}
+     (nil))
+(call_insn 13 12 15 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE4sizeEv") [flags 0x3]  <function_decl 0x7ffaed9cfd00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":5:19 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 13 16 2 (parallel [
+            (set (reg:DI 0 ax [orig:99 _2 ] [99])
+                (and:DI (reg:DI 0 ax [orig:98 _1 ] [98])
+                    (const_int 7 [0x7])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/BinaryToNumbers.cpp":5:22 discrim 1 706 {*anddi_1}
+     (nil))
+(insn 16 15 17 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 0 ax [orig:99 _2 ] [99])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":5:41 discrim 1 12 {*cmpdi_ccno_1}
+     (nil))
+(insn 17 16 18 2 (set (reg:QI 0 ax [orig:102 retval.0_18 ] [102])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":5:41 discrim 1 1452 {*setcc_qi}
+     (nil))
+(insn 18 17 19 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:102 retval.0_18 ] [102])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":5:5 discrim 1 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 19 18 20 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "libs/helpers/BinaryToNumbers.cpp":5:5 discrim 1 1458 {*jcc}
+     (nil)
+ -> 38)
+(note 20 19 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 3 (set (reg:DI 5 di)
+        (const_int 16 [0x10])) "libs/helpers/BinaryToNumbers.cpp":6:89 95 {*movdi_internal}
+     (nil))
+(call_insn 22 21 24 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_allocate_exception") [flags 0x41]  <function_decl 0x7ffaed9f1100 __cxa_allocate_exception>) [0 __cxa_allocate_exception S1 A8])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":6:89 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 24 22 25 3 (set (reg/f:DI 3 bx [orig:104 _41 ] [104])
+        (reg/f:DI 0 ax [117])) "libs/helpers/BinaryToNumbers.cpp":6:89 95 {*movdi_internal}
+     (nil))
+(insn 25 24 26 3 (set (reg:DI 0 ax [118])
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7ffaed2107b8 *.LC0>)) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 26 25 27 3 (set (reg:DI 4 si)
+        (reg:DI 0 ax [118])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 27 26 183 3 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:104 _41 ] [104])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 183 27 28 3 0 NOTE_INSN_EH_REGION_BEG)
+(call_insn 28 183 184 3 (call (mem:QI (symbol_ref:DI ("_ZNSt13runtime_errorC1EPKc") [flags 0x41]  <function_decl 0x7ffaeda73500 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 184 28 29 0 NOTE_INSN_EH_REGION_END)
+(note 29 184 30 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 4 (set (reg:DI 0 ax [120])
+        (mem/u/c:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7ffaeda73a00 __dt_comp >)
+                    ] UNSPEC_GOTPCREL)) [35  S8 A8])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 31 30 32 4 (set (reg:DI 1 dx [119])
+        (reg:DI 0 ax [120])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 95 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt13runtime_errorD1Ev") [flags 0x41]  <function_decl 0x7ffaeda73a00 __dt_comp >)
+        (nil)))
+(insn 32 31 34 4 (set (reg:DI 0 ax [121])
+        (symbol_ref:DI ("_ZTISt13runtime_error") [flags 0x40]  <var_decl 0x7ffaeda08a18 _ZTISt13runtime_error>)) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 34 32 35 4 (set (reg:DI 4 si)
+        (reg:DI 0 ax [121])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 35 34 185 4 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:104 _41 ] [104])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 95 {*movdi_internal}
+     (nil))
+(note 185 35 36 4 1 NOTE_INSN_EH_REGION_BEG)
+(call_insn 36 185 37 4 (call (mem:QI (symbol_ref:DI ("__cxa_throw") [flags 0x41]  <function_decl 0x7ffaed9f1000 __cxa_throw>) [0 __cxa_throw S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 4 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+            (expr_list:REG_NORETURN (const_int 0 [0])
+                (nil))))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(barrier 37 36 38)
+(code_label 38 37 39 5 8 (nil) [1 uses])
+(note 39 38 40 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [16 value+0 S8 A64])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":8:14 95 {*movdi_internal}
+     (nil))
+(insn 41 40 42 5 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":9:9 96 {*movsi_internal}
+     (nil))
+(insn 42 41 43 5 (set (reg/f:DI 0 ax [122])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -112 [0xffffffffffffff90])) [32 bytes+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":10:25 95 {*movdi_internal}
+     (nil))
+(insn 43 42 44 5 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [32 __for_range+0 S8 A64])
+        (reg/f:DI 0 ax [122])) "libs/helpers/BinaryToNumbers.cpp":10:25 95 {*movdi_internal}
+     (nil))
+(insn 44 43 45 5 (set (reg:DI 0 ax [123])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [32 __for_range+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":10:25 95 {*movdi_internal}
+     (nil))
+(insn 45 44 46 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [123])) "libs/helpers/BinaryToNumbers.cpp":10:25 95 {*movdi_internal}
+     (nil))
+(call_insn 46 45 49 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE5beginEv") [flags 0x3]  <function_decl 0x7ffaed9cf200 begin>) [0 begin S1 A8])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":10:25 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 49 46 50 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [6 __for_begin+0 S8 A64])
+        (reg:DI 0 ax [125])) "libs/helpers/BinaryToNumbers.cpp":10:25 95 {*movdi_internal}
+     (nil))
+(insn 50 49 51 5 (set (reg:DI 0 ax [126])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [32 __for_range+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 51 50 52 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [126])) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 52 51 55 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE3endEv") [flags 0x3]  <function_decl 0x7ffaed9cf400 end>) [0 end S1 A8])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 55 52 153 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -88 [0xffffffffffffffa8])) [6 __for_end+0 S8 A64])
+        (reg:DI 0 ax [128])) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(jump_insn 153 55 154 5 (set (pc)
+        (label_ref 94)) "libs/helpers/BinaryToNumbers.cpp":10:5 1459 {jump}
+     (nil)
+ -> 94)
+(barrier 154 153 115)
+(code_label 115 154 58 6 16 (nil) [1 uses])
+(note 58 115 59 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 63 6 (set (reg/f:DI 0 ax [orig:105 D.47566 ] [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [5 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1090:17 95 {*movdi_internal}
+     (nil))
+(insn 63 59 64 6 (set (reg:QI 0 ax [129])
+        (mem:QI (reg/f:DI 0 ax [orig:105 D.47566 ] [105]) [0 *_3+0 S1 A8])) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 64 63 65 6 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -41 [0xffffffffffffffd7])) [0 byte+0 S1 A8])
+        (reg:QI 0 ax [129])) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 65 64 66 6 (set (reg:DI 0 ax [130])
+        (zero_extend:DI (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -41 [0xffffffffffffffd7])) [0 byte+0 S1 A8]))) "libs/helpers/BinaryToNumbers.cpp":11:18 176 {zero_extendqidi2}
+     (nil))
+(insn 66 65 67 6 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [16 part+0 S8 A64])
+        (reg:DI 0 ax [130])) "libs/helpers/BinaryToNumbers.cpp":11:18 95 {*movdi_internal}
+     (nil))
+(insn 67 66 68 6 (set (reg:SI 0 ax [131])
+        (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])) "libs/helpers/BinaryToNumbers.cpp":12:23 96 {*movsi_internal}
+     (nil))
+(insn 68 67 166 6 (set (reg:DI 1 dx [132])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [16 part+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":12:23 95 {*movdi_internal}
+     (nil))
+(insn 166 68 69 6 (set (reg:QI 2 cx [145])
+        (reg:QI 0 ax [131])) "libs/helpers/BinaryToNumbers.cpp":12:23 98 {*movqi_internal}
+     (nil))
+(insn 69 166 165 6 (parallel [
+            (set (reg:DI 1 dx [132])
+                (ashift:DI (reg:DI 1 dx [132])
+                    (reg:QI 2 cx [145])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/BinaryToNumbers.cpp":12:23 1091 {*ashldi3_1}
+     (expr_list:REG_EQUAL (ashift:DI (mem/c:DI (plus:DI (reg/f:DI 19 frame)
+                    (const_int -40 [0xffffffffffffffd8])) [16 part+0 S8 A64])
+            (subreg:QI (reg:SI 0 ax [131]) 0))
+        (nil)))
+(insn 165 69 70 6 (set (reg:DI 0 ax [orig:100 _4 ] [100])
+        (reg:DI 1 dx [132])) "libs/helpers/BinaryToNumbers.cpp":12:23 95 {*movdi_internal}
+     (nil))
+(insn 70 165 71 6 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -24 [0xffffffffffffffe8])) [16 value+0 S8 A64])
+                (ior:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -24 [0xffffffffffffffe8])) [16 value+0 S8 A64])
+                    (reg:DI 0 ax [orig:100 _4 ] [100])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/BinaryToNumbers.cpp":12:15 832 {*iordi_1}
+     (nil))
+(insn 71 70 72 6 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/BinaryToNumbers.cpp":13:15 283 {*addsi_1}
+     (nil))
+(insn 72 71 73 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])
+            (const_int 64 [0x40]))) "libs/helpers/BinaryToNumbers.cpp":14:9 15 {*cmpsi_1}
+     (nil))
+(jump_insn 73 72 74 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 85)
+            (pc))) "libs/helpers/BinaryToNumbers.cpp":14:9 1458 {*jcc}
+     (nil)
+ -> 85)
+(note 74 73 75 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 7 (set (reg:DI 0 ax [133])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [16 value+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":15:22 95 {*movdi_internal}
+     (nil))
+(insn 76 75 182 7 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -96 [0xffffffffffffffa0])) [16 number+0 S8 A64])
+        (reg:DI 0 ax [133])) "libs/helpers/BinaryToNumbers.cpp":15:22 95 {*movdi_internal}
+     (nil))
+(insn 182 76 78 7 (set (reg:DI 1 dx [134])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/BinaryToNumbers.cpp":16:30 265 {*leadi}
+     (nil))
+(insn 78 182 79 7 (set (reg:DI 0 ax [135])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [34 <retval>+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":16:30 95 {*movdi_internal}
+     (nil))
+(insn 79 78 80 7 (set (reg:DI 4 si)
+        (reg:DI 1 dx [134])) "libs/helpers/BinaryToNumbers.cpp":16:30 95 {*movdi_internal}
+     (nil))
+(insn 80 79 81 7 (set (reg:DI 5 di)
+        (reg:DI 0 ax [135])) "libs/helpers/BinaryToNumbers.cpp":16:30 95 {*movdi_internal}
+     (nil))
+(call_insn 81 80 186 7 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorImSaImEE9push_backERKm") [flags 0x3]  <function_decl 0x7ffaed963d00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":16:30 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 186 81 82 1 NOTE_INSN_EH_REGION_END)
+(note 82 186 83 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 83 82 84 8 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [16 value+0 S8 A64])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":17:19 95 {*movdi_internal}
+     (nil))
+(insn 84 83 85 8 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -28 [0xffffffffffffffe4])) [31 shift+0 S4 A32])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":18:19 96 {*movsi_internal}
+     (nil))
+(code_label 85 84 86 9 11 (nil) [1 uses])
+(note 86 85 87 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 87 86 88 9 (set (reg/f:DI 0 ax [orig:106 _47 ] [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [5 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1103:4 95 {*movdi_internal}
+     (nil))
+(insn 88 87 89 9 (parallel [
+            (set (reg/f:DI 0 ax [orig:107 _48 ] [107])
+                (plus:DI (reg/f:DI 0 ax [orig:106 _47 ] [106])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 285 {*adddi_1}
+     (nil))
+(insn 89 88 162 9 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -80 [0xffffffffffffffb0])) [5 __for_begin._M_current+0 S8 A64])
+        (reg/f:DI 0 ax [orig:107 _48 ] [107])) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 95 {*movdi_internal}
+     (nil))
+(insn 162 89 94 9 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_iterator.h":1104:10 1495 {nop}
+     (nil))
+(code_label 94 162 95 10 9 (nil) [1 uses])
+(note 95 94 180 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 180 95 97 10 (set (reg:DI 0 ax [136])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -80 [0xffffffffffffffb0]))) 265 {*leadi}
+     (nil))
+(insn 97 180 98 10 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [33 this+0 S8 A64])
+        (reg:DI 0 ax [136])) 95 {*movdi_internal}
+     (nil))
+(insn 98 97 102 10 (set (reg/f:DI 0 ax [orig:109 _51 ] [109])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [33 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 102 98 181 10 (set (reg/f:DI 1 dx [orig:110 _54 ] [110])
+        (mem/f:DI (reg/f:DI 0 ax [orig:109 _51 ] [109]) [5 *_53+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 181 102 104 10 (set (reg:DI 0 ax [137])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -88 [0xffffffffffffffa8]))) 265 {*leadi}
+     (nil))
+(insn 104 181 105 10 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [33 this+0 S8 A64])
+        (reg:DI 0 ax [137])) 95 {*movdi_internal}
+     (nil))
+(insn 105 104 109 10 (set (reg/f:DI 0 ax [orig:111 _56 ] [111])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -72 [0xffffffffffffffb8])) [33 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 109 105 110 10 (set (reg/f:DI 0 ax [orig:112 _59 ] [112])
+        (mem/f:DI (reg/f:DI 0 ax [orig:111 _56 ] [111]) [5 *_58+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 110 109 111 10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 1 dx [orig:110 _54 ] [110])
+            (reg/f:DI 0 ax [orig:112 _59 ] [112]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 16 {*cmpdi_1}
+     (nil))
+(insn 111 110 116 10 (set (reg:QI 0 ax [orig:113 D.47579 ] [113])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 1452 {*setcc_qi}
+     (nil))
+(insn 116 111 117 10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:113 D.47579 ] [113])
+            (const_int 0 [0]))) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 7 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 117 116 155 10 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 115)
+            (pc))) "libs/helpers/BinaryToNumbers.cpp":10:25 discrim 7 1458 {*jcc}
+     (nil)
+ -> 115)
+(note 155 117 157 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 157 155 158 11 (set (pc)
+        (label_ref 156)) "libs/helpers/BinaryToNumbers.cpp":21:12 1459 {jump}
+     (nil)
+ -> 156)
+(barrier 158 157 143)
+(code_label/s 143 158 146 12 20 (nil) [1 uses])
+(note 146 143 144 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 144 146 126 12 (set (reg:DI 40 r12 [139])
+        (reg:DI 0 ax)) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 3 95 {*movdi_internal}
+     (nil))
+(insn 126 144 127 12 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:104 _41 ] [104])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 3 95 {*movdi_internal}
+     (nil))
+(call_insn 127 126 128 12 (call (mem:QI (symbol_ref:DI ("__cxa_free_exception") [flags 0x41]  <function_decl 0x7ffaed9f1200 __cxa_free_exception>) [0 __cxa_free_exception S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":6:89 discrim 3 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 128 127 159 12 (set (reg:DI 3 bx [138])
+        (reg:DI 40 r12 [139])) 95 {*movdi_internal}
+     (nil))
+(jump_insn 159 128 160 12 (set (pc)
+        (label_ref 130)) 1459 {jump}
+     (nil)
+ -> 130)
+(barrier 160 159 147)
+(code_label/s 147 160 152 13 21 (nil) [1 uses])
+(note 152 147 148 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 148 152 130 13 (set (reg:DI 3 bx [138])
+        (reg:DI 0 ax)) "libs/helpers/BinaryToNumbers.cpp":22:1 95 {*movdi_internal}
+     (nil))
+(code_label 130 148 131 14 19 (nil) [1 uses])
+(note 131 130 132 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 132 131 133 14 (set (reg:DI 0 ax [142])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [34 <retval>+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":22:1 95 {*movdi_internal}
+     (nil))
+(insn 133 132 134 14 (set (reg:DI 5 di)
+        (reg:DI 0 ax [142])) "libs/helpers/BinaryToNumbers.cpp":22:1 95 {*movdi_internal}
+     (nil))
+(call_insn 134 133 135 14 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorImSaImEED1Ev") [flags 0x3]  <function_decl 0x7ffaed981b00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/BinaryToNumbers.cpp":22:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 135 134 136 14 (set (reg/f:DI 0 ax [orig:114 D.47586 ] [114])
+        (reg:DI 3 bx [138])) 95 {*movdi_internal}
+     (nil))
+(insn 136 135 187 14 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:114 D.47586 ] [114])) 95 {*movdi_internal}
+     (nil))
+(note 187 136 137 14 2 NOTE_INSN_EH_REGION_BEG)
+(call_insn 137 187 188 14 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7ffaef99cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 188 137 138 2 NOTE_INSN_EH_REGION_END)
+(barrier 138 188 156)
+(code_label 156 138 142 15 22 (nil) [1 uses])
+(note 142 156 140 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 140 142 141 15 (set (reg/i:DI 0 ax)
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [34 <retval>+0 S8 A64])) "libs/helpers/BinaryToNumbers.cpp":22:1 95 {*movdi_internal}
+     (nil))
+(insn 141 140 173 15 (use (reg/i:DI 0 ax)) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (nil))
+(note 173 141 174 15 NOTE_INSN_EPILOGUE_BEG)
+(insn 174 173 175 15 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 96 [0x60])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (nil))
+(insn 175 174 176 15 (set (reg:DI 3 bx)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (nil))
+(insn 176 175 177 15 (set (reg:DI 40 r12)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (nil))
+(insn/f 177 176 178 15 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 178 177 179 15 (simple_return) "libs/helpers/BinaryToNumbers.cpp":22:1 -1
+     (nil)
+ -> simple_return)
+(barrier 179 178 163)
+(note 163 179 0 NOTE_INSN_DELETED)
+
+;; Function std::_Vector_base<long unsigned int, std::allocator<long unsigned int> >::~_Vector_base (_ZNSt12_Vector_baseImSaImEED2Ev, funcdef_no=2073, decl_uid=40836, cgraph_uid=664, symbol_order=663)
+
+
+
+std::_Vector_base<long unsigned int, std::allocator<long unsigned int> >::~_Vector_base
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={11d,8u} r1={6d,3u,1e} r2={4d,1u} r4={4d,1u} r5={5d,3u} r6={3d,11u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={5d} r18={2d} r19={1d,1u} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} r81={2d} r82={2d} r83={2d} r84={2d} r85={2d} r86={2d} r87={2d} r88={2d} r89={2d} r90={2d} r91={2d} 
+;;    total ref usage 245{207d,37u,1e} in 24{22 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 31 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 31 4 32 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 32 31 33 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 33 32 34 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(note 34 33 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 34 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/stl_vector.h":373:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg/f:DI 1 dx [orig:98 _1 ] [98])
+        (mem/f:DI (plus:DI (reg/f:DI 0 ax [105])
+                (const_int 16 [0x10])) [13 this_9(D)->_M_impl.D.40733._M_end_of_storage+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg/f:DI 0 ax [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:99 _2 ] [99])
+        (mem/f:DI (reg/f:DI 0 ax [106]) [13 this_9(D)->_M_impl.D.40733._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 10 9 29 2 (parallel [
+            (set (reg:DI 1 dx [orig:100 _3 ] [100])
+                (minus:DI (reg/f:DI 1 dx [orig:98 _1 ] [98])
+                    (reg/f:DI 0 ax [orig:99 _2 ] [99])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":376:35 391 {*subdi_1}
+     (nil))
+(insn 29 10 11 2 (set (reg:DI 0 ax [orig:100 _3 ] [100])
+        (reg:DI 1 dx [orig:100 _3 ] [100])) "/usr/include/c++/15/bits/stl_vector.h":376:35 95 {*movdi_internal}
+     (nil))
+(insn 11 29 13 2 (parallel [
+            (set (reg:DI 0 ax [orig:100 _3 ] [100])
+                (ashiftrt:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":376:35 1178 {*ashrdi3_1}
+     (expr_list:REG_EQUAL (div:DI (reg:DI 1 dx [orig:100 _3 ] [100])
+            (const_int 8 [0x8]))
+        (nil)))
+(insn 13 11 14 2 (set (reg:DI 1 dx [orig:102 _5 ] [102])
+        (reg:DI 0 ax [orig:101 _4 ] [101])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 14 13 15 2 (set (reg/f:DI 0 ax [108])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 2 (set (reg/f:DI 2 cx [orig:103 _6 ] [103])
+        (mem/f:DI (reg/f:DI 0 ax [108]) [13 this_9(D)->_M_impl.D.40733._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 16 15 18 2 (set (reg:DI 0 ax [109])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 18 16 19 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:103 _6 ] [103])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [109])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(call_insn 20 19 21 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseImSaImEE13_M_deallocateEPmm") [flags 0x3]  <function_decl 0x7ffaed944e00 _M_deallocate>) [0 _M_deallocate S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":375:15 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 21 20 22 2 (set (reg/f:DI 0 ax [orig:104 _7 ] [104])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [18 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:104 _7 ] [104])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(call_insn 23 22 27 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseImSaImEE12_Vector_implD1Ev") [flags 0x3]  <function_decl 0x7ffaed949a00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":377:7 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 27 23 35 2 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_vector.h":377:7 1495 {nop}
+     (nil))
+(note 35 27 36 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 36 35 37 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 37 36 38 2 (simple_return) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (nil)
+ -> simple_return)
+(barrier 38 37 28)
+(note 28 38 0 NOTE_INSN_DELETED)

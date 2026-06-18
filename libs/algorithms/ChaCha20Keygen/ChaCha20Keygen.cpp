@@ -1,7 +1,4 @@
 #include "ChaCha20Keygen.h"
-#include <random>
-
-using namespace std;
 
 ChaCha20Key GenerateRandomChaCha20Key() {
     random_device hardwareRandomDevice;

@@ -1,6 +1,4 @@
 #include "Shamir.h"
-#include "../../helpers/ConvertUtils.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t CalculateShamirX3(uint64_t x2Value, uint64_t daValue, uint64_t primeValue) {
     return modBinary(x2Value, daValue, primeValue);

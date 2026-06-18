@@ -1,5 +1,4 @@
 #include "RsaKeygen.h"
-#include "../MathCrypto/CryptoUtils.h"
 
 uint64_t CalculateRsaModule(uint64_t pValue, uint64_t qValue) {
     return pValue * qValue;

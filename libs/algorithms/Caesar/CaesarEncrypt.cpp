@@ -1,4 +1,3 @@
-
 #include "CaesarEncrypt.h"
 
 using namespace std;

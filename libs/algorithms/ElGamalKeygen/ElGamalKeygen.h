@@ -1,6 +1,8 @@
 #ifndef EL_GAMAL_KEYGEN_H
 #define EL_GAMAL_KEYGEN_H
 
+#include "../DiffieHellman/DiffieHellman.h"
+#include "../MathCrypto/CryptoUtils.h"
 #include <cstdint>
 #include <stdexcept>
 #include <string>

@@ -3,6 +3,7 @@
 
 #include "../../libs/helpers/BinaryFile.h"
 #include <fstream>
+#include <stdexcept>
 
 using namespace std;
 

@@ -1,6 +1,11 @@
 #ifndef SHAMIR_H
 #define SHAMIR_H
 
+#include "../../helpers/ConvertUtils.h"
+#include "../MathCrypto/CryptoUtils.h"
+
+#include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <stdexcept>
 #include <string>

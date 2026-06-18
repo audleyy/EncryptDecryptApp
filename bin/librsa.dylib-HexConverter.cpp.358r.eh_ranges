@@ -1,0 +1,1852 @@
+
+;; Function BytesToHex (_Z10BytesToHexB5cxx11RKSt6vectorIhSaIhEE, funcdef_no=1776, decl_uid=40349, cgraph_uid=370, symbol_order=369)
+
+
+
+BytesToHex
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 0 [ax] 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={56d,44u} r1={27d,7u} r2={19d,1u} r3={4d,4u} r4={24d,7u} r5={35d,18u} r6={3d,53u} r7={5d,35u} r8={17d} r9={17d} r10={17d} r11={17d} r12={17d} r13={17d} r14={17d} r15={17d} r16={2u} r17={23d,2u} r18={17d} r19={1d,3u,1e} r20={18d} r21={18d} r22={18d} r23={18d} r24={18d} r25={18d} r26={18d} r27={18d} r28={17d} r29={17d} r30={17d} r31={17d} r32={17d} r33={17d} r34={17d} r35={17d} r36={18d} r37={18d} r38={17d} r39={17d} r44={17d} r45={17d} r46={17d} r47={17d} r48={17d} r49={17d} r50={17d} r51={17d} r52={17d} r53={17d} r54={17d} r55={17d} r56={17d} r57={17d} r58={17d} r59={17d} r60={17d} r61={17d} r62={17d} r63={17d} r64={17d} r65={17d} r66={17d} r67={17d} r68={17d} r69={17d} r70={17d} r71={17d} r72={17d} r73={17d} r74={17d} r75={17d} r76={17d} r77={17d} r78={17d} r79={17d} r80={17d} r81={17d} r82={17d} r83={17d} r84={17d} r85={17d} r86={17d} r87={17d} r88={17d} r89={17d} r90={17d} r91={17d} 
+;;    total ref usage 1693{1516d,176u,1e} in 114{97 regular + 17 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 178 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 178 5 179 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/helpers/HexConverter.cpp":15:49 -1
+     (nil))
+(insn/f 179 178 180 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/helpers/HexConverter.cpp":15:49 -1
+     (nil))
+(insn/f 180 179 181 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/helpers/HexConverter.cpp":15:49 -1
+     (nil))
+(insn/f 181 180 182 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -120 [0xffffffffffffff88])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/HexConverter.cpp":15:49 -1
+     (nil))
+(note 182 181 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 182 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [15 .result_ptr+0 S8 A64])
+        (reg:DI 5 di [ .result_ptr ])) "libs/helpers/HexConverter.cpp":15:49 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -128 [0xffffffffffffff80])) [29 bytes+0 S8 A64])
+        (reg:DI 4 si [ bytes ])) "libs/helpers/HexConverter.cpp":15:49 95 {*movdi_internal}
+     (nil))
+(note 4 3 197 2 NOTE_INSN_FUNCTION_BEG)
+(insn 197 4 9 2 (set (reg:DI 0 ax [123])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -57 [0xffffffffffffffc7]))) 265 {*leadi}
+     (nil))
+(insn 9 197 164 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [30 this+0 S8 A64])
+        (reg:DI 0 ax [123])) 95 {*movdi_internal}
+     (nil))
+(insn 164 9 165 2 (const_int 0 [0]) "/usr/include/c++/15/bits/new_allocator.h":88:49 1495 {nop}
+     (nil))
+(insn 165 164 198 2 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":168:38 1495 {nop}
+     (nil))
+(insn 198 165 13 2 (set (reg:DI 1 dx [124])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -57 [0xffffffffffffffc7]))) "libs/helpers/HexConverter.cpp":16:27 discrim 1 265 {*leadi}
+     (nil))
+(insn 13 198 199 2 (set (reg:DI 2 cx [125])
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f2de9e7fa18 *.LC0>)) "libs/helpers/HexConverter.cpp":16:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 199 13 16 2 (set (reg:DI 0 ax [126])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/HexConverter.cpp":16:27 discrim 1 265 {*leadi}
+     (nil))
+(insn 16 199 17 2 (set (reg:DI 4 si)
+        (reg:DI 2 cx [125])) "libs/helpers/HexConverter.cpp":16:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 17 16 200 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [126])) "libs/helpers/HexConverter.cpp":16:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 200 17 18 2 0 NOTE_INSN_EH_REGION_BEG)
+(call_insn 18 200 201 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_") [flags 0x3]  <function_decl 0x7f2deaa99c00 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":16:27 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(note 201 18 19 0 NOTE_INSN_EH_REGION_END)
+(note 19 201 195 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 195 19 21 3 (set (reg:DI 0 ax [127])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -57 [0xffffffffffffffc7]))) "/usr/include/c++/15/bits/allocator.h":189:39 265 {*leadi}
+     (nil))
+(insn 21 195 22 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [127])) "/usr/include/c++/15/bits/allocator.h":189:39 95 {*movdi_internal}
+     (nil))
+(call_insn 22 21 166 3 (call (mem:QI (symbol_ref/i:DI ("_ZNSt15__new_allocatorIcED2Ev") [flags 0x3]  <function_decl 0x7f2deb66c600 __dt_base >) [0 __dt_base  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/allocator.h":189:39 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 166 22 24 3 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":189:39 1495 {nop}
+     (nil))
+(insn 24 166 25 3 (set (reg:DI 0 ax [128])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":17:12 95 {*movdi_internal}
+     (nil))
+(insn 25 24 26 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [128])) "libs/helpers/HexConverter.cpp":17:12 95 {*movdi_internal}
+     (nil))
+(call_insn 26 25 27 3 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev") [flags 0x3]  <function_decl 0x7f2deaf7ac00 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":17:12 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 27 26 28 3 (set (reg:DI 0 ax [129])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -128 [0xffffffffffffff80])) [29 bytes+0 S8 A64])) "libs/helpers/HexConverter.cpp":18:28 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [129])) "libs/helpers/HexConverter.cpp":18:28 95 {*movdi_internal}
+     (nil))
+(call_insn 29 28 196 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE4sizeEv") [flags 0x3]  <function_decl 0x7f2dea562c00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":18:28 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 196 29 32 3 (set (reg:DI 1 dx [orig:99 _2 ] [99])
+        (mult:DI (reg:DI 0 ax [orig:98 _1 ] [98])
+            (const_int 2 [0x2]))) "libs/helpers/HexConverter.cpp":18:17 discrim 1 265 {*leadi}
+     (nil))
+(insn 32 196 33 3 (set (reg:DI 0 ax [130])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":18:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 33 32 34 3 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:99 _2 ] [99])) "libs/helpers/HexConverter.cpp":18:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 34 33 202 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [130])) "libs/helpers/HexConverter.cpp":18:17 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 202 34 35 3 1 NOTE_INSN_EH_REGION_BEG)
+(call_insn 35 202 36 3 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm") [flags 0x3]  <function_decl 0x7f2deaf3f400 reserve>) [0 reserve S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":18:17 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 4 [0x4])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 36 35 37 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 4 (set (reg/f:DI 0 ax [131])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -128 [0xffffffffffffff80])) [29 bytes+0 S8 A64])) "libs/helpers/HexConverter.cpp":19:25 95 {*movdi_internal}
+     (nil))
+(insn 38 37 39 4 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [29 __for_range+0 S8 A64])
+        (reg/f:DI 0 ax [131])) "libs/helpers/HexConverter.cpp":19:25 95 {*movdi_internal}
+     (nil))
+(insn 39 38 40 4 (set (reg:DI 0 ax [132])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [29 __for_range+0 S8 A64])) "libs/helpers/HexConverter.cpp":19:25 95 {*movdi_internal}
+     (nil))
+(insn 40 39 41 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [132])) "libs/helpers/HexConverter.cpp":19:25 95 {*movdi_internal}
+     (nil))
+(call_insn 41 40 44 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE5beginEv") [flags 0x3]  <function_decl 0x7f2dea562100 begin>) [0 begin S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":19:25 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 44 41 45 4 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [6 __for_begin+0 S8 A64])
+        (reg:DI 0 ax [134])) "libs/helpers/HexConverter.cpp":19:25 95 {*movdi_internal}
+     (nil))
+(insn 45 44 46 4 (set (reg:DI 0 ax [135])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [29 __for_range+0 S8 A64])) "libs/helpers/HexConverter.cpp":19:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 46 45 47 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [135])) "libs/helpers/HexConverter.cpp":19:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 47 46 50 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt6vectorIhSaIhEE3endEv") [flags 0x3]  <function_decl 0x7f2dea562300 end>) [0 end S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":19:25 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 50 47 168 4 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -112 [0xffffffffffffff90])) [6 __for_end+0 S8 A128])
+        (reg:DI 0 ax [137])) "libs/helpers/HexConverter.cpp":19:25 discrim 1 95 {*movdi_internal}
+     (nil))
+(jump_insn 168 50 169 4 (set (pc)
+        (label_ref 96)) "libs/helpers/HexConverter.cpp":19:5 1459 {jump}
+     (nil)
+ -> 96)
+(barrier 169 168 117)
+(code_label 117 169 53 5 24 (nil) [1 uses])
+(note 53 117 54 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 58 5 (set (reg/f:DI 0 ax [orig:114 D.47027 ] [114])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [5 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1090:17 95 {*movdi_internal}
+     (nil))
+(insn 58 54 59 5 (set (reg:QI 0 ax [138])
+        (mem:QI (reg/f:DI 0 ax [orig:114 D.47027 ] [114]) [0 *_3+0 S1 A8])) "libs/helpers/HexConverter.cpp":19:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 59 58 60 5 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 byte+0 S1 A8])
+        (reg:QI 0 ax [138])) "libs/helpers/HexConverter.cpp":19:25 discrim 8 98 {*movqi_internal}
+     (nil))
+(insn 60 59 61 5 (set (reg:QI 0 ax [139])
+        (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -25 [0xffffffffffffffe7])) [0 byte+0 S1 A8])) "libs/helpers/HexConverter.cpp":20:36 98 {*movqi_internal}
+     (nil))
+(insn 61 60 62 5 (parallel [
+            (set (reg:QI 0 ax [orig:100 _4 ] [100])
+                (lshiftrt:QI (reg:QI 0 ax [139])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":20:36 1213 {*lshrqi3_1}
+     (expr_list:REG_EQUAL (lshiftrt:QI (mem/c:QI (plus:DI (reg/f:DI 19 frame)
+                    (const_int -9 [0xfffffffffffffff7])) [0 byte+0 S1 A8])
+            (const_int 4 [0x4]))
+        (nil)))
+(insn 62 61 194 5 (set (reg:DI 1 dx [orig:101 _5 ] [101])
+        (zero_extend:DI (reg:QI 0 ax [orig:100 _4 ] [100]))) "libs/helpers/HexConverter.cpp":20:40 176 {zero_extendqidi2}
+     (nil))
+(insn 194 62 64 5 (set (reg:DI 0 ax [140])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/HexConverter.cpp":20:40 265 {*leadi}
+     (nil))
+(insn 64 194 65 5 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:101 _5 ] [101])) "libs/helpers/HexConverter.cpp":20:40 95 {*movdi_internal}
+     (nil))
+(insn 65 64 66 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [140])) "libs/helpers/HexConverter.cpp":20:40 95 {*movdi_internal}
+     (nil))
+(call_insn 66 65 68 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm") [flags 0x3]  <function_decl 0x7f2deaf3f800 operator[]>) [0 operator[] S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":20:40 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 68 66 69 5 (set (reg:QI 0 ax [orig:103 _7 ] [103])
+        (mem:QI (reg/f:DI 0 ax [orig:102 _6 ] [102]) [0 *_6+0 S1 A8])) "libs/helpers/HexConverter.cpp":20:23 discrim 1 98 {*movqi_internal}
+     (nil))
+(insn 69 68 70 5 (set (reg:SI 1 dx [orig:104 _8 ] [104])
+        (sign_extend:SI (reg:QI 0 ax [orig:103 _7 ] [103]))) "libs/helpers/HexConverter.cpp":20:23 discrim 1 191 {extendqisi2}
+     (nil))
+(insn 70 69 71 5 (set (reg:DI 0 ax [141])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":20:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 71 70 72 5 (set (reg:SI 4 si)
+        (reg:SI 1 dx [orig:104 _8 ] [104])) "libs/helpers/HexConverter.cpp":20:23 discrim 1 96 {*movsi_internal}
+     (nil))
+(insn 72 71 73 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [141])) "libs/helpers/HexConverter.cpp":20:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 73 72 74 5 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9push_backEc") [flags 0x3]  <function_decl 0x7f2deaf42e00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":20:23 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 4 [0x4])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+(note 74 73 75 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 6 (set (reg:DI 0 ax [orig:105 _9 ] [105])
+        (zero_extend:DI (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -25 [0xffffffffffffffe7])) [0 byte+0 S1 A8]))) "libs/helpers/HexConverter.cpp":21:36 176 {zero_extendqidi2}
+     (nil))
+(insn 76 75 177 6 (parallel [
+            (set (reg:DI 0 ax [orig:105 _9 ] [105])
+                (and:DI (reg:DI 0 ax [orig:105 _9 ] [105])
+                    (const_int 15 [0xf])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":21:40 706 {*anddi_1}
+     (nil))
+(insn 177 76 193 6 (set (reg:DI 1 dx [orig:106 _10 ] [106])
+        (reg:DI 0 ax [orig:105 _9 ] [105])) "libs/helpers/HexConverter.cpp":21:40 95 {*movdi_internal}
+     (nil))
+(insn 193 177 78 6 (set (reg:DI 0 ax [142])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/HexConverter.cpp":21:40 265 {*leadi}
+     (nil))
+(insn 78 193 79 6 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:106 _10 ] [106])) "libs/helpers/HexConverter.cpp":21:40 95 {*movdi_internal}
+     (nil))
+(insn 79 78 80 6 (set (reg:DI 5 di)
+        (reg:DI 0 ax [142])) "libs/helpers/HexConverter.cpp":21:40 95 {*movdi_internal}
+     (nil))
+(call_insn 80 79 82 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm") [flags 0x3]  <function_decl 0x7f2deaf3f800 operator[]>) [0 operator[] S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":21:40 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 82 80 83 6 (set (reg:QI 0 ax [orig:108 _12 ] [108])
+        (mem:QI (reg/f:DI 0 ax [orig:107 _11 ] [107]) [0 *_11+0 S1 A8])) "libs/helpers/HexConverter.cpp":21:23 discrim 1 98 {*movqi_internal}
+     (nil))
+(insn 83 82 84 6 (set (reg:SI 1 dx [orig:109 _13 ] [109])
+        (sign_extend:SI (reg:QI 0 ax [orig:108 _12 ] [108]))) "libs/helpers/HexConverter.cpp":21:23 discrim 1 191 {extendqisi2}
+     (nil))
+(insn 84 83 85 6 (set (reg:DI 0 ax [143])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":21:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 85 84 86 6 (set (reg:SI 4 si)
+        (reg:SI 1 dx [orig:109 _13 ] [109])) "libs/helpers/HexConverter.cpp":21:23 discrim 1 96 {*movsi_internal}
+     (nil))
+(insn 86 85 87 6 (set (reg:DI 5 di)
+        (reg:DI 0 ax [143])) "libs/helpers/HexConverter.cpp":21:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 87 86 203 6 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9push_backEc") [flags 0x3]  <function_decl 0x7f2deaf42e00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":21:23 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 4 [0x4])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+(note 203 87 88 1 NOTE_INSN_EH_REGION_END)
+(note 88 203 89 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 89 88 90 7 (set (reg/f:DI 0 ax [orig:115 _49 ] [115])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [5 __for_begin._M_current+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1103:4 95 {*movdi_internal}
+     (nil))
+(insn 90 89 91 7 (parallel [
+            (set (reg/f:DI 0 ax [orig:116 _50 ] [116])
+                (plus:DI (reg/f:DI 0 ax [orig:115 _49 ] [115])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 285 {*adddi_1}
+     (nil))
+(insn 91 90 174 7 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -104 [0xffffffffffffff98])) [5 __for_begin._M_current+0 S8 A64])
+        (reg/f:DI 0 ax [orig:116 _50 ] [116])) "/usr/include/c++/15/bits/stl_iterator.h":1103:2 95 {*movdi_internal}
+     (nil))
+(insn 174 91 96 7 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_iterator.h":1104:10 1495 {nop}
+     (nil))
+(code_label 96 174 97 8 18 (nil) [1 uses])
+(note 97 96 191 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 191 97 99 8 (set (reg:DI 0 ax [144])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -104 [0xffffffffffffff98]))) 265 {*leadi}
+     (nil))
+(insn 99 191 100 8 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [31 this+0 S8 A64])
+        (reg:DI 0 ax [144])) 95 {*movdi_internal}
+     (nil))
+(insn 100 99 104 8 (set (reg/f:DI 0 ax [orig:118 _53 ] [118])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [31 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 104 100 192 8 (set (reg/f:DI 1 dx [orig:119 _56 ] [119])
+        (mem/f:DI (reg/f:DI 0 ax [orig:118 _53 ] [118]) [5 *_55+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 192 104 106 8 (set (reg:DI 0 ax [145])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -112 [0xffffffffffffff90]))) 265 {*leadi}
+     (nil))
+(insn 106 192 107 8 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [31 this+0 S8 A64])
+        (reg:DI 0 ax [145])) 95 {*movdi_internal}
+     (nil))
+(insn 107 106 111 8 (set (reg/f:DI 0 ax [orig:120 _58 ] [120])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [31 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1166:16 95 {*movdi_internal}
+     (nil))
+(insn 111 107 112 8 (set (reg/f:DI 0 ax [orig:121 _61 ] [121])
+        (mem/f:DI (reg/f:DI 0 ax [orig:120 _58 ] [120]) [5 *_60+0 S8 A64])) "/usr/include/c++/15/bits/stl_iterator.h":1247:27 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 112 111 113 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 1 dx [orig:119 _56 ] [119])
+            (reg/f:DI 0 ax [orig:121 _61 ] [121]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 16 {*cmpdi_1}
+     (nil))
+(insn 113 112 118 8 (set (reg:QI 0 ax [orig:122 D.47040 ] [122])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/stl_iterator.h":1247:41 discrim 2 1452 {*setcc_qi}
+     (nil))
+(insn 118 113 119 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:122 D.47040 ] [122])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":19:25 discrim 7 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 119 118 120 8 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 117)
+            (pc))) "libs/helpers/HexConverter.cpp":19:25 discrim 7 1458 {*jcc}
+     (nil)
+ -> 117)
+(note 120 119 190 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 190 120 123 9 (set (reg:DI 0 ax [146])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/HexConverter.cpp":24:1 265 {*leadi}
+     (nil))
+(insn 123 190 124 9 (set (reg:DI 5 di)
+        (reg:DI 0 ax [146])) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(call_insn 124 123 171 9 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev") [flags 0x3]  <function_decl 0x7f2deaf7e000 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":24:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 171 124 172 9 (set (pc)
+        (label_ref 170)) "libs/helpers/HexConverter.cpp":23:12 1459 {jump}
+     (nil)
+ -> 170)
+(barrier 172 171 157)
+(code_label/s 157 172 159 10 28 (nil) [1 uses])
+(note 159 157 158 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 158 159 189 10 (set (reg:DI 3 bx [148])
+        (reg:DI 0 ax)) "/usr/include/c++/15/bits/allocator.h":189:39 95 {*movdi_internal}
+     (nil))
+(insn 189 158 132 10 (set (reg:DI 0 ax [147])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -57 [0xffffffffffffffc7]))) "/usr/include/c++/15/bits/allocator.h":189:39 265 {*leadi}
+     (nil))
+(insn 132 189 133 10 (set (reg:DI 5 di)
+        (reg:DI 0 ax [147])) "/usr/include/c++/15/bits/allocator.h":189:39 95 {*movdi_internal}
+     (nil))
+(call_insn 133 132 167 10 (call (mem:QI (symbol_ref/i:DI ("_ZNSt15__new_allocatorIcED2Ev") [flags 0x3]  <function_decl 0x7f2deb66c600 __dt_base >) [0 __dt_base  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/allocator.h":189:39 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 167 133 135 10 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":189:39 1495 {nop}
+     (nil))
+(insn 135 167 136 10 (set (reg/f:DI 0 ax [orig:110 D.47051 ] [110])
+        (reg:DI 3 bx [148])) 95 {*movdi_internal}
+     (nil))
+(insn 136 135 204 10 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:110 D.47051 ] [110])) 95 {*movdi_internal}
+     (nil))
+(note 204 136 137 10 2 NOTE_INSN_EH_REGION_BEG)
+(call_insn 137 204 138 10 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f2dec59cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(barrier 138 137 160)
+(code_label/s 160 138 163 11 29 (nil) [1 uses])
+(note 163 160 161 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 161 163 141 11 (set (reg:DI 3 bx [151])
+        (reg:DI 0 ax)) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(insn 141 161 142 11 (set (reg:DI 0 ax [149])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(insn 142 141 143 11 (set (reg:DI 5 di)
+        (reg:DI 0 ax [149])) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(call_insn 143 142 188 11 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev") [flags 0x3]  <function_decl 0x7f2deaf7e000 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":24:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 188 143 147 11 (set (reg:DI 0 ax [154])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -96 [0xffffffffffffffa0]))) "libs/helpers/HexConverter.cpp":24:1 265 {*leadi}
+     (nil))
+(insn 147 188 148 11 (set (reg:DI 5 di)
+        (reg:DI 0 ax [154])) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(call_insn 148 147 149 11 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev") [flags 0x3]  <function_decl 0x7f2deaf7e000 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":24:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 149 148 150 11 (set (reg/f:DI 0 ax [orig:111 D.47052 ] [111])
+        (reg:DI 3 bx [150])) 95 {*movdi_internal}
+     (nil))
+(insn 150 149 151 11 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:111 D.47052 ] [111])) 95 {*movdi_internal}
+     (nil))
+(call_insn 151 150 205 11 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f2dec59cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 205 151 152 2 NOTE_INSN_EH_REGION_END)
+(barrier 152 205 170)
+(code_label 170 152 156 12 30 (nil) [1 uses])
+(note 156 170 154 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 154 156 155 12 (set (reg/i:DI 0 ax)
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -120 [0xffffffffffffff88])) [32 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":24:1 95 {*movdi_internal}
+     (nil))
+(insn 155 154 183 12 (use (reg/i:DI 0 ax)) "libs/helpers/HexConverter.cpp":24:1 -1
+     (nil))
+(note 183 155 184 12 NOTE_INSN_EPILOGUE_BEG)
+(insn 184 183 185 12 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "libs/helpers/HexConverter.cpp":24:1 -1
+     (nil))
+(insn/f 185 184 186 12 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/HexConverter.cpp":24:1 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 186 185 187 12 (simple_return) "libs/helpers/HexConverter.cpp":24:1 -1
+     (nil)
+ -> simple_return)
+(barrier 187 186 175)
+(note 175 187 0 NOTE_INSN_DELETED)
+
+;; Function HexToBytes (_Z10HexToBytesRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, funcdef_no=1780, decl_uid=40352, cgraph_uid=387, symbol_order=386)
+
+
+
+HexToBytes
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9] 40 [r12]
+;;  exit block uses 	 0 [ax] 3 [bx] 6 [bp] 7 [sp] 19 [frame] 40 [r12]
+;;  regs ever live 	 0 [ax] 1 [dx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags] 40 [r12]
+;;  ref usage 	r0={56d,44u} r1={32d,7u} r2={22d} r3={6d,9u} r4={30d,9u} r5={43d,22u} r6={3d,46u} r7={9d,51u} r8={21d} r9={21d} r10={21d} r11={21d} r12={21d} r13={21d} r14={21d} r15={21d} r16={3u} r17={34d,5u} r18={21d} r19={1d,4u} r20={22d} r21={22d} r22={22d} r23={22d} r24={22d} r25={22d} r26={22d} r27={22d} r28={21d} r29={21d} r30={21d} r31={21d} r32={21d} r33={21d} r34={21d} r35={21d} r36={22d} r37={22d} r38={21d} r39={21d} r40={4d,4u} r44={21d} r45={21d} r46={21d} r47={21d} r48={21d} r49={21d} r50={21d} r51={21d} r52={21d} r53={21d} r54={21d} r55={21d} r56={21d} r57={21d} r58={21d} r59={21d} r60={21d} r61={21d} r62={21d} r63={21d} r64={21d} r65={21d} r66={21d} r67={21d} r68={21d} r69={21d} r70={21d} r71={21d} r72={21d} r73={21d} r74={21d} r75={21d} r76={21d} r77={21d} r78={21d} r79={21d} r80={21d} r81={21d} r82={21d} r83={21d} r84={21d} r85={21d} r86={21d} r87={21d} r88={21d} r89={21d} r90={21d} r91={21d} 
+;;    total ref usage 2071{1867d,204u,0e} in 124{103 regular + 21 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 192 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 192 5 193 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "libs/helpers/HexConverter.cpp":26:48 -1
+     (nil))
+(insn/f 193 192 194 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "libs/helpers/HexConverter.cpp":26:48 -1
+     (nil))
+(insn/f 194 193 195 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 40 r12)) "libs/helpers/HexConverter.cpp":26:48 -1
+     (nil))
+(insn/f 195 194 196 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "libs/helpers/HexConverter.cpp":26:48 -1
+     (nil))
+(insn/f 196 195 197 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -48 [0xffffffffffffffd0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/HexConverter.cpp":26:48 -1
+     (nil))
+(note 197 196 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 197 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [35 .result_ptr+0 S8 A64])
+        (reg:DI 5 di [ .result_ptr ])) "libs/helpers/HexConverter.cpp":26:48 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])
+        (reg:DI 4 si [ text ])) "libs/helpers/HexConverter.cpp":26:48 95 {*movdi_internal}
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 9 2 (set (reg:DI 0 ax [122])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])) "libs/helpers/HexConverter.cpp":27:18 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [122])) "libs/helpers/HexConverter.cpp":27:18 95 {*movdi_internal}
+     (nil))
+(call_insn 10 9 12 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv") [flags 0x3]  <function_decl 0x7f2deaf3cc00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":27:18 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 12 10 209 2 (parallel [
+            (set (reg:DI 0 ax [orig:99 _2 ] [99])
+                (and:DI (reg:DI 0 ax [orig:98 _1 ] [98])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":27:21 discrim 1 706 {*anddi_1}
+     (nil))
+(insn 209 12 14 2 (parallel [
+            (set (reg:SI 0 ax [orig:116 retval.20_25 ] [116])
+                (and:SI (reg:SI 0 ax [orig:99 _2 ] [99])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":27:25 discrim 1 722 {*andsi_1}
+     (nil))
+(insn 14 209 15 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:116 retval.20_25 ] [116])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":27:5 discrim 1 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 15 14 16 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) "libs/helpers/HexConverter.cpp":27:5 discrim 1 1458 {*jcc}
+     (nil)
+ -> 34)
+(note 16 15 17 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 3 (set (reg:DI 5 di)
+        (const_int 16 [0x10])) "libs/helpers/HexConverter.cpp":28:98 95 {*movdi_internal}
+     (nil))
+(call_insn 18 17 20 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_allocate_exception") [flags 0x41]  <function_decl 0x7f2dea59b100 __cxa_allocate_exception>) [0 __cxa_allocate_exception S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":28:98 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 20 18 21 3 (set (reg/f:DI 3 bx [orig:120 _52 ] [120])
+        (reg/f:DI 0 ax [123])) "libs/helpers/HexConverter.cpp":28:98 95 {*movdi_internal}
+     (nil))
+(insn 21 20 22 3 (set (reg:DI 0 ax [124])
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f2de9e961c8 *.LC1>)) "libs/helpers/HexConverter.cpp":28:98 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 22 21 23 3 (set (reg:DI 4 si)
+        (reg:DI 0 ax [124])) "libs/helpers/HexConverter.cpp":28:98 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 23 22 210 3 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:120 _52 ] [120])) "libs/helpers/HexConverter.cpp":28:98 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 210 23 24 3 3 NOTE_INSN_EH_REGION_BEG)
+(call_insn 24 210 211 3 (call (mem:QI (symbol_ref:DI ("_ZNSt16invalid_argumentC1EPKc") [flags 0x41]  <function_decl 0x7f2dea65d600 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":28:98 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 211 24 25 3 NOTE_INSN_EH_REGION_END)
+(note 25 211 26 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 4 (set (reg:DI 0 ax [126])
+        (mem/u/c:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("_ZNSt16invalid_argumentD1Ev") [flags 0x41]  <function_decl 0x7f2dea65db00 __dt_comp >)
+                    ] UNSPEC_GOTPCREL)) [36  S8 A8])) "libs/helpers/HexConverter.cpp":28:98 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 27 26 28 4 (set (reg:DI 1 dx [125])
+        (reg:DI 0 ax [126])) "libs/helpers/HexConverter.cpp":28:98 discrim 4 95 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt16invalid_argumentD1Ev") [flags 0x41]  <function_decl 0x7f2dea65db00 __dt_comp >)
+        (nil)))
+(insn 28 27 30 4 (set (reg:DI 0 ax [127])
+        (symbol_ref:DI ("_ZTISt16invalid_argument") [flags 0x40]  <var_decl 0x7f2dea608688 _ZTISt16invalid_argument>)) "libs/helpers/HexConverter.cpp":28:98 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 30 28 31 4 (set (reg:DI 4 si)
+        (reg:DI 0 ax [127])) "libs/helpers/HexConverter.cpp":28:98 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 31 30 212 4 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:120 _52 ] [120])) "libs/helpers/HexConverter.cpp":28:98 discrim 4 95 {*movdi_internal}
+     (nil))
+(note 212 31 32 4 4 NOTE_INSN_EH_REGION_BEG)
+(call_insn 32 212 213 4 (call (mem:QI (symbol_ref:DI ("__cxa_throw") [flags 0x41]  <function_decl 0x7f2dea59b000 __cxa_throw>) [0 __cxa_throw S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":28:98 discrim 4 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(note 213 32 33 4 NOTE_INSN_EH_REGION_END)
+(barrier 33 213 34)
+(code_label 34 33 35 5 35 (nil) [1 uses])
+(note 35 34 36 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 5 (set (reg:DI 0 ax [128])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [29 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":31:21 95 {*movdi_internal}
+     (nil))
+(insn 37 36 38 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [128])) "libs/helpers/HexConverter.cpp":31:21 95 {*movdi_internal}
+     (nil))
+(call_insn 38 37 39 5 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEEC1Ev") [flags 0x3]  <function_decl 0x7f2dea583b00 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":31:21 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 39 38 40 5 (set (reg:DI 0 ax [129])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])) "libs/helpers/HexConverter.cpp":32:28 95 {*movdi_internal}
+     (nil))
+(insn 40 39 41 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [129])) "libs/helpers/HexConverter.cpp":32:28 95 {*movdi_internal}
+     (nil))
+(call_insn 41 40 43 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv") [flags 0x3]  <function_decl 0x7f2deaf3cc00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":32:28 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 43 41 189 5 (parallel [
+            (set (reg:DI 0 ax [orig:100 _3 ] [100])
+                (lshiftrt:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":32:18 discrim 1 1183 {*lshrdi3_1}
+     (nil))
+(insn 189 43 44 5 (set (reg:DI 1 dx [orig:101 _4 ] [101])
+        (reg:DI 0 ax [orig:100 _3 ] [100])) "libs/helpers/HexConverter.cpp":32:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 44 189 45 5 (set (reg:DI 0 ax [130])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [29 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":32:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 45 44 46 5 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:101 _4 ] [101])) "libs/helpers/HexConverter.cpp":32:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 46 45 214 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [130])) "libs/helpers/HexConverter.cpp":32:18 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 214 46 47 5 5 NOTE_INSN_EH_REGION_BEG)
+(call_insn 47 214 215 5 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEE7reserveEm") [flags 0x3]  <function_decl 0x7f2dea564300 reserve>) [0 reserve S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":32:18 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 215 47 48 5 NOTE_INSN_EH_REGION_END)
+(note 48 215 49 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 179 6 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":33:17 95 {*movdi_internal}
+     (nil))
+(jump_insn 179 49 180 6 (set (pc)
+        (label_ref 122)) "libs/helpers/HexConverter.cpp":33:5 1459 {jump}
+     (nil)
+ -> 122)
+(barrier 180 179 130)
+(code_label 130 180 52 7 39 (nil) [1 uses])
+(note 52 130 53 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 7 (set (reg:DI 1 dx [131])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])) "libs/helpers/HexConverter.cpp":34:51 95 {*movdi_internal}
+     (nil))
+(insn 54 53 55 7 (set (reg:DI 0 ax [132])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])) "libs/helpers/HexConverter.cpp":34:51 95 {*movdi_internal}
+     (nil))
+(insn 55 54 56 7 (set (reg:DI 4 si)
+        (reg:DI 1 dx [131])) "libs/helpers/HexConverter.cpp":34:51 95 {*movdi_internal}
+     (nil))
+(insn 56 55 57 7 (set (reg:DI 5 di)
+        (reg:DI 0 ax [132])) "libs/helpers/HexConverter.cpp":34:51 95 {*movdi_internal}
+     (nil))
+(call_insn 57 56 59 7 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm") [flags 0x3]  <function_decl 0x7f2deaf3f800 operator[]>) [0 operator[] S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":34:51 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 59 57 60 7 (set (reg:QI 0 ax [orig:103 _6 ] [103])
+        (mem:QI (reg/f:DI 0 ax [orig:102 _5 ] [102]) [0 *_5+0 S1 A8])) "libs/helpers/HexConverter.cpp":34:40 discrim 1 98 {*movqi_internal}
+     (nil))
+(insn 60 59 61 7 (set (reg:SI 0 ax [orig:104 _7 ] [104])
+        (sign_extend:SI (reg:QI 0 ax [orig:103 _6 ] [103]))) "libs/helpers/HexConverter.cpp":34:40 discrim 1 191 {extendqisi2}
+     (nil))
+(insn 61 60 62 7 (set (reg:SI 5 di)
+        (reg:SI 0 ax [orig:104 _7 ] [104])) "libs/helpers/HexConverter.cpp":34:40 discrim 1 96 {*movsi_internal}
+     (nil))
+(call_insn 62 61 64 7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_Z15HexDigitToValuec") [flags 0x3]  <function_decl 0x7f2dea512000 HexDigitToValue>) [0 HexDigitToValue S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":34:40 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 64 62 65 7 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -28 [0xffffffffffffffe4])) [28 firstHalf+0 S4 A32])
+        (reg:SI 0 ax [133])) "libs/helpers/HexConverter.cpp":34:40 discrim 1 96 {*movsi_internal}
+     (nil))
+(insn 65 64 208 7 (set (reg:DI 0 ax [134])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])) "libs/helpers/HexConverter.cpp":35:56 95 {*movdi_internal}
+     (nil))
+(insn 208 65 67 7 (set (reg:DI 1 dx [orig:105 _8 ] [105])
+        (plus:DI (reg:DI 0 ax [134])
+            (const_int 1 [0x1]))) "libs/helpers/HexConverter.cpp":35:56 265 {*leadi}
+     (nil))
+(insn 67 208 68 7 (set (reg:DI 0 ax [135])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])) "libs/helpers/HexConverter.cpp":35:56 95 {*movdi_internal}
+     (nil))
+(insn 68 67 69 7 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:105 _8 ] [105])) "libs/helpers/HexConverter.cpp":35:56 95 {*movdi_internal}
+     (nil))
+(insn 69 68 70 7 (set (reg:DI 5 di)
+        (reg:DI 0 ax [135])) "libs/helpers/HexConverter.cpp":35:56 95 {*movdi_internal}
+     (nil))
+(call_insn 70 69 72 7 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm") [flags 0x3]  <function_decl 0x7f2deaf3f800 operator[]>) [0 operator[] S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":35:56 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 72 70 73 7 (set (reg:QI 0 ax [orig:107 _10 ] [107])
+        (mem:QI (reg/f:DI 0 ax [orig:106 _9 ] [106]) [0 *_9+0 S1 A8])) "libs/helpers/HexConverter.cpp":35:41 discrim 1 98 {*movqi_internal}
+     (nil))
+(insn 73 72 74 7 (set (reg:SI 0 ax [orig:108 _11 ] [108])
+        (sign_extend:SI (reg:QI 0 ax [orig:107 _10 ] [107]))) "libs/helpers/HexConverter.cpp":35:41 discrim 1 191 {extendqisi2}
+     (nil))
+(insn 74 73 75 7 (set (reg:SI 5 di)
+        (reg:SI 0 ax [orig:108 _11 ] [108])) "libs/helpers/HexConverter.cpp":35:41 discrim 1 96 {*movsi_internal}
+     (nil))
+(call_insn 75 74 77 7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_Z15HexDigitToValuec") [flags 0x3]  <function_decl 0x7f2dea512000 HexDigitToValue>) [0 HexDigitToValue S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":35:41 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 77 75 80 7 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [28 secondHalf+0 S4 A64])
+        (reg:SI 0 ax [136])) "libs/helpers/HexConverter.cpp":35:41 discrim 1 96 {*movsi_internal}
+     (nil))
+(insn 80 77 81 7 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -28 [0xffffffffffffffe4])) [28 firstHalf+0 S4 A32])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":36:9 11 {*cmpsi_ccno_1}
+     (nil))
+(jump_insn 81 80 82 7 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 87)
+            (pc))) "libs/helpers/HexConverter.cpp":36:9 1458 {*jcc}
+     (nil)
+ -> 87)
+(note 82 81 85 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 85 82 86 8 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -32 [0xffffffffffffffe0])) [28 secondHalf+0 S4 A64])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":36:27 discrim 1 11 {*cmpsi_ccno_1}
+     (nil))
+(jump_insn 86 85 87 8 (set (pc)
+        (if_then_else (ge (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 106)
+            (pc))) "libs/helpers/HexConverter.cpp":36:27 discrim 1 1458 {*jcc}
+     (nil)
+ -> 106)
+(code_label 87 86 88 9 37 (nil) [1 uses])
+(note 88 87 89 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 89 88 90 9 (set (reg:DI 5 di)
+        (const_int 16 [0x10])) "libs/helpers/HexConverter.cpp":37:109 95 {*movdi_internal}
+     (nil))
+(call_insn 90 89 92 9 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_allocate_exception") [flags 0x41]  <function_decl 0x7f2dea59b100 __cxa_allocate_exception>) [0 __cxa_allocate_exception S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":37:109 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 92 90 93 9 (set (reg/f:DI 3 bx [orig:119 _45 ] [119])
+        (reg/f:DI 0 ax [137])) "libs/helpers/HexConverter.cpp":37:109 95 {*movdi_internal}
+     (nil))
+(insn 93 92 94 9 (set (reg:DI 0 ax [138])
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f2de9e96260 *.LC2>)) "libs/helpers/HexConverter.cpp":37:109 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 94 93 95 9 (set (reg:DI 4 si)
+        (reg:DI 0 ax [138])) "libs/helpers/HexConverter.cpp":37:109 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 95 94 216 9 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:119 _45 ] [119])) "libs/helpers/HexConverter.cpp":37:109 discrim 1 95 {*movdi_internal}
+     (nil))
+(note 216 95 96 9 6 NOTE_INSN_EH_REGION_BEG)
+(call_insn 96 216 217 9 (call (mem:QI (symbol_ref:DI ("_ZNSt16invalid_argumentC1EPKc") [flags 0x41]  <function_decl 0x7f2dea65d600 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":37:109 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 217 96 97 6 NOTE_INSN_EH_REGION_END)
+(note 97 217 98 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 98 97 99 10 (set (reg:DI 0 ax [140])
+        (mem/u/c:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("_ZNSt16invalid_argumentD1Ev") [flags 0x41]  <function_decl 0x7f2dea65db00 __dt_comp >)
+                    ] UNSPEC_GOTPCREL)) [36  S8 A8])) "libs/helpers/HexConverter.cpp":37:109 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 99 98 100 10 (set (reg:DI 1 dx [139])
+        (reg:DI 0 ax [140])) "libs/helpers/HexConverter.cpp":37:109 discrim 4 95 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt16invalid_argumentD1Ev") [flags 0x41]  <function_decl 0x7f2dea65db00 __dt_comp >)
+        (nil)))
+(insn 100 99 102 10 (set (reg:DI 0 ax [141])
+        (symbol_ref:DI ("_ZTISt16invalid_argument") [flags 0x40]  <var_decl 0x7f2dea608688 _ZTISt16invalid_argument>)) "libs/helpers/HexConverter.cpp":37:109 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 102 100 103 10 (set (reg:DI 4 si)
+        (reg:DI 0 ax [141])) "libs/helpers/HexConverter.cpp":37:109 discrim 4 95 {*movdi_internal}
+     (nil))
+(insn 103 102 218 10 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:119 _45 ] [119])) "libs/helpers/HexConverter.cpp":37:109 discrim 4 95 {*movdi_internal}
+     (nil))
+(note 218 103 104 10 7 NOTE_INSN_EH_REGION_BEG)
+(call_insn 104 218 105 10 (call (mem:QI (symbol_ref:DI ("__cxa_throw") [flags 0x41]  <function_decl 0x7f2dea59b000 __cxa_throw>) [0 __cxa_throw S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":37:109 discrim 4 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+            (expr_list:REG_NORETURN (const_int 0 [0])
+                (nil))))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(barrier 105 104 106)
+(code_label 106 105 107 11 38 (nil) [1 uses])
+(note 107 106 108 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 108 107 205 11 (set (reg:SI 0 ax [142])
+        (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -28 [0xffffffffffffffe4])) [28 firstHalf+0 S4 A32])) "libs/helpers/HexConverter.cpp":39:39 96 {*movsi_internal}
+     (nil))
+(insn 205 108 191 11 (parallel [
+            (set (reg:SI 0 ax [orig:109 _12 ] [109])
+                (ashift:SI (reg:SI 0 ax [orig:109 _12 ] [109])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":39:39 1089 {*ashlsi3_1}
+     (nil))
+(insn 191 205 111 11 (set (reg:QI 1 dx [orig:110 _13 ] [110])
+        (reg:QI 0 ax [orig:109 _12 ] [109])) "libs/helpers/HexConverter.cpp":39:39 98 {*movqi_internal}
+     (nil))
+(insn 111 191 206 11 (set (reg:SI 0 ax [143])
+        (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [28 secondHalf+0 S4 A64])) "libs/helpers/HexConverter.cpp":39:39 96 {*movsi_internal}
+     (nil))
+(insn 206 111 114 11 (parallel [
+            (set (reg:SI 0 ax [orig:112 _15 ] [112])
+                (plus:SI (reg:SI 0 ax [orig:111 _14 ] [111])
+                    (reg:SI 1 dx [orig:110 _13 ] [110])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":39:39 283 {*addsi_1}
+     (nil))
+(insn 114 206 207 11 (set (mem/c:QI (plus:DI (reg/f:DI 6 bp)
+                (const_int -33 [0xffffffffffffffdf])) [0 byte+0 S1 A8])
+        (reg:QI 0 ax [orig:112 _15 ] [112])) "libs/helpers/HexConverter.cpp":39:17 98 {*movqi_internal}
+     (nil))
+(insn 207 114 116 11 (set (reg:DI 1 dx [144])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) "libs/helpers/HexConverter.cpp":40:24 265 {*leadi}
+     (nil))
+(insn 116 207 117 11 (set (reg:DI 0 ax [145])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [29 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":40:24 95 {*movdi_internal}
+     (nil))
+(insn 117 116 118 11 (set (reg:DI 4 si)
+        (reg:DI 1 dx [144])) "libs/helpers/HexConverter.cpp":40:24 95 {*movdi_internal}
+     (nil))
+(insn 118 117 119 11 (set (reg:DI 5 di)
+        (reg:DI 0 ax [145])) "libs/helpers/HexConverter.cpp":40:24 95 {*movdi_internal}
+     (nil))
+(call_insn 119 118 219 11 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEE9push_backERKh") [flags 0x3]  <function_decl 0x7f2dea564f00 push_back>) [0 push_back S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":40:24 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(note 219 119 120 7 NOTE_INSN_EH_REGION_END)
+(note 120 219 121 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 121 120 122 12 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])
+                (plus:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "libs/helpers/HexConverter.cpp":33:55 discrim 2 285 {*adddi_1}
+     (nil))
+(code_label 122 121 123 13 36 (nil) [1 uses])
+(note 123 122 124 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 124 123 125 13 (set (reg:DI 0 ax [146])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -64 [0xffffffffffffffc0])) [32 text+0 S8 A64])) "libs/helpers/HexConverter.cpp":33:45 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 125 124 126 13 (set (reg:DI 5 di)
+        (reg:DI 0 ax [146])) "libs/helpers/HexConverter.cpp":33:45 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 126 125 128 13 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv") [flags 0x3]  <function_decl 0x7f2deaf3cc00 size>) [0 size S1 A8])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":33:45 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 128 126 129 13 (set (reg:CC 17 flags)
+        (compare:CC (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -24 [0xffffffffffffffe8])) [14 index+0 S8 A64])
+            (reg:DI 0 ax [orig:113 _16 ] [113]))) "libs/helpers/HexConverter.cpp":33:34 discrim 3 16 {*cmpdi_1}
+     (nil))
+(insn 129 128 131 13 (set (reg:QI 0 ax [orig:117 retval.21_32 ] [117])
+        (ltu:QI (reg:CC 17 flags)
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":33:34 discrim 3 1452 {*setcc_qi}
+     (nil))
+(insn 131 129 132 13 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:117 retval.21_32 ] [117])
+            (const_int 0 [0]))) "libs/helpers/HexConverter.cpp":33:34 discrim 3 9 {*cmpqi_ccno_1}
+     (nil))
+(jump_insn 132 131 181 13 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 130)
+            (pc))) "libs/helpers/HexConverter.cpp":33:34 discrim 3 1458 {*jcc}
+     (nil)
+ -> 130)
+(note 181 132 183 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 183 181 184 14 (set (pc)
+        (label_ref 182)) "libs/helpers/HexConverter.cpp":42:12 1459 {jump}
+     (nil)
+ -> 182)
+(barrier 184 183 166)
+(code_label/s 166 184 168 15 44 (nil) [1 uses])
+(note 168 166 167 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 167 168 141 15 (set (reg:DI 40 r12 [147])
+        (reg:DI 0 ax)) "libs/helpers/HexConverter.cpp":28:98 discrim 3 95 {*movdi_internal}
+     (nil))
+(insn 141 167 142 15 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:120 _52 ] [120])) "libs/helpers/HexConverter.cpp":28:98 discrim 3 95 {*movdi_internal}
+     (nil))
+(call_insn 142 141 143 15 (call (mem:QI (symbol_ref:DI ("__cxa_free_exception") [flags 0x41]  <function_decl 0x7f2dea59b200 __cxa_free_exception>) [0 __cxa_free_exception S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":28:98 discrim 3 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 143 142 144 15 (set (reg/f:DI 0 ax [orig:114 D.47055 ] [114])
+        (reg:DI 40 r12 [147])) 95 {*movdi_internal}
+     (nil))
+(insn 144 143 220 15 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:114 D.47055 ] [114])) 95 {*movdi_internal}
+     (nil))
+(note 220 144 145 15 8 NOTE_INSN_EH_REGION_BEG)
+(call_insn 145 220 146 15 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f2dec59cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(barrier 146 145 175)
+(code_label/s 175 146 178 16 46 (nil) [1 uses])
+(note 178 175 176 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 176 178 149 16 (set (reg:DI 40 r12 [149])
+        (reg:DI 0 ax)) "libs/helpers/HexConverter.cpp":37:109 discrim 3 95 {*movdi_internal}
+     (nil))
+(insn 149 176 150 16 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:119 _45 ] [119])) "libs/helpers/HexConverter.cpp":37:109 discrim 3 95 {*movdi_internal}
+     (nil))
+(call_insn 150 149 151 16 (call (mem:QI (symbol_ref:DI ("__cxa_free_exception") [flags 0x41]  <function_decl 0x7f2dea59b200 __cxa_free_exception>) [0 __cxa_free_exception S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":37:109 discrim 3 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 151 150 185 16 (set (reg:DI 3 bx [148])
+        (reg:DI 40 r12 [149])) 95 {*movdi_internal}
+     (nil))
+(jump_insn 185 151 186 16 (set (pc)
+        (label_ref 153)) 1459 {jump}
+     (nil)
+ -> 153)
+(barrier 186 185 169)
+(code_label/s 169 186 174 17 45 (nil) [1 uses])
+(note 174 169 170 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 170 174 153 17 (set (reg:DI 3 bx [148])
+        (reg:DI 0 ax)) "libs/helpers/HexConverter.cpp":43:1 95 {*movdi_internal}
+     (nil))
+(code_label 153 170 154 18 43 (nil) [1 uses])
+(note 154 153 155 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 155 154 156 18 (set (reg:DI 0 ax [152])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [29 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":43:1 95 {*movdi_internal}
+     (nil))
+(insn 156 155 157 18 (set (reg:DI 5 di)
+        (reg:DI 0 ax [152])) "libs/helpers/HexConverter.cpp":43:1 95 {*movdi_internal}
+     (nil))
+(call_insn 157 156 158 18 (call (mem:QI (symbol_ref/i:DI ("_ZNSt6vectorIhSaIhEED1Ev") [flags 0x3]  <function_decl 0x7f2dea583d00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "libs/helpers/HexConverter.cpp":43:1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 158 157 159 18 (set (reg/f:DI 0 ax [orig:121 D.47056 ] [121])
+        (reg:DI 3 bx [148])) 95 {*movdi_internal}
+     (nil))
+(insn 159 158 160 18 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:121 D.47056 ] [121])) 95 {*movdi_internal}
+     (nil))
+(call_insn 160 159 221 18 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f2dec59cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 221 160 161 8 NOTE_INSN_EH_REGION_END)
+(barrier 161 221 182)
+(code_label 182 161 165 19 47 (nil) [1 uses])
+(note 165 182 163 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 163 165 164 19 (set (reg/i:DI 0 ax)
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [29 <retval>+0 S8 A64])) "libs/helpers/HexConverter.cpp":43:1 95 {*movdi_internal}
+     (nil))
+(insn 164 163 198 19 (use (reg/i:DI 0 ax)) "libs/helpers/HexConverter.cpp":43:1 -1
+     (nil))
+(note 198 164 199 19 NOTE_INSN_EPILOGUE_BEG)
+(insn 199 198 200 19 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 48 [0x30])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "libs/helpers/HexConverter.cpp":43:1 -1
+     (nil))
+(insn 200 199 201 19 (set (reg:DI 3 bx)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/HexConverter.cpp":43:1 -1
+     (nil))
+(insn 201 200 202 19 (set (reg:DI 40 r12)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/HexConverter.cpp":43:1 -1
+     (nil))
+(insn/f 202 201 203 19 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "libs/helpers/HexConverter.cpp":43:1 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 203 202 204 19 (simple_return) "libs/helpers/HexConverter.cpp":43:1 -1
+     (nil)
+ -> simple_return)
+(barrier 204 203 187)
+(note 187 204 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::basic_string (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2Ev, funcdef_no=1900, decl_uid=26578, cgraph_uid=491, symbol_order=490)
+
+
+
+std::__cxx11::basic_string<char>::basic_string
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={11d,7u} r1={6d,1u} r2={6d,1u} r3={3d,3u} r4={7d,2u} r5={9d,5u} r6={3d,16u} r7={5d,12u} r8={4d} r9={4d} r10={4d} r11={4d} r12={4d} r13={4d} r14={4d} r15={4d} r17={5d} r18={4d} r19={1d,1u} r20={5d} r21={5d} r22={5d} r23={5d} r24={5d} r25={5d} r26={5d} r27={5d} r28={4d} r29={4d} r30={4d} r31={4d} r32={4d} r33={4d} r34={4d} r35={4d} r36={5d} r37={5d} r38={4d} r39={4d} r44={4d} r45={4d} r46={4d} r47={4d} r48={4d} r49={4d} r50={4d} r51={4d} r52={4d} r53={4d} r54={4d} r55={4d} r56={4d} r57={4d} r58={4d} r59={4d} r60={4d} r61={4d} r62={4d} r63={4d} r64={4d} r65={4d} r66={4d} r67={4d} r68={4d} r69={4d} r70={4d} r71={4d} r72={4d} r73={4d} r74={4d} r75={4d} r76={4d} r77={4d} r78={4d} r79={4d} r80={4d} r81={4d} r82={4d} r83={4d} r84={4d} r85={4d} r86={4d} r87={4d} r88={4d} r89={4d} r90={4d} r91={4d} 
+;;    total ref usage 422{374d,48u,0e} in 34{30 regular + 4 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 40 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 40 4 41 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 41 40 42 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 42 41 43 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(insn/f 43 42 44 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -56 [0xffffffffffffffc8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":585:7 -1
+     (nil))
+(note 44 43 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 44 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [15 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.h":585:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 50 2 (set (reg/f:DI 3 bx [orig:98 _1 ] [98])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":590:9 95 {*movdi_internal}
+     (nil))
+(insn 50 6 8 2 (set (reg:DI 0 ax [101])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) 265 {*leadi}
+     (nil))
+(insn 8 50 33 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [30 this+0 S8 A64])
+        (reg:DI 0 ax [101])) 95 {*movdi_internal}
+     (nil))
+(insn 33 8 34 2 (const_int 0 [0]) "/usr/include/c++/15/bits/new_allocator.h":88:49 1495 {nop}
+     (nil))
+(insn 34 33 11 2 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":168:38 1495 {nop}
+     (nil))
+(insn 11 34 12 2 (set (reg:DI 0 ax [102])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [102])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv") [flags 0x3]  <function_decl 0x7f2deaf14f00 _M_local_data>) [0 _M_local_data S1 A8])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 14 13 51 2 (set (reg/f:DI 2 cx [orig:99 _2 ] [99])
+        (reg:DI 0 ax)) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 51 14 16 2 (set (reg:DI 0 ax [103])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 265 {*leadi}
+     (nil))
+(insn 16 51 17 2 (set (reg:DI 1 dx)
+        (reg:DI 0 ax [103])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:99 _2 ] [99])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:98 _1 ] [98])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 95 {*movdi_internal}
+     (nil))
+(call_insn 19 18 52 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcOS3_") [flags 0x3]  <function_decl 0x7f2deaf14800 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":590:9 discrim 2 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 52 19 21 2 (set (reg:DI 0 ax [104])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -33 [0xffffffffffffffdf]))) "/usr/include/c++/15/bits/allocator.h":189:39 265 {*leadi}
+     (nil))
+(insn 21 52 22 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [104])) "/usr/include/c++/15/bits/allocator.h":189:39 95 {*movdi_internal}
+     (nil))
+(call_insn 22 21 35 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt15__new_allocatorIcED2Ev") [flags 0x3]  <function_decl 0x7f2deb66c600 __dt_base >) [0 __dt_base  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/allocator.h":189:39 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 35 22 24 2 (const_int 0 [0]) "/usr/include/c++/15/bits/allocator.h":189:39 1495 {nop}
+     (nil))
+(insn 24 35 25 2 (set (reg/f:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [15 this+0 S8 A64])) 95 {*movdi_internal}
+     (nil))
+(insn 25 24 36 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [15 this+0 S8 A64])
+        (reg/f:DI 0 ax [105])) 95 {*movdi_internal}
+     (nil))
+(insn 36 25 27 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":378:7 1495 {nop}
+     (nil))
+(insn 27 36 28 2 (set (reg:DI 0 ax [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 2 (set (reg:DI 4 si)
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(insn 29 28 30 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [106])) "/usr/include/c++/15/bits/basic_string.h":593:15 95 {*movdi_internal}
+     (nil))
+(call_insn 30 29 38 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm") [flags 0x3]  <function_decl 0x7f2deaf21200 _M_set_length>) [0 _M_set_length S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":593:15 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 38 30 45 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":594:7 1495 {nop}
+     (nil))
+(note 45 38 46 2 NOTE_INSN_EPILOGUE_BEG)
+(insn 46 45 47 2 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (nil))
+(insn/f 47 46 48 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 48 47 49 2 (simple_return) "/usr/include/c++/15/bits/basic_string.h":594:7 -1
+     (nil)
+ -> simple_return)
+(barrier 49 48 39)
+(note 39 49 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::~basic_string (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev, funcdef_no=1903, decl_uid=26590, cgraph_uid=494, symbol_order=493)
+
+
+
+std::__cxx11::basic_string<char>::~basic_string
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 5 [di] 6 [bp] 7 [sp]
+;;  ref usage 	r0={5d,2u} r1={3d} r2={3d} r4={3d} r5={5d,3u} r6={3d,8u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={3d} r18={2d} r19={1d,1u} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} r81={2d} r82={2d} r83={2d} r84={2d} r85={2d} r86={2d} r87={2d} r88={2d} r89={2d} r90={2d} r91={2d} 
+;;    total ref usage 217{194d,23u,0e} in 13{11 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 17 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 17 4 18 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(insn/f 18 17 19 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(insn/f 19 18 20 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":895:7 -1
+     (nil))
+(note 20 19 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 20 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [15 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.h":895:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:DI 0 ax [99])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":896:19 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [99])) "/usr/include/c++/15/bits/basic_string.h":896:19 95 {*movdi_internal}
+     (nil))
+(call_insn 8 7 9 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv") [flags 0x3]  <function_decl 0x7f2deaf21500 _M_dispose>) [0 _M_dispose S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":896:19 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:98 _1 ] [98])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:98 _1 ] [98])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 11 10 15 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD1Ev") [flags 0x3]  <function_decl 0x7f2deaf95800 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":896:23 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 11 21 2 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.h":896:23 1495 {nop}
+     (nil))
+(note 21 15 22 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 22 21 23 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":896:23 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 23 22 24 2 (simple_return) "/usr/include/c++/15/bits/basic_string.h":896:23 -1
+     (nil)
+ -> simple_return)
+(barrier 24 23 16)
+(note 16 24 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::basic_string<> (_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_, funcdef_no=2069, decl_uid=28940, cgraph_uid=660, symbol_order=659)
+
+
+
+std::__cxx11::basic_string<char>::basic_string<>
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 3 [bx] 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 3 [bx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={17d,11u,1e} r1={12d,4u} r2={10d,2u} r3={4d,4u} r4={10d,3u} r5={15d,8u} r6={3d,26u} r7={5d,21u} r8={7d} r9={7d} r10={7d} r11={7d} r12={7d} r13={7d} r14={7d} r15={7d} r16={1u} r17={10d,1u} r18={7d} r19={1d,2u,1e} r20={8d} r21={8d} r22={8d} r23={8d} r24={8d} r25={8d} r26={8d} r27={8d} r28={7d} r29={7d} r30={7d} r31={7d} r32={7d} r33={7d} r34={7d} r35={7d} r36={8d} r37={8d} r38={7d} r39={7d} r44={7d} r45={7d} r46={7d} r47={7d} r48={7d} r49={7d} r50={7d} r51={7d} r52={7d} r53={7d} r54={7d} r55={7d} r56={7d} r57={7d} r58={7d} r59={7d} r60={7d} r61={7d} r62={7d} r63={7d} r64={7d} r65={7d} r66={7d} r67={7d} r68={7d} r69={7d} r70={7d} r71={7d} r72={7d} r73={7d} r74={7d} r75={7d} r76={7d} r77={7d} r78={7d} r79={7d} r80={7d} r81={7d} r82={7d} r83={7d} r84={7d} r85={7d} r86={7d} r87={7d} r88={7d} r89={7d} r90={7d} r91={7d} 
+;;    total ref usage 721{636d,83u,2e} in 45{38 regular + 7 call} insns.
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 68 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 68 6 69 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.h":706:7 -1
+     (nil))
+(insn/f 69 68 70 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.h":706:7 -1
+     (nil))
+(insn/f 70 69 71 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg:DI 3 bx)) "/usr/include/c++/15/bits/basic_string.h":706:7 -1
+     (nil))
+(insn/f 71 70 72 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -56 [0xffffffffffffffc8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":706:7 -1
+     (nil))
+(note 72 71 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 72 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [15 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.h":706:7 95 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [3 __s+0 S8 A64])
+        (reg:DI 4 si [ __s ])) "/usr/include/c++/15/bits/basic_string.h":706:7 95 {*movdi_internal}
+     (nil))
+(insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [39 __a+0 S8 A64])
+        (reg:DI 1 dx [ __a ])) "/usr/include/c++/15/bits/basic_string.h":706:7 95 {*movdi_internal}
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg/f:DI 3 bx [orig:98 _1 ] [98])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":707:9 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 0 ax [104])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":707:9 95 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [104])) "/usr/include/c++/15/bits/basic_string.h":707:9 95 {*movdi_internal}
+     (nil))
+(call_insn 11 10 12 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv") [flags 0x3]  <function_decl 0x7f2deaf14f00 _M_local_data>) [0 _M_local_data S1 A8])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.h":707:9 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 12 11 13 2 (set (reg/f:DI 2 cx [orig:99 _2 ] [99])
+        (reg:DI 0 ax)) "/usr/include/c++/15/bits/basic_string.h":707:9 95 {*movdi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -56 [0xffffffffffffffc8])) [39 __a+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":707:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 14 13 15 2 (set (reg:DI 1 dx)
+        (reg:DI 0 ax [105])) "/usr/include/c++/15/bits/basic_string.h":707:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:99 _2 ] [99])) "/usr/include/c++/15/bits/basic_string.h":707:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 5 di)
+        (reg/f:DI 3 bx [orig:98 _1 ] [98])) "/usr/include/c++/15/bits/basic_string.h":707:9 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 17 16 18 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_") [flags 0x3]  <function_decl 0x7f2deaf14a00 __ct_comp >) [0 __ct_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":707:9 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 18 17 19 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -48 [0xffffffffffffffd0])) [3 __s+0 S8 A64])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.h":710:2 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 19 18 20 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 25)
+            (pc))) "/usr/include/c++/15/bits/basic_string.h":710:2 1458 {*jcc}
+     (nil)
+ -> 25)
+(note 20 19 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 3 (set (reg:DI 0 ax [106])
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f2de9eb12f8 *.LC3>)) "/usr/include/c++/15/bits/basic_string.h":711:28 95 {*movdi_internal}
+     (nil))
+(insn 22 21 78 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [106])) "/usr/include/c++/15/bits/basic_string.h":711:28 95 {*movdi_internal}
+     (nil))
+(note 78 22 23 3 9 NOTE_INSN_EH_REGION_BEG)
+(call_insn 23 78 24 3 (call (mem:QI (symbol_ref:DI ("_ZSt19__throw_logic_errorPKc") [flags 0x41]  <function_decl 0x7f2deb629e00 __throw_logic_error>) [0 __throw_logic_error S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":711:28 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+            (expr_list:REG_NORETURN (const_int 0 [0])
+                (nil))))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(barrier 24 23 25)
+(code_label 25 24 26 4 56 (nil) [1 uses])
+(note 26 25 27 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 4 (set (reg:DI 0 ax [107])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [3 __s+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":713:49 95 {*movdi_internal}
+     (nil))
+(insn 28 27 29 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [107])) "/usr/include/c++/15/bits/basic_string.h":713:49 95 {*movdi_internal}
+     (nil))
+(call_insn 29 28 59 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZNSt11char_traitsIcE6lengthEPKc") [flags 0x3]  <function_decl 0x7f2deb9bd100 length>) [0 length S1 A8])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.h":713:49 1476 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 59 29 35 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 35 59 36 5 (set (reg/f:DI 1 dx [111])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [3 __s+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":713:16 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 36 35 37 5 (parallel [
+            (set (reg:DI 0 ax [orig:110 __end_15 ] [110])
+                (plus:DI (reg:DI 0 ax [orig:100 _3 ] [100])
+                    (reg/f:DI 1 dx [111])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/basic_string.h":713:16 discrim 2 285 {*adddi_1}
+     (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 19 frame)
+                    (const_int -32 [0xffffffffffffffe0])) [3 __s+0 S8 A64])
+            (reg:DI 0 ax [orig:100 _3 ] [100]))
+        (nil)))
+(insn 37 36 38 5 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [3 __end+0 S8 A64])
+        (reg:DI 0 ax [orig:110 __end_15 ] [110])) "/usr/include/c++/15/bits/basic_string.h":713:16 discrim 2 95 {*movdi_internal}
+     (nil))
+(insn 38 37 39 5 (set (reg:DI 1 dx [112])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [3 __end+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":714:14 95 {*movdi_internal}
+     (nil))
+(insn 39 38 40 5 (set (reg:DI 2 cx [113])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -48 [0xffffffffffffffd0])) [3 __s+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":714:14 95 {*movdi_internal}
+     (nil))
+(insn 40 39 42 5 (set (reg:DI 0 ax [114])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":714:14 95 {*movdi_internal}
+     (nil))
+(insn 42 40 43 5 (set (reg:DI 4 si)
+        (reg:DI 2 cx [113])) "/usr/include/c++/15/bits/basic_string.h":714:14 95 {*movdi_internal}
+     (nil))
+(insn 43 42 44 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [114])) "/usr/include/c++/15/bits/basic_string.h":714:14 95 {*movdi_internal}
+     (nil))
+(call_insn 44 43 79 5 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag") [flags 0x3]  <function_decl 0x7f2dea2f4200 _M_construct>) [0 _M_construct S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":714:14 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(note 79 44 63 9 NOTE_INSN_EH_REGION_END)
+(note 63 79 65 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 65 63 66 6 (set (pc)
+        (label_ref 64)) "/usr/include/c++/15/bits/basic_string.h":715:7 1459 {jump}
+     (nil)
+ -> 64)
+(barrier 66 65 60)
+(code_label/s 60 66 62 7 58 (nil) [1 uses])
+(note 62 60 61 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 61 62 50 7 (set (reg:DI 3 bx [115])
+        (reg:DI 0 ax)) "/usr/include/c++/15/bits/basic_string.h":715:7 95 {*movdi_internal}
+     (nil))
+(insn 50 61 51 7 (set (reg/f:DI 0 ax [orig:101 _4 ] [101])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [15 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.h":715:7 95 {*movdi_internal}
+     (nil))
+(insn 51 50 52 7 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:101 _4 ] [101])) "/usr/include/c++/15/bits/basic_string.h":715:7 95 {*movdi_internal}
+     (nil))
+(call_insn 52 51 53 7 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD1Ev") [flags 0x3]  <function_decl 0x7f2deaf95800 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.h":715:7 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 53 52 54 7 (set (reg/f:DI 0 ax [orig:102 D.47060 ] [102])
+        (reg:DI 3 bx [115])) 95 {*movdi_internal}
+     (nil))
+(insn 54 53 80 7 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:102 D.47060 ] [102])) 95 {*movdi_internal}
+     (nil))
+(note 80 54 55 7 10 NOTE_INSN_EH_REGION_BEG)
+(call_insn 55 80 81 7 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f2dec59cb00 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) 1465 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(note 81 55 56 10 NOTE_INSN_EH_REGION_END)
+(barrier 56 81 64)
+(code_label 64 56 58 8 59 (nil) [1 uses])
+(note 58 64 73 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(note 73 58 74 8 NOTE_INSN_EPILOGUE_BEG)
+(insn 74 73 75 8 (set (reg:DI 3 bx)
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [33  S8 A8])) "/usr/include/c++/15/bits/basic_string.h":715:7 -1
+     (nil))
+(insn/f 75 74 76 8 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.h":715:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 76 75 77 8 (simple_return) "/usr/include/c++/15/bits/basic_string.h":715:7 -1
+     (nil)
+ -> simple_return)
+(barrier 77 76 67)
+(note 67 77 0 NOTE_INSN_DELETED)
+
+;; Function std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base (_ZNSt12_Vector_baseIhSaIhEED2Ev, funcdef_no=2086, decl_uid=40845, cgraph_uid=677, symbol_order=676)
+
+
+
+std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={9d,6u} r1={5d,2u} r2={4d,1u} r4={4d,1u} r5={5d,3u} r6={3d,11u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={4d} r18={2d} r19={1d,1u} r20={3d} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={2d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={3d} r37={3d} r38={2d} r39={2d} r44={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} r81={2d} r82={2d} r83={2d} r84={2d} r85={2d} r86={2d} r87={2d} r88={2d} r89={2d} r90={2d} r91={2d} 
+;;    total ref usage 237{203d,34u,0e} in 21{19 regular + 2 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 27 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 27 4 28 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 28 27 29 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(insn/f 29 28 30 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":373:7 -1
+     (nil))
+(note 30 29 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 30 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/stl_vector.h":373:7 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [104])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg/f:DI 1 dx [orig:98 _1 ] [98])
+        (mem/f:DI (plus:DI (reg/f:DI 0 ax [104])
+                (const_int 16 [0x10])) [5 this_8(D)->_M_impl.D.40742._M_end_of_storage+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:17 95 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg/f:DI 0 ax [105])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [orig:99 _2 ] [99])
+        (mem/f:DI (reg/f:DI 0 ax [105]) [5 this_8(D)->_M_impl.D.40742._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":376:45 95 {*movdi_internal}
+     (nil))
+(insn 10 9 12 2 (parallel [
+            (set (reg:DI 1 dx [orig:100 _3 ] [100])
+                (minus:DI (reg/f:DI 1 dx [orig:98 _1 ] [98])
+                    (reg/f:DI 0 ax [orig:99 _2 ] [99])))
+            (clobber (reg:CC 17 flags))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":376:35 391 {*subdi_1}
+     (nil))
+(insn 12 10 13 2 (set (reg/f:DI 0 ax [106])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 13 12 14 2 (set (reg/f:DI 2 cx [orig:102 _5 ] [102])
+        (mem/f:DI (reg/f:DI 0 ax [106]) [5 this_8(D)->_M_impl.D.40742._M_start+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 14 13 16 2 (set (reg:DI 0 ax [107])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 16 14 17 2 (set (reg:DI 4 si)
+        (reg/f:DI 2 cx [orig:102 _5 ] [102])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [107])) "/usr/include/c++/15/bits/stl_vector.h":375:15 95 {*movdi_internal}
+     (nil))
+(call_insn 18 17 19 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseIhSaIhEE13_M_deallocateEPhm") [flags 0x3]  <function_decl 0x7f2dea54a000 _M_deallocate>) [0 _M_deallocate S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":375:15 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 19 18 20 2 (set (reg/f:DI 0 ax [orig:103 _6 ] [103])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [19 this+0 S8 A64])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(insn 20 19 21 2 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:103 _6 ] [103])) "/usr/include/c++/15/bits/stl_vector.h":377:7 95 {*movdi_internal}
+     (nil))
+(call_insn 21 20 25 2 (call (mem:QI (symbol_ref/i:DI ("_ZNSt12_Vector_baseIhSaIhEE12_Vector_implD1Ev") [flags 0x3]  <function_decl 0x7f2dea54ac00 __dt_comp >) [0 __dt_comp  S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/stl_vector.h":377:7 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 25 21 31 2 (const_int 0 [0]) "/usr/include/c++/15/bits/stl_vector.h":377:7 1495 {nop}
+     (nil))
+(note 31 25 32 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 32 31 33 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 33 32 34 2 (simple_return) "/usr/include/c++/15/bits/stl_vector.h":377:7 -1
+     (nil)
+ -> simple_return)
+(barrier 34 33 26)
+(note 26 34 0 NOTE_INSN_DELETED)
+
+;; Function std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::~_Guard (_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev, funcdef_no=2163, decl_uid=44313, cgraph_uid=754, symbol_order=753)
+
+
+
+std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::~_Guard
+
+Dataflow summary:
+;;  fully invalidated by EH 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 28 [mm0] 29 [mm1] 30 [mm2] 31 [mm3] 32 [mm4] 33 [mm5] 34 [mm6] 35 [mm7] 36 [r8] 37 [r9] 38 [r10] 39 [r11] 44 [xmm8] 45 [xmm9] 46 [xmm10] 47 [xmm11] 48 [xmm12] 49 [xmm13] 50 [xmm14] 51 [xmm15] 52 [xmm16] 53 [xmm17] 54 [xmm18] 55 [xmm19] 56 [xmm20] 57 [xmm21] 58 [xmm22] 59 [xmm23] 60 [xmm24] 61 [xmm25] 62 [xmm26] 63 [xmm27] 64 [xmm28] 65 [xmm29] 66 [xmm30] 67 [xmm31] 68 [k0] 69 [k1] 70 [k2] 71 [k3] 72 [k4] 73 [k5] 74 [k6] 75 [k7] 76 [r16] 77 [r17] 78 [r18] 79 [r19] 80 [r20] 81 [r21] 82 [r22] 83 [r23] 84 [r24] 85 [r25] 86 [r26] 87 [r27] 88 [r28] 89 [r29] 90 [r30] 91 [r31]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 19 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 19 [frame] 20 [xmm0] 21 [xmm1] 22 [xmm2] 23 [xmm3] 24 [xmm4] 25 [xmm5] 26 [xmm6] 27 [xmm7] 36 [r8] 37 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 19 [frame]
+;;  regs ever live 	 0 [ax] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={6d,4u} r1={2d} r2={2d} r4={2d} r5={3d,2u} r6={3d,10u} r7={4d,10u} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r17={3d,1u} r18={1d} r19={1d,1u} r20={2d} r21={2d} r22={2d} r23={2d} r24={2d} r25={2d} r26={2d} r27={2d} r28={1d} r29={1d} r30={1d} r31={1d} r32={1d} r33={1d} r34={1d} r35={1d} r36={2d} r37={2d} r38={1d} r39={1d} r44={1d} r45={1d} r46={1d} r47={1d} r48={1d} r49={1d} r50={1d} r51={1d} r52={1d} r53={1d} r54={1d} r55={1d} r56={1d} r57={1d} r58={1d} r59={1d} r60={1d} r61={1d} r62={1d} r63={1d} r64={1d} r65={1d} r66={1d} r67={1d} r68={1d} r69={1d} r70={1d} r71={1d} r72={1d} r73={1d} r74={1d} r75={1d} r76={1d} r77={1d} r78={1d} r79={1d} r80={1d} r81={1d} r82={1d} r83={1d} r84={1d} r85={1d} r86={1d} r87={1d} r88={1d} r89={1d} r90={1d} r91={1d} 
+;;    total ref usage 141{113d,28u,0e} in 15{14 regular + 1 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 25 4 26 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "/usr/include/c++/15/bits/basic_string.tcc":248:4 -1
+     (nil))
+(insn/f 26 25 27 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "/usr/include/c++/15/bits/basic_string.tcc":248:4 -1
+     (nil))
+(insn/f 27 26 28 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.tcc":248:4 -1
+     (nil))
+(note 28 27 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 28 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [45 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) "/usr/include/c++/15/bits/basic_string.tcc":248:4 95 {*movdi_internal}
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [100])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [45 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.tcc":248:20 95 {*movdi_internal}
+     (nil))
+(insn 7 6 8 2 (set (reg/f:DI 0 ax [orig:98 _1 ] [98])
+        (mem/f:DI (reg/f:DI 0 ax [100]) [15 this_5(D)->_M_guarded+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.tcc":248:20 95 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:98 _1 ] [98])
+            (const_int 0 [0]))) "/usr/include/c++/15/bits/basic_string.tcc":248:16 12 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 22)
+            (pc))) "/usr/include/c++/15/bits/basic_string.tcc":248:16 1458 {*jcc}
+     (nil)
+ -> 22)
+(note 10 9 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg/f:DI 0 ax [101])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [45 this+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.tcc":248:32 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 12 11 13 3 (set (reg/f:DI 0 ax [orig:99 _2 ] [99])
+        (mem/f:DI (reg/f:DI 0 ax [101]) [15 this_5(D)->_M_guarded+0 S8 A64])) "/usr/include/c++/15/bits/basic_string.tcc":248:32 discrim 1 95 {*movdi_internal}
+     (nil))
+(insn 13 12 14 3 (set (reg:DI 5 di)
+        (reg/f:DI 0 ax [orig:99 _2 ] [99])) "/usr/include/c++/15/bits/basic_string.tcc":248:54 discrim 1 95 {*movdi_internal}
+     (nil))
+(call_insn 14 13 22 3 (call (mem:QI (symbol_ref/i:DI ("_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv") [flags 0x3]  <function_decl 0x7f2deaf21500 _M_dispose>) [0 _M_dispose S1 A8])
+        (const_int 0 [0])) "/usr/include/c++/15/bits/basic_string.tcc":248:54 discrim 1 1465 {*call}
+     (expr_list:REG_EH_REGION (const_int -1 [0xffffffffffffffff])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(code_label 22 14 21 4 121 (nil) [1 uses])
+(note 21 22 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 23 21 29 4 (const_int 0 [0]) "/usr/include/c++/15/bits/basic_string.tcc":248:58 1495 {nop}
+     (nil))
+(note 29 23 30 4 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 30 29 31 4 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "/usr/include/c++/15/bits/basic_string.tcc":248:58 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 31 30 32 4 (simple_return) "/usr/include/c++/15/bits/basic_string.tcc":248:58 -1
+     (nil)
+ -> simple_return)
+(barrier 32 31 24)
+(note 24 32 0 NOTE_INSN_DELETED)
