@@ -9,6 +9,7 @@
 
 struct CliParseResult {
     bool needHelp;
+    bool needMan;
     ErrorCode errorCode;
     CoreOptions options;
 };
@@ -16,5 +17,6 @@ struct CliParseResult {
 CliParseResult ParseCliArguments(int argc, char* argv[]);
 CliParseResult ParseCliLine(const string& line);
 void PrintHelp();
+void PrintMan();
 
 #endif

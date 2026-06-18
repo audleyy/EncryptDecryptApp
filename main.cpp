@@ -11,6 +11,10 @@ int main(int argc, char* argv[]) {
         return RunConsoleUI();
     }
     CliParseResult parseResult = ParseCliArguments(argc, argv);
+    if (parseResult.needMan) {
+        PrintMan();
+        return Success;
+    }
     if (parseResult.needHelp) {
         PrintHelp();
         return Success;
