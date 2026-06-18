@@ -1,4 +1,5 @@
 #include "CliParser.h"
+#include "ManualPages.h"
 
 using namespace std;
 
@@ -71,6 +72,7 @@ CliParseResult ParseCliArguments(int argc, char* argv[]) {
     CliParseResult result;
     result.needHelp = false;
     result.needMan = false;
+    result.manTopic = "";
     result.errorCode = Success;
     result.options.useText = false;
     bool hasAlgorithm = false;
@@ -81,6 +83,7 @@ CliParseResult ParseCliArguments(int argc, char* argv[]) {
             result.needHelp = true;
         } else if (argument == "--man") {
             result.needMan = true;
+            result.manTopic = ReadFlagValue(argc, argv, index);
         } else if (argument == "--algorithm" || argument == "-a") {
             string value = ReadFlagValue(argc, argv, index);
             hasAlgorithm = ParseAlgorithm(value, result.options.algorithm);
@@ -119,6 +122,9 @@ CliParseResult ParseCliLine(const string& line) {
     while (stream >> word) {
         words.push_back(word);
     }
+    if (words.size() >= 2 && words[1] == "man") {
+        words[1] = "--man";
+    }
     vector<char*> argv;
     argv.reserve(words.size());
     for (string& value : words) {
@@ -131,6 +137,8 @@ void PrintHelp(){
     cout << "\033[31mИСПОЛЬЗОВАНИЕ:\033[0m\n";
     cout << "  ./app --help\n";
     cout << "  ./app --man\n";
+    cout << "  ./app --man mode|algorithm|key|input|output|text|all\n";
+    cout << "  man mode\n";
     cout << "  ./app --mode generate-key --algorithm rsa|shamir|elgamal|caesar|chacha20 --key key.bin\n";
     cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal|caesar|chacha20 --input in.bin --output out.bin --key key.bin\n";
     cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal|caesar|chacha20 --input in.bin --output out.bin --key key.bin\n";
@@ -141,6 +149,7 @@ void PrintHelp(){
     cout << "\033[31mФЛАГИ:\033[0m\n";
     cout << "  --help, -h       показать справку\n";
     cout << "  --man            показать полное руководство\n";
+    cout << "  man <topic>      показать подробное описание темы\n";
     cout << "  --mode, -m       generate-key, encrypt или decrypt\n";
     cout << "  --algorithm, -a  rsa, shamir, elgamal, caesar или chacha20\n";
     cout << "  --input, -i      входной файл для encrypt/decrypt\n";
@@ -151,9 +160,19 @@ void PrintHelp(){
     cout << "\n";
     cout << "Для --text при encrypt программа выводит HEX-шифротекст.\n";
     cout << "Для --text при decrypt нужно ввести HEX-шифротекст.\n";
+    cout << "Ввод текста завершается строкой exit_for_text.\n";
 }
 
-void PrintMan() {
+void PrintMan(const string& topic) {
+    if (PrintManualPage(topic)) {
+        return;
+    }
+    if (!topic.empty() && topic != "all") {
+        cout << "Нет страницы man для темы: " << topic << "\n";
+        cout << "Доступные темы: mode, algorithm, key, input, output, text, all\n";
+        return;
+    }
+
     cout << "\n";
     cout << "\033[31mОПИСАНИЕ\033[0m\n";
     cout << "  Программа шифрования и расшифрования данных с поддержкой нескольких\n";

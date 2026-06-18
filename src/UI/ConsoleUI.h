@@ -8,5 +8,6 @@
 #include <iostream>
 
 ErrorCode RunConsoleUI();
+string ReadConsoleTextUntilExit();
 
 #endif

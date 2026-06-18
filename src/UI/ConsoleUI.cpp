@@ -2,6 +2,27 @@
 
 using namespace std;
 
+const string TextEndMarker = "exit_for_text";
+
+string ReadConsoleTextUntilExit() {
+    string text;
+    string line;
+    bool isFirstLine = true;
+    bool isReading = true;
+    while (isReading && getline(cin, line)) {
+        if (line == TextEndMarker) {
+            isReading = false;
+        } else {
+            if (!isFirstLine) {
+                text += "\n";
+            }
+            text += line;
+            isFirstLine = false;
+        }
+    }
+    return text;
+}
+
 ErrorCode RunConsoleUI() {
     ErrorCode errorCode = Success;
     try {
@@ -26,7 +47,7 @@ ErrorCode RunConsoleUI() {
             } else if (!line.empty()) {
                 CliParseResult parseResult = ParseCliLine(line);
                 if (parseResult.needMan) {
-                    PrintMan();
+                    PrintMan(parseResult.manTopic);
                     errorCode = Success;
                 } else if (parseResult.needHelp) {
                     PrintHelp();
@@ -41,8 +62,8 @@ ErrorCode RunConsoleUI() {
                         } else {
                             cout << "Введите текст:\n";
                         }
-                        cout << "> ";
-                        getline(cin, parseResult.options.textValue);
+                        cout << "Для завершения ввода введите " << TextEndMarker << "\n";
+                        parseResult.options.textValue = ReadConsoleTextUntilExit();
                     }
                     errorCode = RunCore(parseResult.options);
                     cout << GetErrorText(errorCode) << "\n";

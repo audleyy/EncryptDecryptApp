@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
     }
     CliParseResult parseResult = ParseCliArguments(argc, argv);
     if (parseResult.needMan) {
-        PrintMan();
+        PrintMan(parseResult.manTopic);
         return Success;
     }
     if (parseResult.needHelp) {
@@ -25,8 +25,8 @@ int main(int argc, char* argv[]) {
         return parseResult.errorCode;
     }
     if (parseResult.options.useText) {
-        cout << "> ";
-        getline(cin, parseResult.options.textValue);
+        cout << "Для завершения ввода введите exit_for_text\n";
+        parseResult.options.textValue = ReadConsoleTextUntilExit();
     }
     ErrorCode errorCode = RunCore(parseResult.options);
     cout << GetErrorText(errorCode) << "\n";
