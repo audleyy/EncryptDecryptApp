@@ -44,7 +44,17 @@ void EncryptTextByOptions(const CoreOptions& options) {
             break;
         }
         case AlgorithmType::ChaCha20: {
-            ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+           
+            vector<uint8_t> keyFileBytes = ReadBinaryFile(options.keyFilePath);
+            ChaCha20Key key;
+
+            if (keyFileBytes.size() == sizeof(uint64_t) * 5) { 
+                DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+                key = GenerateChaCha20KeyFromDH(dhParams);
+            } else {
+                key = ReadChaCha20KeyFromFile(options.keyFilePath);
+            }
+
             outputBytes = EncryptChaCha20ByDll(inputBytes, key);
             break;
         }
@@ -53,6 +63,7 @@ void EncryptTextByOptions(const CoreOptions& options) {
     }
     cout << BytesToHex(outputBytes) << "\n";
 }
+
 
 void DecryptTextByOptions(const CoreOptions& options) {
     vector<uint8_t> inputBytes = HexToBytes(options.textValue);
@@ -79,14 +90,24 @@ void DecryptTextByOptions(const CoreOptions& options) {
             break;
         }
         case AlgorithmType::ChaCha20: {
-            ChaCha20Key key = ReadChaCha20KeyFromFile(options.keyFilePath);
+        
+            vector<uint8_t> keyFileBytes = ReadBinaryFile(options.keyFilePath);
+            ChaCha20Key key;
+
+            if (keyFileBytes.size() == sizeof(uint64_t) * 5) {
+                DhChaCha20Params dhParams = ReadDhChaCha20ParamsFromFile(options.keyFilePath);
+                key = GenerateChaCha20KeyFromDH(dhParams);
+            } else {
+                key = ReadChaCha20KeyFromFile(options.keyFilePath);
+            }
+
+           
             outputBytes = DecryptChaCha20ByDll(inputBytes, key);
             break;
         }
         default:
             throw invalid_argument("Некорректный алгоритм");
     }
-
     cout << BytesToText(outputBytes) << "\n";
 }
 

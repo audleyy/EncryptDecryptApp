@@ -40,4 +40,7 @@ CaesarKey ReadCaesarKeyFromFile(const string& filePath);
 void SaveChaCha20KeyToFile(const string& filePath, const ChaCha20Key& key);
 ChaCha20Key ReadChaCha20KeyFromFile(const string& filePath);
 
+void SaveDhChaCha20ParamsToFile(const string& filePath, const DhChaCha20Params& params);
+DhChaCha20Params ReadDhChaCha20ParamsFromFile(const string& filePath);
+
 #endif

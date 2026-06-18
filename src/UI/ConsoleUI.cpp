@@ -1,4 +1,6 @@
 #include "ConsoleUI.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -35,10 +37,12 @@ ErrorCode RunConsoleUI() {
 
         cout << "Введите команду с флагами или --help, --man:\n";
         cout << "Для выхода введите exit\n";
+        
         bool isRunning = true;
         while (isRunning) {
             string line{};
             cout << "> ";
+            
             if (!getline(cin, line)) {
                 isRunning = false;
             } else if (line == "exit") {
@@ -46,29 +50,38 @@ ErrorCode RunConsoleUI() {
                 errorCode = Success;
             } else if (!line.empty()) {
                 CliParseResult parseResult = ParseCliLine(line);
+                
                 if (parseResult.needMan) {
                     PrintMan(parseResult.manTopic);
                     errorCode = Success;
                 } else if (parseResult.needHelp) {
                     PrintHelp();
-                    errorCode = Success;
                 } else if (parseResult.errorCode != Success) {
-                    errorCode = parseResult.errorCode;
-                    cout << GetErrorText(errorCode) << "\n";
+                    cout << "Ошибка парсинга: " << GetErrorText(parseResult.errorCode) << "\n";
                 } else {
-                    if (parseResult.options.useText) {
+                    if (parseResult.options.useText && parseResult.options.textValue.empty()) {
                         if (parseResult.options.operation == OperationType::Decrypt) {
-                            cout << "Введите HEX-шифротекст:\n";
+                            cout << "Введите HEX-шифротекст:\n> ";
                         } else {
-                            cout << "Введите текст:\n";
+                            cout << "Введите открытый текст:\n> ";
                         }
                         cout << "Для завершения ввода введите " << TextEndMarker << "\n";
                         parseResult.options.textValue = ReadConsoleTextUntilExit();
                     }
+
+                    if (parseResult.options.operation == OperationType::GenerateKey) {
+                        cout << "Генерация ключа по пути: " << parseResult.options.keyFilePath << "...\n";
+                    }
+
                     errorCode = RunCore(parseResult.options);
-                    cout << GetErrorText(errorCode) << "\n";
-                    if (errorCode != Success && !LastErrorDetails.empty()) {
-                        cout << LastErrorDetails << "\n";
+                    
+                    if (errorCode == Success) {
+                        cout << "[Успешно выполнено]\n";
+                    } else {
+                        cout << "Ошибка выполнения: " << GetErrorText(errorCode) << "\n";
+                        if (!LastErrorDetails.empty()) {
+                            cout << LastErrorDetails << "\n";
+                        }
                     }
                 }
             }
