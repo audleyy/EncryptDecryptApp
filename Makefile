@@ -1,5 +1,6 @@
 CXX = c++
 CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
+DEPFLAGS = -MMD -MP
 
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
@@ -11,6 +12,8 @@ LIB_FLAGS = -shared -fPIC
 endif
 
 BIN_DIR = bin
+BUILD_DIR = build
+APP_OBJ_DIR = $(BUILD_DIR)/app
 
 APP = $(BIN_DIR)/app
 RSA_LIB = $(BIN_DIR)/librsa$(LIB_EXT)
@@ -115,13 +118,24 @@ APP_SRC = \
 	$(DIFFIE_HELLMAN_SRC) \
 	$(MATH_SRC)
 
+APP_OBJECTS = $(patsubst %.cpp,$(APP_OBJ_DIR)/%.o,$(APP_SRC))
+APP_DEPS = $(APP_OBJECTS:.o=.d)
+
 all: app rsa shamir elgamal caesar chacha20
+
+prepare: $(BIN_DIR) $(APP_OBJECTS) rsa shamir elgamal caesar chacha20
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
 
-app: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) $(APP_SRC) -o $(APP)
+app: $(APP)
+
+$(APP): $(BIN_DIR) $(APP_OBJECTS)
+	$(CXX) $(CXXFLAGS) $(APP_OBJECTS) -o $(APP)
+
+$(APP_OBJ_DIR)/%.o: %.cpp
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 rsa: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/Rsa/RsaDll.cpp $(RSA_SRC) $(CONVERT_SRC) libs/algorithms/MathCrypto/mod.cpp -o $(RSA_LIB)
@@ -139,4 +153,9 @@ chacha20: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(LIB_FLAGS) libs/algorithms/ChaCha20/ChaCha20Dll.cpp $(CHACHA20_SRC) -o $(CHACHA20_LIB)
 
 clean:
-	rm -rf $(BIN_DIR)
+	rm -rf $(BIN_DIR) $(BUILD_DIR)
+
+clean-objects:
+	rm -rf $(BUILD_DIR)
+
+-include $(APP_DEPS)

@@ -24,15 +24,24 @@ string BytesToHex(const vector<uint8_t>& bytes) {
 }
 
 vector<uint8_t> HexToBytes(const string& text) {
-    if (text.size() % 2 != 0) {
+    string preparedText;
+    preparedText.reserve(text.size());
+    for (char symbol : text) {
+        bool isSpaceSymbol = symbol == ' ' || symbol == '\n' || symbol == '\r' || symbol == '\t';
+        if (!isSpaceSymbol) {
+            preparedText.push_back(symbol);
+        }
+    }
+
+    if (preparedText.size() % 2 != 0) {
         throw invalid_argument("HEX-строка должна иметь четную длину");
     }
 
     vector<uint8_t> bytes;
-    bytes.reserve(text.size() / 2);
-    for (size_t index = 0; index < text.size(); index += 2) {
-        int firstHalf = HexDigitToValue(text[index]);
-        int secondHalf = HexDigitToValue(text[index + 1]);
+    bytes.reserve(preparedText.size() / 2);
+    for (size_t index = 0; index < preparedText.size(); index += 2) {
+        int firstHalf = HexDigitToValue(preparedText[index]);
+        int secondHalf = HexDigitToValue(preparedText[index + 1]);
         if (firstHalf < 0 || secondHalf < 0) {
             throw invalid_argument("HEX-строка содержит некорректный символ");
         }
