@@ -1,8 +1,12 @@
-#pragma once
+#ifndef CAESAR_DECRYPT_H
+#define CAESAR_DECRYPT_H
 
 #include "Caesar.h"
+using namespace std;
 
-std::vector<uint8_t> DecryptCaesar(
-    const std::vector<uint8_t>& input,
+vector<uint8_t> DecryptCaesar(
+    const vector<uint8_t>& input,
     uint64_t shift
 );
+
+#endif //

@@ -2,7 +2,9 @@
 
 #include "Caesar.h"
 
-std::vector<uint8_t> EncryptCaesar(
+using namespace std;
+
+vector<uint8_t> EncryptCaesar(
     const std::vector<uint8_t>& input,
     uint64_t shift
 );
