@@ -2,7 +2,30 @@
 
 using namespace std;
 
-string LastErrorDetails;
+string LastErrorDetails{};
+
+void PrintHexByLines(const string& hexText) {
+    const size_t hexLineLength = 64;
+    for (size_t index = 0; index < hexText.size(); index += hexLineLength) {
+        cout << hexText.substr(index, hexLineLength) << "\n";
+    }
+}
+
+void PrintNumbers(const vector<uint64_t>& numbers) {
+    const size_t numbersInLine = 16;
+    for (size_t index = 0; index < numbers.size(); index++) {
+        if (index > 0 && index % numbersInLine != 0) {
+            cout << " ";
+        }
+        cout << numbers[index];
+        if ((index + 1) % numbersInLine == 0) {
+            cout << "\n";
+        }
+    }
+    if (numbers.size() % numbersInLine != 0) {
+        cout << "\n";
+    }
+}
 
 ErrorCode ClassifyRuntimeError(const runtime_error& error) {
     string text = error.what();
@@ -52,7 +75,14 @@ void EncryptTextByOptions(const CoreOptions& options) {
         default:
             throw invalid_argument("Некорректный алгоритм");
     }
-    cout << BytesToHex(outputBytes) << "\n";
+    if (options.showNumbers) {
+        cout << "Исходные байты в десятичном виде:\n";
+        PrintNumbers(BytesToNumbers(inputBytes));
+        cout << "Шифротекст в десятичном виде:\n";
+        PrintNumbers(BinaryToNumbers(outputBytes));
+        cout << "Шифротекст в HEX:\n";
+    }
+    PrintHexByLines(BytesToHex(outputBytes));
 }
 
 void DecryptTextByOptions(const CoreOptions& options) {
@@ -99,12 +129,22 @@ ErrorCode GenerateKeyByOptions(const CoreOptions& options) {
     } else {
         switch (options.algorithm) {
             case AlgorithmType::Rsa: {
-                RsaKey key = GenerateRandomRsaKey(17, 61);
+                RsaKey key;
+                if (options.hasRsaManualParams) {
+                    key = GenerateRsaKey(options.pValue, options.qValue, options.cValue);
+                } else {
+                    key = GenerateRandomRsaKey(17, 61);
+                }
                 SaveRsaKeyToFile(options.keyFilePath, key);
                 break;
             }
             case AlgorithmType::Shamir: {
-                ShamirKey key = GenerateRandomShamirKey(257, 313);
+                ShamirKey key;
+                if (options.hasShamirManualParams) {
+                    key = GenerateShamirKey(options.pValue, options.caValue, options.cbValue);
+                } else {
+                    key = GenerateRandomShamirKey(257, 313);
+                }
                 SaveShamirKeyToFile(options.keyFilePath, key);
                 break;
             }

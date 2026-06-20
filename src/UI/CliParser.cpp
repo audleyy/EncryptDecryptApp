@@ -16,6 +16,17 @@ string ReadFlagValue(int argc, char* argv[], int& index) {
     return value;
 }
 
+uint64_t ReadNumberFlagValue(int argc, char* argv[], int& index, ErrorCode& errorCode) {
+    uint64_t number = 0;
+    string value = ReadFlagValue(argc, argv, index);
+    try {
+        number = stoull(value);
+    } catch (const exception&) {
+        errorCode = InvalidInput;
+    }
+    return number;
+}
+
 bool ParseAlgorithm(const string& value, AlgorithmType& algorithm) {
     bool isParsed = true;
     if (value == "rsa") {
@@ -75,6 +86,14 @@ CliParseResult ParseCliArguments(int argc, char* argv[]) {
     result.manTopic = "";
     result.errorCode = Success;
     result.options.useText = false;
+    result.options.showNumbers = false;
+    result.options.hasRsaManualParams = false;
+    result.options.hasShamirManualParams = false;
+    result.options.pValue = 0;
+    result.options.qValue = 0;
+    result.options.cValue = 0;
+    result.options.caValue = 0;
+    result.options.cbValue = 0;
     bool hasAlgorithm = false;
     bool hasOperation = false;
     for (int index = 1; index < argc; index++) {
@@ -104,10 +123,24 @@ CliParseResult ParseCliArguments(int argc, char* argv[]) {
             result.options.keyFilePath = ReadFlagValue(argc, argv, index);
         } else if (argument == "--text" || argument == "-text") {
             result.options.useText = true;
+        } else if (argument == "--numbers") {
+            result.options.showNumbers = true;
+        } else if (argument == "--p") {
+            result.options.pValue = ReadNumberFlagValue(argc, argv, index, result.errorCode);
+        } else if (argument == "--q") {
+            result.options.qValue = ReadNumberFlagValue(argc, argv, index, result.errorCode);
+        } else if (argument == "--c") {
+            result.options.cValue = ReadNumberFlagValue(argc, argv, index, result.errorCode);
+        } else if (argument == "--ca") {
+            result.options.caValue = ReadNumberFlagValue(argc, argv, index, result.errorCode);
+        } else if (argument == "--cb") {
+            result.options.cbValue = ReadNumberFlagValue(argc, argv, index, result.errorCode);
         } else {
             result.errorCode = InvalidInput;
         }
     }
+    result.options.hasRsaManualParams = result.options.pValue != 0 && result.options.qValue != 0 && result.options.cValue != 0;
+    result.options.hasShamirManualParams = result.options.pValue != 0 && result.options.caValue != 0 && result.options.cbValue != 0;
     if (!result.needHelp && result.errorCode == Success) {
         result.errorCode = ValidateOptions(result.options, hasAlgorithm, hasOperation);
     }
@@ -144,6 +177,9 @@ void PrintHelp(){
     cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal|caesar|chacha20 --input in.bin --output out.bin --key key.bin\n";
     cout << "  ./app --mode encrypt --algorithm rsa|shamir|elgamal|caesar|chacha20 --text --key key.bin\n";
     cout << "  ./app --mode decrypt --algorithm rsa|shamir|elgamal|caesar|chacha20 --text --key key.bin\n";
+    cout << "  ./app --mode generate-key --algorithm rsa --key key.bin --p 17 --q 19 --c 5\n";
+    cout << "  ./app --mode generate-key --algorithm shamir --key key.bin --p 257 --ca 3 --cb 5\n";
+    cout << "  ./app --mode encrypt --algorithm rsa|shamir --text --key key.bin --numbers\n";
     cout << "  ./app -m encrypt -a rsa -i in.bin -o out.bin -k key.bin\n";
     cout << "\n";
     cout << "\033[31mФЛАГИ:\033[0m\n";
@@ -156,6 +192,9 @@ void PrintHelp(){
     cout << "  --output, -o     выходной файл для encrypt/decrypt\n";
     cout << "  --key, -k        файл ключа .bin\n";
     cout << "  --text, -text    ввод текста из консоли вместо файла\n";
+    cout << "  --numbers        при text encrypt вывести числа и HEX\n";
+    cout << "  --p, --q, --c    ручные параметры RSA для generate-key\n";
+    cout << "  --p, --ca, --cb  ручные параметры Шамира для generate-key\n";
     cout << "  exit             выйти из интерактивного режима\n";
     cout << "\n";
     cout << "Для --text при encrypt программа выводит HEX-шифротекст.\n";

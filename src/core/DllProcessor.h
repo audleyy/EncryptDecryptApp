@@ -17,6 +17,10 @@
 
 using namespace std;
 
+struct DllLibrary {
+    void* handle;
+};
+
 vector<uint8_t> EncryptRsaByDll(const vector<uint8_t>& inputBytes, const RsaKey& key);
 vector<uint8_t> DecryptRsaByDll(const vector<uint8_t>& inputBytes, const RsaKey& key);
 

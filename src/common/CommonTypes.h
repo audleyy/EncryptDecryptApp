@@ -1,6 +1,7 @@
 #ifndef COMMON_TYPES_H
 #define COMMON_TYPES_H
 
+#include <cstdint>
 #include <string>
 
 using namespace std;
@@ -35,6 +36,14 @@ struct CoreOptions {
     AlgorithmType algorithm;
     OperationType operation;
     bool useText;
+    bool showNumbers;
+    bool hasRsaManualParams;
+    bool hasShamirManualParams;
+    uint64_t pValue;
+    uint64_t qValue;
+    uint64_t cValue;
+    uint64_t caValue;
+    uint64_t cbValue;
     string inputFilePath;
     string outputFilePath;
     string keyFilePath;

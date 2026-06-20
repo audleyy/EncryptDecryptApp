@@ -14,10 +14,6 @@ const string CaesarLibraryPath = "bin/libcaesar" + LibExt;
 const string ChaCha20LibraryPath = "bin/libchacha20" + LibExt;
 
 
-struct DllLibrary {
-    void* handle;
-};
-
 DllLibrary OpenDllLibrary(const string& libraryPath, const string& algorithmName) {
     DllLibrary library;
     library.handle = dlopen(libraryPath.c_str(), RTLD_NOW);
